@@ -11,7 +11,8 @@ struct HomeView: View {
     @State private var showFilePicker = false
     
     @State private var photoLibraryStatus: PHAuthorizationStatus = .notDetermined
-    @State private var showPermissionAlert = false
+    @State private var showBatchPicker = false
+    @State private var @State private var showPermissionAlert = false
     @State private var permissionAlertMessage = ""
     
     var body: some View {
@@ -132,7 +133,12 @@ struct HomeView: View {
         } message: {
             Text(permissionAlertMessage)
         }
-        .onAppear {
+        .sheet(isPresented: $showBatchPicker) {
+            BatchPickerView { urls in
+                handleBatchFiles(urls)
+            }
+        }
+        ..onAppear {
             checkPhotoLibraryPermission()
         }
         .navigationTitle("")

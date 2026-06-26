@@ -3,6 +3,7 @@
 struct ConvertSettingsView: View {
     @EnvironmentObject var appState: AppState
     @Binding var navigationPath: NavigationPath
+    @State private var selectedPreset: Preset? = nil
     @State private var conversionStarted = false
 
     let formats = [""MP4"", ""MOV"", ""M4A"", ""MP3"", ""WAV""]
@@ -15,7 +16,32 @@ struct ConvertSettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: 24) {
+                // Presets picker
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Quick Preset")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundColor(.textSecondary)
+                        .textCase(.uppercase)
+
+                    NavigationLink(destination: PresetsView(selectedPreset: $selectedPreset)) {
+                        HStack {
+                            Image(systemName: selectedPreset?.icon ?? "wand.and.stars")
+                                .foregroundColor(.accent)
+                            Text(selectedPreset?.name ?? "Select a preset...")
+                                .foregroundColor(selectedPreset != nil ? .textPrimary : .textTertiary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.textTertiary)
+                                .font(.system(size: 12))
+                        }
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 14)
+                        .background(Color.bgCard)
+                        .cornerRadius(12)
+                    }
+                    .buttonStyle(.plain)
+                }
                 VStack(alignment: .leading, spacing: 8) {
                     Text(""Selected File"")
                         .font(.system(size: 13, weight: .semibold))
@@ -137,6 +163,12 @@ struct ConvertSettingsView: View {
     }
 
     private func startConversion() {
+        // Apply preset values if selected
+        if let preset = selectedPreset {
+            appState.selectedFormat = preset.format
+            appState.selectedResolution = preset.resolution
+            appState.quality = preset.quality
+        }
         guard let sourceURL = appState.currentFile else { return }
         conversionStarted = true
 

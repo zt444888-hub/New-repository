@@ -1,55 +1,49 @@
 ﻿{
   "sourceLanguage" : "en",
   "strings" : {
-    "Conversion Complete" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Conversion Complete" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转换完成" } }
-      }
-    },
-    "Convert Settings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Convert Settings" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转换设置" } }
-      }
-    },
-    "Start Conversion" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Start Conversion" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开始转换" } }
-      }
-    },
-    "Cancel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Cancel" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
-      }
-    },
-    "Test Mode Active" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Test Mode Active" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "测试模式已启用" } }
-      }
-    },
-    "Settings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "Settings" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } }
-      }
-    },
-    "History" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "new", "value" : "History" } },
-        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "历史" } }
-      }
-    }
+    "About MediaMate" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "About MediaMate" } } } },
+    "All formats: MP4, MOV, M4A, MP3, WAV, GIF" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "All formats: MP4, MOV, M4A, MP3, WAV, GIF" } } } },
+    "Batch conversion" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Batch conversion" } } } },
+    "Buy Full Version" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Buy Full Version" } } } },
+    "Cancel" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Cancel" } } } },
+    "Choose from Files" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Choose from Files" } } } },
+    "Choose from Photos" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Choose from Photos" } } } },
+    "Complete" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Complete" } } } },
+    "Convert Settings" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Convert Settings" } } } },
+    "Convert Another" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Convert Another" } } } },
+    "Conversion Complete" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Conversion Complete" } } } },
+    "Converted Files" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Converted Files" } } } },
+    "Converting..." : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Converting..." } } } },
+    "Data Collection" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Data Collection" } } } },
+    "Delete" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Delete" } } } },
+    "Done" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Done" } } } },
+    "Failed" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Failed" } } } },
+    "Files" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Files" } } } },
+    "General" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "General" } } } },
+    "Go Back" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Go Back" } } } },
+    "History" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "History" } } } },
+    "Home" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Home" } } } },
+    "Info" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Info" } } } },
+    "Maybe Later" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Maybe Later" } } } },
+    "No converted files" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "No converted files" } } } },
+    "None" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "None" } } } },
+    "Output Format" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Output Format" } } } },
+    "Privacy Policy" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Privacy Policy" } } } },
+    "Privacy" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Privacy" } } } },
+    "Progress" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Progress" } } } },
+    "Quality" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Quality" } } } },
+    "Resolution" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Resolution" } } } },
+    "Restore Purchases" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Restore Purchases" } } } },
+    "Save to Photos" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Save to Photos" } } } },
+    "Search conversions" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Search conversions" } } } },
+    "Settings" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Settings" } } } },
+    "Share" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Share" } } } },
+    "Start Conversion" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Start Conversion" } } } },
+    "Storage Saved" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Storage Saved" } } } },
+    "Total space saved" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Total space saved" } } } },
+    "Unlock Full Version" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Unlock Full Version" } } } },
+    "Version" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Version" } } } },
+    "Video & Audio Tool" : { "extractionState" : "manual", "localizations" : { "en" : { "stringUnit" : { "state" : "new", "value" : "Video & Audio Tool" } } } }
   },
   "version" : "1.0"
 }

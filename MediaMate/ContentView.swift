@@ -1,39 +1,40 @@
-import SwiftUI
+﻿import SwiftUI
 
 enum Route: Hashable {
-    case convert
-    case progress
-    case complete
+    case convert, progress, complete
+}
+
+enum Tab: String, CaseIterable {
+    case home, history, files, settings
 }
 
 struct ContentView: View {
     @State private var selectedTab: Tab = .home
     @State private var navigationPath = NavigationPath()
-    
-    enum Tab { case home, history, settings }
-    
+
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack(path: $navigationPath) {
                 HomeView(navigationPath: $navigationPath)
                     .navigationDestination(for: Route.self) { route in
                         switch route {
-                        case .convert:
-                            ConvertSettingsView(navigationPath: $navigationPath)
-                        case .progress:
-                            ProgressView(navigationPath: $navigationPath)
-                        case .complete:
-                            CompleteView(navigationPath: $navigationPath)
+                        case .convert: ConvertSettingsView(navigationPath: $navigationPath)
+                        case .progress: ProgressView(navigationPath: $navigationPath)
+                        case .complete: CompleteView(navigationPath: $navigationPath)
                         }
                     }
             }
             .tabItem { Label("Home", systemImage: "house") }
             .tag(Tab.home)
-            
+
             HistoryView()
                 .tabItem { Label("History", systemImage: "clock.arrow.circlepath") }
                 .tag(Tab.history)
-            
+
+            ConvertedFilesView()
+                .tabItem { Label("Files", systemImage: "tray.full") }
+                .tag(Tab.files)
+
             SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape") }
                 .tag(Tab.settings)

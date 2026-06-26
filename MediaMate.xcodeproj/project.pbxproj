@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+﻿// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -28,7 +28,14 @@
 		149D6FA328A1065800B7E003 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA228A1065800B7E003 /* HistoryItem.swift */; };
 		149D6FA528A1065800B7E003 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA428A1065800B7E003 /* MockDataGenerator.swift */; };
 		149D6FA728A1065800B7E003 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA628A1065800B7E003 /* PreviewProvider.swift */; };
-/* End PBXBuildFile section */
+		519A322A4EC3489E89120290 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96003898B144016AA56FE66; };
+		143D7D6A8DA34E5FA2091CA7 /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B8BA0FFE840E39D133083; };
+		065C4B84D2EE47D6A5C73EE2 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F97BFC1E1439D9C754F22; };
+		88CC7644618147019786F785 /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA52728F332470D9478FD8B; };
+		5AA65AC2092242D89F379756 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E0B732B464AF999F59974; };
+		00E87133BB1C4CCCB31996DB /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD860FAEC30D4CD799EDC839; };
+		56CA9621923E4F4F848BCC87 /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0659F98E93654A82B38069A5; };
+		38CF78E540574206BB923DC9 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB92F849CA9A41E5AE46E200; };/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00E356D91AD558DC003DB820 /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +61,14 @@
 		149D6FA228A1065800B7E003 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		149D6FA428A1065800B7E003 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
 		149D6FA628A1065800B7E003 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
+		D96003898B144016AA56FE66 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PaywallView.swift"; sourceTree = <group>; };
+		A23B8BA0FFE840E39D133083 /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/ConvertedFilesView.swift"; sourceTree = <group>; };
+		2D5F97BFC1E1439D9C754F22 /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PresetsView.swift"; sourceTree = <group>; };
+		ECA52728F332470D9478FD8B /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/BatchPickerView.swift"; sourceTree = <group>; };
+		631E0B732B464AF999F59974 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/MediaMateCore/Preset.swift; sourceTree = <group>; };
+		DD860FAEC30D4CD799EDC839 /* GIFExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/MediaMateCore/GIFExportEngine.swift; sourceTree = <group>; };
+		0659F98E93654A82B38069A5 /* HEICConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/MediaMateCore/HEICConverter.swift; sourceTree = <group>; };
+		FB92F849CA9A41E5AE46E200 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/MediaMateCore/StoreManager.swift; sourceTree = <group>; };/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		00E356DB1AD558DC003DB820 /* Frameworks */ = {
