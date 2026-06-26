@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var appState: AppState
+    @State private var searchText = ""
     
     var body: some View {
         List {
@@ -20,11 +21,15 @@ struct HistoryView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 60)
             } else {
-                ForEach(appState.recentItems) { item in
+                                let filteredItems = searchText.isEmpty ? appState.recentItems : appState.recentItems.filter { ForEach(appState.recentItems) { item in.fileName.localizedCaseInsensitiveContains(searchText) || ForEach(appState.recentItems) { item in.fromFormat.localizedCaseInsensitiveContains(searchText) || ForEach(appState.recentItems) { item in.toFormat.localizedCaseInsensitiveContains(searchText) }
+                
+                ForEach(filteredItems) { item in
                     HistoryListItem(item: item)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {
-                                if let idx = appState.recentItems.firstIndex(where: { ForEach(appState.recentItems) { item in
+                                if let idx = appState.recentItems.firstIndex(where: {                 let filteredItems = searchText.isEmpty ? appState.recentItems : appState.recentItems.filter { ForEach(appState.recentItems) { item in.fileName.localizedCaseInsensitiveContains(searchText) || ForEach(appState.recentItems) { item in.fromFormat.localizedCaseInsensitiveContains(searchText) || ForEach(appState.recentItems) { item in.toFormat.localizedCaseInsensitiveContains(searchText) }
+                
+                ForEach(filteredItems) { item in
                     HistoryListItem(item: item)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.bgPrimary)
@@ -43,5 +48,6 @@ struct HistoryView: View {
         .background(Color.bgPrimary)
         .navigationTitle("History")
         .navigationBarTitleDisplayMode(.inline)
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search conversions")
     }
 }

@@ -74,7 +74,7 @@ struct ProgressView: View {
                 .foregroundColor(.textTertiary)
 
             if isFailed {
-                Text(""The conversion could not be completed. The file format may not be supported."")
+                Text(appState.engine.lastError ?? "The conversion could not be completed. The file format may not be supported.")
                     .font(.system(size: 13))
                     .foregroundColor(.textSecondary)
                     .multilineTextAlignment(.center)

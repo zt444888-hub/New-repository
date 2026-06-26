@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct ConvertSettingsView: View {
     @EnvironmentObject var appState: AppState
@@ -23,14 +23,7 @@ struct ConvertSettingsView: View {
                         .textCase(.uppercase)
 
                     HStack(spacing: 12) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .fill(Color.bgElevated)
-                                .frame(width: 44, height: 44)
-                            Image(systemName: fileIcon)
-                                .foregroundColor(.accent)
-                                .font(.system(size: 20))
-                        }
+                        VideoThumbnailView(url: appState.currentFile, size: 44)
 
                         VStack(alignment: .leading, spacing: 2) {
                             Text(selectedFileName)

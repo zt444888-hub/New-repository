@@ -20,16 +20,19 @@ class ConversionEngine: NSObject, ObservableObject {
     private var completion: ((Result<URL, Error>) -> Void)?
     private let audioFormats: Set<String> = [""M4A"", ""MP3"", ""WAV""]
     private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
+    @Published var lastError: String?
 
     func convertFile(at sourceURL: URL, to format: String, quality: Double, resolution: String, completion: @escaping (Result<URL, Error>) -> Void) {
         // Keep conversion alive when app goes to background
-        backgroundTaskID = UIApplication.shared.beginBackgroundTask(withName: "MediaMate Conversion") { [weak self] in
+        lastError = nil
+                backgroundTaskID = UIApplication.shared.beginBackgroundTask(withName: "MediaMate Conversion") { [weak self] in
             self?.cancel()
         }
 
         guard !isConverting else {
             completion(.failure(NSError(domain: ""MediaMate"", code: -1, userInfo: [NSLocalizedDescriptionKey: ""Conversion in progress""])))
-            endBackgroundTask()
+            lastError = "Conversion already in progress"
+                    endBackgroundTask()
             return
         }
 
@@ -41,6 +44,9 @@ class ConversionEngine: NSObject, ObservableObject {
         // Wrap completion to end background task automatically
         let wrappedCompletion: (Result<URL, Error>) -> Void = { [weak self] result in
             completion(result)
+            if case .failure(let error) = result {
+                self?.lastError = (error as NSError).localizedDescription
+            }
             self?.endBackgroundTask()
         }
 
