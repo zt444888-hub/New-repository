@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 
 struct ConvertSettingsView: View {
     @EnvironmentObject var appState: AppState
@@ -160,7 +160,7 @@ struct ConvertSettingsView: View {
                 appState.engine.isConverting = false
                 switch result {
                 case .success(let outputURL):
-                    appState.convertedFileURL = outputURL
+
                     appState.convertedFile = outputURL
                     appState.engine.progress = 1.0
                     appState.conversionProgress = 1.0

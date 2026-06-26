@@ -1,4 +1,4 @@
-﻿import AVFoundation
+﻿﻿import AVFoundation
 import UIKit
 import Foundation
 
@@ -106,7 +106,7 @@ class ConversionEngine: NSObject, ObservableObject {
     private func convertAudioOnly(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         let asset = AVAsset(url: sourceURL)
 
-        guard let audioTrack = asset.tracks(withMediaType: .audio).else {
+        guard let audioTrack = asset.tracks(withMediaType: .audio).first {
             isConverting = false
             conversionState = .failed
             completion(.failure(NSError(domain: ""MediaMate"", code: -5, userInfo: [NSLocalizedDescriptionKey: ""No audio track found in file""])))
@@ -228,11 +228,10 @@ class ConversionEngine: NSObject, ObservableObject {
         }
     }
 
-        func cancel() {
+    func cancel() {
         exportSession?.cancelExport()
         reader?.cancelReading()
         writer?.cancelWriting()
-    func cancel() {
         endBackgroundTask()
         conversionState = .idle
         progress = 0
@@ -267,17 +266,17 @@ class ConversionEngine: NSObject, ObservableObject {
         return types[format] ?? .mp4
     }
 
-    private func outputURLFor(_ sourceURL: URL, format: String) -> URL {
-        let fileManager = FileManager.default
-        let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileName = sourceURL.deletingPathExtension().lastPathComponent
-
     private func endBackgroundTask() {
         if backgroundTaskID != .invalid {
             UIApplication.shared.endBackgroundTask(backgroundTaskID)
             backgroundTaskID = .invalid
         }
     }
+
+    private func outputURLFor(_ sourceURL: URL, format: String) -> URL {
+        let fileManager = FileManager.default
+        let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileName = sourceURL.deletingPathExtension().lastPathComponent
 
         // For MP3, use .m4a extension since there is no MP3 encoder on iOS
         let ext = format == ""MP3"" ? ""m4a"" : format.lowercased()

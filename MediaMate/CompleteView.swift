@@ -1,4 +1,5 @@
-import SwiftUI
+﻿import SwiftUI
+import Photos
 
 struct CompleteView: View {
     @EnvironmentObject var appState: AppState
@@ -79,14 +80,7 @@ struct CompleteView: View {
     }
 
     private func shareFile() {
-        guard let url = appState.convertedFile else {
-            guard let url2 = appState.convertedFileURL else { return }
-            let activityVC = UIActivityViewController(activityItems: [url2], applicationActivities: nil)
-            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                scene.windows.first?.rootViewController?.present(activityVC, animated: true)
-            }
-            return
-        }
+        guard let url = appState.convertedFile else { return }
 
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
 
@@ -96,7 +90,7 @@ struct CompleteView: View {
     }
 
     private func saveToPhotos() {
-        guard let url = appState.convertedFile ?? appState.convertedFileURL else { return }
+        guard let url = appState.convertedFile else { return }
         PHPhotoLibrary.requestAuthorization { status in
             guard status == .authorized else { return }
             PHPhotoLibrary.shared().performChanges({

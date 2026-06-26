@@ -10,7 +10,7 @@ class AppState: ObservableObject {
     @Published var conversionProgress: Double = 0
     @Published var convertedFile: URL?
     @Published var engine = ConversionEngine()
-    @Published var convertedFileURL: URL?
+
     @Published var originalFileSizeText: String = ""
     @Published var convertedFileSizeText: String = ""
     @Published var isTestMode = false
@@ -105,7 +105,7 @@ class AppState: ObservableObject {
         selectedResolution = "Original"
         conversionProgress = 0
         convertedFile = nil
-        convertedFileURL = nil
+
         originalFileSizeText = ""
         convertedFileSizeText = ""
         originalFileName = ""
