@@ -38,8 +38,8 @@ struct ConvertSettingsView: View {
                                 .foregroundColor(.textPrimary)
                                 .lineLimit(1)
 
-                            if let size = getFileSize() {
-                                Text(size)
+                            if let url = appState.currentFile {
+                                Text(FileUtilities.formatFileSize(url.path))
                                     .font(.system(size: 12))
                                     .foregroundColor(.textTertiary)
                             }
@@ -155,17 +155,7 @@ struct ConvertSettingsView: View {
             return
         }
 
-        do {
-            let attrs = try FileManager.default.attributesOfItem(atPath: sourceURL.path)
-            if let size = attrs[.size] as? Int64 {
-                let fmt = ByteCountFormatter()
-                fmt.allowedUnits = [.useMB]
-                fmt.countStyle = .file
-                appState.originalFileSizeText = fmt.string(fromByteCount: size)
-            }
-        } catch {
-            appState.originalFileSizeText = ""Unknown""
-        }
+        appState.originalFileSizeText = FileUtilities.formatFileSize(sourceURL.path)
 
         appState.originalFileName = sourceURL.lastPathComponent
         appState.engine.progress = 0
@@ -182,17 +172,7 @@ struct ConvertSettingsView: View {
                     appState.engine.progress = 1.0
                     appState.conversionProgress = 1.0
 
-                    do {
-                        let attrs = try FileManager.default.attributesOfItem(atPath: outputURL.path)
-                        if let size = attrs[.size] as? Int64 {
-                            let fmt = ByteCountFormatter()
-                            fmt.allowedUnits = [.useMB]
-                            fmt.countStyle = .file
-                            appState.convertedFileSizeText = fmt.string(fromByteCount: size)
-                        }
-                    } catch {
-                        appState.convertedFileSizeText = ""Unknown""
-                    }
+                    appState.convertedFileSizeText = FileUtilities.formatFileSize(outputURL.path)
 
                 case .failure(let error):
                     print(""Conversion failed: \(error.localizedDescription)"")
@@ -215,19 +195,4 @@ struct ConvertSettingsView: View {
         return ""doc""
     }
 
-    private func getFileSize() -> String? {
-        guard let url = appState.currentFile else { return nil }
-        do {
-            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
-            if let fileSize = attributes[.size] as? Int64 {
-                let formatter = ByteCountFormatter()
-                formatter.allowedUnits = [.useMB]
-                formatter.countStyle = .file
-                return formatter.string(fromByteCount: fileSize)
-            }
-        } catch {
-            print(""Error getting file size: \(error)"")
-        }
-        return nil
-    }
 }

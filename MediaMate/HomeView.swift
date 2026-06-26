@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 import PhotosUI
 import Photos
 
@@ -160,7 +160,7 @@ struct HomeView: View {
     }
     
     private func handlePickedFile(_ url: URL) {
-        let fileSize = formatFileSize(url.path)
+        let fileSize = FileUtilities.formatFileSize(url.path)
         appState.originalFileName = url.lastPathComponent
         appState.originalFileSizeText = fileSize
         appState.currentFile = url
@@ -272,30 +272,17 @@ struct MediaFile: Transferable {
         FileRepresentation(contentType: .movie) { media in
             SentTransferredFile(media.url)
         } importing: { received in
-            let fileSize = formatFileSize(received.file.path)
+            let fileSize = FileUtilities.formatFileSize(received.file.path)
             return Self(url: received.file, size: fileSize)
         }
         
         FileRepresentation(contentType: .audio) { media in
             SentTransferredFile(media.url)
         } importing: { received in
-            let fileSize = formatFileSize(received.file.path)
+            let fileSize = FileUtilities.formatFileSize(received.file.path)
             return Self(url: received.file, size: fileSize)
         }
     }
 }
 
-private func formatFileSize(_ filePath: String) -> String {
-    do {
-        let attributes = try FileManager.default.attributesOfItem(atPath: filePath)
-        if let fileSize = attributes[.size] as? Int64 {
-            let formatter = ByteCountFormatter()
-            formatter.allowedUnits = [.useMB]
-            formatter.countStyle = .file
-            return formatter.string(fromByteCount: fileSize)
-        }
-    } catch {
-        print("Error getting file size: \(error)")
-    }
-    return "Unknown"
-}
+

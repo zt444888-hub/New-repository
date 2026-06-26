@@ -9,8 +9,8 @@ extension Color {
     static let textPrimary = Color(hex: "#FFFFFF")
     static let textSecondary = Color(hex: "#AEAEB2")
     static let textTertiary = Color(hex: "#636366")
-    static let green = Color(hex: "#30D158")
-    static let red = Color(hex: "#FF453A")
+    static let accentGreen = Color(hex: "#30D158")
+    static let accentRed = Color(hex: "#FF453A")
     static let separator = Color(hex: "#38383A")
 }
 

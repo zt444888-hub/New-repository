@@ -1,9 +1,17 @@
-﻿import AVFoundation
+import AVFoundation
 import Foundation
 
 class ConversionEngine: NSObject, ObservableObject {
     @Published var progress: Double = 0
     @Published var isConverting = false
+
+    enum ConversionState: Equatable {
+        case idle
+        case converting
+        case completed
+        case failed
+    }
+    @Published var conversionState: ConversionState = .idle
 
     private var exportSession: AVAssetExportSession?
     private var reader: AVAssetReader?
@@ -18,12 +26,13 @@ class ConversionEngine: NSObject, ObservableObject {
         }
 
         isConverting = true
+        conversionState = .converting
         progress = 0
         self.completion = completion
 
         let outputURL = outputURLFor(sourceURL, format: format)
 
-        if resolution == ""Original"" && audioFormats.contains(format) {
+        if audioFormats.contains(format) {
             convertAudioOnly(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: completion)
         } else {
             convertVideoExport(sourceURL: sourceURL, to: format, outputURL: outputURL, quality: quality, resolution: resolution, completion: completion)
@@ -36,6 +45,7 @@ class ConversionEngine: NSObject, ObservableObject {
 
         guard let exportSession = AVAssetExportSession(asset: asset, presetName: preset) else {
             isConverting = false
+            conversionState = .failed
             completion(.failure(NSError(domain: ""MediaMate"", code: -2, userInfo: [NSLocalizedDescriptionKey: ""Failed to create export session""])))
             return
         }
@@ -76,8 +86,9 @@ class ConversionEngine: NSObject, ObservableObject {
     private func convertAudioOnly(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         let asset = AVAsset(url: sourceURL)
 
-        guard let audioTrack = asset.tracks(withMediaType: .audio).first else {
+        guard let audioTrack = asset.tracks(withMediaType: .audio).else {
             isConverting = false
+            conversionState = .failed
             completion(.failure(NSError(domain: ""MediaMate"", code: -5, userInfo: [NSLocalizedDescriptionKey: ""No audio track found in file""])))
             return
         }
@@ -86,6 +97,7 @@ class ConversionEngine: NSObject, ObservableObject {
             reader = try AVAssetReader(asset: asset)
         } catch {
             isConverting = false
+            conversionState = .failed
             completion(.failure(NSError(domain: ""MediaMate"", code: -6, userInfo: [NSLocalizedDescriptionKey: ""Failed to create reader: \(error.localizedDescription)""])))
             return
         }
@@ -132,6 +144,7 @@ class ConversionEngine: NSObject, ObservableObject {
             writer = try AVAssetWriter(outputURL: outputURL, fileType: outputFileType)
         } catch {
             isConverting = false
+            conversionState = .failed
             completion(.failure(NSError(domain: ""MediaMate"", code: -8, userInfo: [NSLocalizedDescriptionKey: ""Failed to create writer: \(error.localizedDescription)""])))
             return
         }
@@ -160,13 +173,13 @@ class ConversionEngine: NSObject, ObservableObject {
 
             while writerInput.isReadyForMoreMediaData {
                 guard let buffer = readerOutput.copyNextSampleBuffer() else {
-                    let time = writerInput.appendSampleBuffersInQueue
                     writerInput.markAsFinished()
 
                     if reader.status == .completed {
                         writer.finishWriting { [weak self] in
                             DispatchQueue.main.async {
                                 self?.isConverting = false
+                                self?.conversionState = .completed
                                 self?.progress = 1.0
                                 completion(.success(outputURL))
                             }
@@ -176,7 +189,8 @@ class ConversionEngine: NSObject, ObservableObject {
                         reader.cancelReading()
                         DispatchQueue.main.async {
                             self.isConverting = false
-                            completion(.failure(NSError(domain: ""MediaMate"", code: -10, userInfo: [NSLocalizedDescriptionKey: ""Audio read failed""])))
+                            self.conversionState = .failed
+                            completion(.failure(NSError(domain: "MediaMate", code: -10, userInfo: [NSLocalizedDescriptionKey: ""Audio read failed""])))
                         }
                     }
                     return
@@ -194,11 +208,12 @@ class ConversionEngine: NSObject, ObservableObject {
         }
     }
 
-    func cancel() {
+        func cancel() {
         exportSession?.cancelExport()
         reader?.cancelReading()
         writer?.cancelWriting()
         isConverting = false
+        conversionState = .idle
         progress = 0
     }
 

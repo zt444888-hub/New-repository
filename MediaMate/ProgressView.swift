@@ -25,11 +25,11 @@ struct ProgressView: View {
     }
 
     private var isComplete: Bool {
-        appState.isTestMode ? simulatedProgress >= 1.0 : (!appState.engine.isConverting && appState.engine.progress >= 1.0)
+        appState.isTestMode ? simulatedProgress >= 1.0 : appState.engine.conversionState == .completed
     }
 
     private var isFailed: Bool {
-        !appState.isTestMode && !appState.engine.isConverting && appState.engine.progress == 0 && currentStep > 2
+        !appState.isTestMode && appState.engine.conversionState == .failed
     }
 
     private var etaText: String {
@@ -81,6 +81,7 @@ struct ProgressView: View {
                     .padding(.horizontal, 40)
 
                 Button(""Go Back"") {
+                    appState.engine.conversionState = .idle
                     appState.engine.progress = 0
                     appState.engine.isConverting = false
                     navigationPath.removeLast()
@@ -164,6 +165,7 @@ struct ProgressView: View {
     }
 
     private func handleCancel() {
+        appState.engine.conversionState = .idle
         appState.engine.cancel()
         appState.clearCurrentConversion()
         navigationPath.removeLast()

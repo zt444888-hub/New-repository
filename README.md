@@ -1,15 +1,15 @@
-# MediaMate
+﻿# MediaMate
 
 A powerful local video/audio format converter for iOS. All conversions happen locally on your device, ensuring complete privacy.
 
 ## Features
 
-- 🎬 **Video Conversion**: Convert videos to MP4, MOV and more
-- 🎵 **Audio Extraction**: Extract audio from videos
-- 📱 **Privacy First**: 100% local processing, no cloud uploads
-- ⚡ **Fast Conversion**: Optimized for speed and quality
-- 📊 **File Comparison**: See before/after file sizes
-- 📜 **Conversion History**: Track all your conversions
+- 馃幀 **Video Conversion**: Convert videos to MP4, MOV and more
+- 馃幍 **Audio Extraction**: Extract audio from videos
+- 馃摫 **Privacy First**: 100% local processing, no cloud uploads
+- 鈿?**Fast Conversion**: Optimized for speed and quality
+- 馃搳 **File Comparison**: See before/after file sizes
+- 馃摐 **Conversion History**: Track all your conversions
 
 ## Requirements
 
@@ -27,8 +27,8 @@ A powerful local video/audio format converter for iOS. All conversions happen lo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/MediaMate.git
-cd MediaMate
+git clone https://github.com/zt444888-hub/New-repository.git
+cd New-repository/MediaMate
 ```
 
 2. Open the project in Xcode:
@@ -37,7 +37,7 @@ open MediaMate.xcodeproj
 ```
 
 3. Select a simulator or connect a device
-4. Press ⌘+R to build and run
+4. Press 鈱?R to build and run
 
 ## Usage
 
@@ -60,21 +60,21 @@ See [TESTING_GUIDE.md](TESTING_GUIDE.md) for detailed testing instructions.
 
 ```
 MediaMate/
-├── MediaMateApp.swift          # App entry point
-├── ContentView.swift           # Main navigation
-├── AppState.swift              # State management
-├── ConversionEngine.swift      # Conversion logic
-├── Views/
-│   ├── HomeView.swift          # Home screen
-│   ├── ConvertSettingsView.swift
-│   ├── ProgressView.swift
-│   ├── CompleteView.swift
-│   ├── HistoryView.swift
-│   └── SettingsView.swift
-└── Components/
-    ├── ButtonStyles.swift      # Custom button styles
-    ├── FormatChip.swift        # Format selection chip
-    └── SizeCompareCard.swift   # File size comparison
+鈹溾攢鈹€ MediaMateApp.swift          # App entry point
+鈹溾攢鈹€ ContentView.swift           # Main navigation
+鈹溾攢鈹€ AppState.swift              # State management
+鈹溾攢鈹€ ConversionEngine.swift      # Conversion logic
+鈹溾攢鈹€ Views/
+鈹?  鈹溾攢鈹€ HomeView.swift          # Home screen
+鈹?  鈹溾攢鈹€ ConvertSettingsView.swift
+鈹?  鈹溾攢鈹€ ProgressView.swift
+鈹?  鈹溾攢鈹€ CompleteView.swift
+鈹?  鈹溾攢鈹€ HistoryView.swift
+鈹?  鈹斺攢鈹€ SettingsView.swift
+鈹斺攢鈹€ Components/
+    鈹溾攢鈹€ ButtonStyles.swift      # Custom button styles
+    鈹溾攢鈹€ FormatChip.swift        # Format selection chip
+    鈹斺攢鈹€ SizeCompareCard.swift   # File size comparison
 ```
 
 ## Contributing

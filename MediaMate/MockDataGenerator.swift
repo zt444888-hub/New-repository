@@ -1,4 +1,4 @@
-import Foundation
+﻿import Foundation
 import UIKit
 
 class MockDataGenerator {
@@ -9,17 +9,17 @@ class MockDataGenerator {
     private var hasAttemptedCreation = false
     
     private init() {
-        print("📦 MockDataGenerator singleton initialized")
+        print("馃摝 MockDataGenerator singleton initialized")
     }
     
     func setupMockFiles() {
         print("\n========================================")
-        print("🔧 setupMockFiles() called")
+        print("馃敡 setupMockFiles() called")
         print("  hasAttemptedCreation: \(hasAttemptedCreation)")
         print("  mockFiles count BEFORE: \(mockFiles.count)")
         
         if hasAttemptedCreation && !mockFiles.isEmpty {
-            print("  → SKIPPING: Already attempted and files exist")
+            print("  鈫?SKIPPING: Already attempted and files exist")
             print("========================================\n")
             return
         }
@@ -30,43 +30,43 @@ class MockDataGenerator {
         let videoFormats = ["mov", "mp4"]
         let audioFormats = ["m4a", "mp3", "wav"]
         
-        print("\n🚀 Starting Mock File Generation")
-        print("📂 Temporary directory: \(NSTemporaryDirectory())")
+        print("\n馃殌 Starting Mock File Generation")
+        print("馃搨 Temporary directory: \(NSTemporaryDirectory())")
         
         var successCount = 0
         
         for i in 0..<3 {
             let format = videoFormats.randomElement() ?? "mp4"
-            print("\n📹 Attempting video file \(i+1) (\(format))...")
+            print("\n馃摴 Attempting video file \(i+1) (\(format))...")
             
             if let videoUrl = createMockVideoFile(format: format) {
                 mockFiles.append(videoUrl)
                 successCount += 1
-                print("  ✅ SUCCESS: \(videoUrl.lastPathComponent)")
+                print("  鉁?SUCCESS: \(videoUrl.lastPathComponent)")
             } else {
-                print("  ❌ FAILED: Could not create video file")
+                print("  鉂?FAILED: Could not create video file")
             }
         }
         
         for i in 0..<2 {
             let format = audioFormats.randomElement() ?? "m4a"
-            print("\n🎵 Attempting audio file \(i+1) (\(format))...")
+            print("\n馃幍 Attempting audio file \(i+1) (\(format))...")
             
             if let audioUrl = createMockAudioFile(format: format) {
                 mockFiles.append(audioUrl)
                 successCount += 1
-                print("  ✅ SUCCESS: \(audioUrl.lastPathComponent)")
+                print("  鉁?SUCCESS: \(audioUrl.lastPathComponent)")
             } else {
-                print("  ❌ FAILED: Could not create audio file")
+                print("  鉂?FAILED: Could not create audio file")
             }
         }
         
-        print("\n📊 Mock File Generation Complete")
+        print("\n馃搳 Mock File Generation Complete")
         print("  Total files created: \(mockFiles.count)")
         
         if mockFiles.isEmpty {
-            print("\n⚠️ WARNING: No mock files were created!")
-            print("  → Attempting fallback creation...")
+            print("\n鈿狅笍 WARNING: No mock files were created!")
+            print("  鈫?Attempting fallback creation...")
             createFallbackFiles()
         }
         
@@ -78,14 +78,14 @@ class MockDataGenerator {
     }
     
     private func createFallbackFiles() {
-        print("\n🔄 Creating fallback mock files...")
+        print("\n馃攧 Creating fallback mock files...")
         
         let fallbackDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("MediaMateMock")
         print("  Fallback directory: \(fallbackDir.path)")
         
         do {
             try fileManager.createDirectory(at: fallbackDir, withIntermediateDirectories: true)
-            print("  ✅ Created fallback directory")
+            print("  鉁?Created fallback directory")
             
             let testVideoUrl = fallbackDir.appendingPathComponent("test_video.mp4")
             let testAudioUrl = fallbackDir.appendingPathComponent("test_audio.mp3")
@@ -93,42 +93,42 @@ class MockDataGenerator {
             let smallData = Data(repeating: 0x00, count: 1024 * 1024 * 2)
             
             try smallData.write(to: testVideoUrl)
-            print("  ✅ Created test_video.mp4")
+            print("  鉁?Created test_video.mp4")
             
             try smallData.write(to: testAudioUrl)
-            print("  ✅ Created test_audio.mp3")
+            print("  鉁?Created test_audio.mp3")
             
             mockFiles.append(testVideoUrl)
             mockFiles.append(testAudioUrl)
             
-            print("  ✅ Fallback files created successfully")
+            print("  鉁?Fallback files created successfully")
             
         } catch {
-            print("  ❌ Failed to create fallback files:")
+            print("  鉂?Failed to create fallback files:")
             print("    Error: \(error.localizedDescription)")
             print("    Full error: \(error)")
         }
     }
     
     func getMockFiles() -> [URL] {
-        print("📥 getMockFiles() called")
+        print("馃摜 getMockFiles() called")
         setupMockFiles()
         return mockFiles
     }
     
     func getRandomMockFile() -> URL? {
-        print("\n🎲 getRandomMockFile() called")
+        print("\n馃幉 getRandomMockFile() called")
         setupMockFiles()
         
         print("  Current mockFiles count: \(mockFiles.count)")
         
         guard !mockFiles.isEmpty else {
-            print("  ❌ ERROR: No mock files available!")
+            print("  鉂?ERROR: No mock files available!")
             return nil
         }
         
         let selected = mockFiles.randomElement()
-        print("  ✅ Selected file: \(selected?.lastPathComponent ?? "nil")")
+        print("  鉁?Selected file: \(selected?.lastPathComponent ?? "nil")")
         return selected
     }
     
@@ -144,11 +144,11 @@ class MockDataGenerator {
             print("    Generated data: \(videoData.count) bytes")
             
             try videoData.write(to: fileUrl)
-            print("    ✅ File written successfully")
+            print("    鉁?File written successfully")
             
             return fileUrl
         } catch {
-            print("    ❌ Error writing file:")
+            print("    鉂?Error writing file:")
             print("      - Description: \(error.localizedDescription)")
             print("      - Full error: \(error)")
             return nil
@@ -167,11 +167,11 @@ class MockDataGenerator {
             print("    Generated data: \(audioData.count) bytes")
             
             try audioData.write(to: fileUrl)
-            print("    ✅ File written successfully")
+            print("    鉁?File written successfully")
             
             return fileUrl
         } catch {
-            print("    ❌ Error writing file:")
+            print("    鉂?Error writing file:")
             print("      - Description: \(error.localizedDescription)")
             print("      - Full error: \(error)")
             return nil
@@ -250,33 +250,19 @@ class MockDataGenerator {
 
 extension MockDataGenerator {
     func simulatePhotoPickerSelection() -> URL? {
-        print("\n📷 simulatePhotoPickerSelection() called")
+        print("\n馃摲 simulatePhotoPickerSelection() called")
         return getRandomMockFile()
     }
     
     func simulateDocumentPickerSelection() -> URL? {
-        print("\n📁 simulateDocumentPickerSelection() called")
+        print("\n馃搧 simulateDocumentPickerSelection() called")
         return getRandomMockFile()
     }
     
-    func formatFileSize(_ url: URL) -> String {
-        do {
-            let attributes = try fileManager.attributesOfItem(atPath: url.path)
-            if let fileSize = attributes[.size] as? Int64 {
-                let formatter = ByteCountFormatter()
-                formatter.allowedUnits = [.useMB]
-                formatter.countStyle = .file
-                return formatter.string(fromByteCount: fileSize)
-            }
-        } catch {
-            print("Error getting file size: \(error)")
-        }
-        return "Unknown"
-    }
     
     func getFileInfo(_ url: URL) -> (name: String, size: String, type: String) {
         let name = url.lastPathComponent
-        let size = formatFileSize(url)
+        let size = FileUtilities.formatFileSize(url)
         let type = url.pathExtension.uppercased()
         
         return (name, size, type)

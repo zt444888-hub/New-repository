@@ -22,6 +22,19 @@ struct HistoryView: View {
             } else {
                 ForEach(appState.recentItems) { item in
                     HistoryListItem(item: item)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button(role: .destructive) {
+                                if let idx = appState.recentItems.firstIndex(where: { ForEach(appState.recentItems) { item in
+                    HistoryListItem(item: item)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.bgPrimary)
+                }.id == item.id }) {
+                                    appState.recentItems.remove(at: idx)
+                                }
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.bgPrimary)
                 }

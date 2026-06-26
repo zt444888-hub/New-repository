@@ -33,8 +33,10 @@ class AppState: ObservableObject {
     @Published var isTestMode = false
     @Published var originalFileName: String = ""
     
-    init() {
+        init() {
+        #if DEBUG
         loadDemoData()
+        #endif
     }
     
     func loadDemoData() {

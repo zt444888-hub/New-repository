@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct CompleteView: View {
     @EnvironmentObject var appState: AppState
@@ -46,8 +46,7 @@ struct CompleteView: View {
 
                 Button(""Convert Another"") {
                     appState.clearCurrentConversion()
-                    navigationPath.removeLast(2)
-                    navigationPath.append(Route.convert)
+                    navigationPath = NavigationPath()
                 }
                 .font(.system(size: 17, weight: .semibold))
                 .foregroundColor(.accent)
