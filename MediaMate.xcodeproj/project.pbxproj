@@ -1,4 +1,4 @@
-﻿// !$*UTF8*$!
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -28,10 +28,6 @@
 		149D6FA328A1065800B7E003 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA228A1065800B7E003 /* HistoryItem.swift */; };
 		149D6FA528A1065800B7E003 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA428A1065800B7E003 /* MockDataGenerator.swift */; };
 		149D6FA728A1065800B7E003 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D6FA628A1065800B7E003 /* PreviewProvider.swift */; };
-		7B55CEFD0C2D4D7EBD765AD4 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C614B62BD6F441E9B67F197D; };
-		E610251F1291452593CF63C0 /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F160767389349BBAA9D98F8; };
-		48B60AD16108491A8EC637E7 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328653082DDE44229A2E311F; };
-		45BADE046FFB42B09DFFB903 /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D35963903174D9AACE337B2; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,10 +54,6 @@
 		149D6FA228A1065800B7E003 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		149D6FA428A1065800B7E003 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
 		149D6FA628A1065800B7E003 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
-		C614B62BD6F441E9B67F197D /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PaywallView.swift"; sourceTree = <group>; };
-		9F160767389349BBAA9D98F8 /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/ConvertedFilesView.swift"; sourceTree = <group>; };
-		328653082DDE44229A2E311F /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PresetsView.swift"; sourceTree = <group>; };
-		1D35963903174D9AACE337B2 /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/BatchPickerView.swift"; sourceTree = <group>; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
