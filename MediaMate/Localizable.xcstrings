@@ -1,0 +1,55 @@
+﻿{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Conversion Complete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Conversion Complete" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转换完成" } }
+      }
+    },
+    "Convert Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Convert Settings" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "转换设置" } }
+      }
+    },
+    "Start Conversion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Start Conversion" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开始转换" } }
+      }
+    },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Cancel" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } }
+      }
+    },
+    "Test Mode Active" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Test Mode Active" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "测试模式已启用" } }
+      }
+    },
+    "Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "Settings" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } }
+      }
+    },
+    "History" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "new", "value" : "History" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "历史" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

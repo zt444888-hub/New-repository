@@ -66,6 +66,7 @@ struct CompleteView: View {
         .navigationTitle("""")
         .navigationBarHidden(true)
         .onAppear {
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
             showCheck = true
         }
     }

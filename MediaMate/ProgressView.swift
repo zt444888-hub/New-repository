@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct ProgressView: View {
     @EnvironmentObject var appState: AppState
@@ -118,9 +118,17 @@ struct ProgressView: View {
                 currentStep = 0
             }
         }
-        .onChange(of: isComplete) { done in
+                .onChange(of: isComplete) { done in
             if done {
+                if !appState.isTestMode {
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+                }
                 finishConversion()
+            }
+        }
+        .onChange(of: isFailed) { failed in
+            if failed {
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
         }
     }

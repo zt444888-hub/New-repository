@@ -1,4 +1,5 @@
-import AVFoundation
+﻿import AVFoundation
+import UIKit
 import Foundation
 
 class ConversionEngine: NSObject, ObservableObject {
@@ -18,10 +19,17 @@ class ConversionEngine: NSObject, ObservableObject {
     private var writer: AVAssetWriter?
     private var completion: ((Result<URL, Error>) -> Void)?
     private let audioFormats: Set<String> = [""M4A"", ""MP3"", ""WAV""]
+    private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
 
     func convertFile(at sourceURL: URL, to format: String, quality: Double, resolution: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        // Keep conversion alive when app goes to background
+        backgroundTaskID = UIApplication.shared.beginBackgroundTask(withName: "MediaMate Conversion") { [weak self] in
+            self?.cancel()
+        }
+
         guard !isConverting else {
             completion(.failure(NSError(domain: ""MediaMate"", code: -1, userInfo: [NSLocalizedDescriptionKey: ""Conversion in progress""])))
+            endBackgroundTask()
             return
         }
 
@@ -30,12 +38,18 @@ class ConversionEngine: NSObject, ObservableObject {
         progress = 0
         self.completion = completion
 
+        // Wrap completion to end background task automatically
+        let wrappedCompletion: (Result<URL, Error>) -> Void = { [weak self] result in
+            completion(result)
+            self?.endBackgroundTask()
+        }
+
         let outputURL = outputURLFor(sourceURL, format: format)
 
         if audioFormats.contains(format) {
-            convertAudioOnly(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: completion)
+            convertAudioOnly(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: wrappedCompletion)
         } else {
-            convertVideoExport(sourceURL: sourceURL, to: format, outputURL: outputURL, quality: quality, resolution: resolution, completion: completion)
+            convertVideoExport(sourceURL: sourceURL, to: format, outputURL: outputURL, quality: quality, resolution: resolution, completion: wrappedCompletion)
         }
     }
 
@@ -212,7 +226,8 @@ class ConversionEngine: NSObject, ObservableObject {
         exportSession?.cancelExport()
         reader?.cancelReading()
         writer?.cancelWriting()
-        isConverting = false
+    func cancel() {
+        endBackgroundTask()
         conversionState = .idle
         progress = 0
     }
@@ -250,6 +265,13 @@ class ConversionEngine: NSObject, ObservableObject {
         let fileManager = FileManager.default
         let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileName = sourceURL.deletingPathExtension().lastPathComponent
+
+    private func endBackgroundTask() {
+        if backgroundTaskID != .invalid {
+            UIApplication.shared.endBackgroundTask(backgroundTaskID)
+            backgroundTaskID = .invalid
+        }
+    }
 
         // For MP3, use .m4a extension since there is no MP3 encoder on iOS
         let ext = format == ""MP3"" ? ""m4a"" : format.lowercased()

@@ -42,8 +42,9 @@
 	<string>MediaMate needs access to your photos to select video and audio files for conversion. Your files are processed locally and never uploaded to the cloud.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>MediaMate needs access to save converted media files to your photo library.</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>MediaMate needs access to your music library to select audio files for conversion. Your files are processed locally and never uploaded to the cloud.</string>
-	
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>processing</string>
+	</array>
 </dict>
 </plist>

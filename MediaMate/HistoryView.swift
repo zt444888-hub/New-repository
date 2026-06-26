@@ -29,7 +29,7 @@ struct HistoryView: View {
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.bgPrimary)
                 }.id == item.id }) {
-                                    appState.recentItems.remove(at: idx)
+                                    appState.deleteConversion(item)
                                 }
                             } label: {
                                 Label("Delete", systemImage: "trash")

@@ -1,22 +1,5 @@
-import Foundation
-
-enum ConversionStatus {
-    case pending
-    case converting
-    case completed
-    case failed
-}
-
-struct ConversionItem: Identifiable {
-    let id = UUID()
-    let fileName: String
-    let fromFormat: String
-    let toFormat: String
-    let originalSize: String
-    let convertedSize: String?
-    let status: ConversionStatus
-    let date: Date
-}
+﻿import Foundation
+import SwiftData
 
 class AppState: ObservableObject {
     @Published var recentItems: [ConversionItem] = []
@@ -32,15 +15,54 @@ class AppState: ObservableObject {
     @Published var convertedFileSizeText: String = ""
     @Published var isTestMode = false
     @Published var originalFileName: String = ""
-    
-        init() {
+
+    /// Shared ModelContainer — also needs to be passed to `.modelContainer()` in the app scene.
+    static let container: ModelContainer = {
+        try! ModelContainer(for: ConversionItem.self)
+    }()
+
+    private let modelContext: ModelContext
+
+    init() {
+        modelContext = Self.container.mainContext
+        loadFromStore()
+
         #if DEBUG
-        loadDemoData()
+        if recentItems.isEmpty {
+            loadDemoData()
+        }
         #endif
     }
-    
+
+    // MARK: - Persistence
+
+    private func loadFromStore() {
+        let descriptor = FetchDescriptor<ConversionItem>(
+            sortBy: [SortDescriptor(\.date, order: .reverse)]
+        )
+        recentItems = (try? modelContext.fetch(descriptor)) ?? []
+    }
+
+    private func saveContext() {
+        try? modelContext.save()
+    }
+
+    func addConversion(item: ConversionItem) {
+        modelContext.insert(item)
+        recentItems.insert(item, at: 0)
+        saveContext()
+    }
+
+    func deleteConversion(_ item: ConversionItem) {
+        modelContext.delete(item)
+        recentItems.removeAll { $0.id == item.id }
+        saveContext()
+    }
+
+    // MARK: - Demo Data (DEBUG only)
+
     func loadDemoData() {
-        recentItems = [
+        let items = [
             ConversionItem(
                 fileName: "vacation_clip.mov",
                 fromFormat: "MOV",
@@ -69,12 +91,13 @@ class AppState: ObservableObject {
                 date: Date().addingTimeInterval(-172800)
             )
         ]
+        items.forEach { modelContext.insert($0) }
+        recentItems = items
+        saveContext()
     }
-    
-    func addConversion(item: ConversionItem) {
-        recentItems.insert(item, at: 0)
-    }
-    
+
+    // MARK: - Conversion lifecycle
+
     func clearCurrentConversion() {
         currentFile = nil
         selectedFormat = "MP4"
