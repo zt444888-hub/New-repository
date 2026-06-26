@@ -29,7 +29,7 @@ for f in all_files:
     fid = uid()
     file_refs[f] = fid
     name = os.path.basename(f)
-    pbx += f'\t\t{fid} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{name}"; sourceTree = "<group>"; }};\n'
+    pbx += f'\t\t{fid} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/{name}"; sourceTree = "<group>"; }};\n'
 fid = uid()
 file_refs['Info.plist'] = fid
 pbx += f'\t\t{fid} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; }};\n'
@@ -96,3 +96,4 @@ pbx += '\t};\n\trootObject = ' + project_id + ';\n}\n'
 with open('MediaMate.xcodeproj/project.pbxproj', 'w') as f:
     f.write(pbx)
 print(f'OK: {len(pbx)} bytes, {len(all_files)} files')
+
