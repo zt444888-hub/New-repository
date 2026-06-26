@@ -1,50 +1,56 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"[]>
 <plist version="1.0">
-<dict>
-	<key>CFBundleDisplayName</key>
-	<string>MediaMate</string>
-	<key>CFBundleName</key>
-	<string>MediaMate</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.mediamate.app</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UIApplicationSceneManifest</key>
-	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-				</dict>
-			</array>
-		</dict>
-	</dict>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>arm64</string>
-	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UILaunchScreenName</key>
-		<string>LaunchScreen</string>
-	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>MediaMate needs access to your photos to select video and audio files for conversion. Your files are processed locally and never uploaded to the cloud.</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>MediaMate needs access to save converted media files to your photo library.</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>processing</string>
-	</array>
-</dict>
+  <dict>
+    <key>CFBundleDisplayName</key>
+    <string>MediaMate</string>
+    <key>CFBundleName</key>
+    <string>MediaMate</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.mediamate.app</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true />
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+      <key>UIApplicationSupportsMultipleScenes</key>
+      <false />
+      <key>UISceneConfigurations</key>
+      <dict>
+        <key>UIWindowSceneSessionRoleApplication</key>
+        <array>
+          <dict>
+            <key>UISceneConfigurationName</key>
+            <string>Default Configuration</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+      <string>arm64</string>
+    </array>
+    <key>UILaunchScreen</key>
+    <dict>
+      <key>UILaunchScreenName</key>
+      <string>LaunchScreen</string>
+    </dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>MediaMate needs access to your photos to select video and audio files for conversion. Your files are processed locally and never uploaded to the cloud.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>MediaMate needs access to save converted media files to your photo library.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>processing</string>
+    </array>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>MediaMate needs access to your files to select video and audio files for conversion.</string>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false />
+    <key>UIApplicationSupportsIndirectInputEvents</key>
+    <true />
+  </dict>
 </plist>

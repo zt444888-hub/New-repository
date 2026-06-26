@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 import PhotosUI
 import Photos
 
@@ -61,12 +61,14 @@ struct HomeView: View {
                     }
                 }
                 
+                #if DEBUG
                 if !appState.isTestMode {
-                    Button("Enable Test Mode") {
+                Button("Enable Test Mode") {
                         Task {
                             await MainActor.run {
                                 MockDataGenerator.shared.setupMockFiles()
                             }
+                            appState.isTestMode = true
                             appState.isTestMode = true
                         }
                     }
@@ -74,6 +76,7 @@ struct HomeView: View {
                     .foregroundColor(.textTertiary)
                     .padding(.top, 8)
                 }
+                #endif
                 
                 if !appState.recentItems.isEmpty {
                     Text("Recent Conversions")
@@ -236,6 +239,10 @@ struct DocumentPickerView: UIViewControllerRepresentable {
         let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.movie, .audio], asCopy: true)
         picker.delegate = context.coordinator
         picker.allowsMultipleSelection = false
+        if let popover = picker.popoverPresentationController {
+            popover.sourceView = picker.view
+            popover.sourceRect = sourceRect
+        }
         return picker
     }
     
@@ -284,5 +291,4 @@ struct MediaFile: Transferable {
         }
     }
 }
-
 

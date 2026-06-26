@@ -76,12 +76,26 @@ class ConversionEngine: NSObject, ObservableObject {
         exportSession.shouldOptimizeForNetworkUse = true
 
         if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *) {
             exportSession.progressHandler = { [weak self] progress in
                 DispatchQueue.main.async {
                     self?.progress = progress
                 }
             }
+        } else {
+            // Fallback for iOS < 16: poll export progress via Timer
+            let pollingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
+                DispatchQueue.main.async {
+                    guard let self = self, let session = self.exportSession else { return }
+                    self.progress = session.progress
+                    if session.status == .completed || session.status == .failed || session.status == .cancelled {
+                        timer.invalidate()
+                    }
+                }
+            }
+            RunLoop.main.add(pollingTimer, forMode: .common)
         }
+
 
         exportSession.exportAsynchronously { [weak self] in
             DispatchQueue.main.async {

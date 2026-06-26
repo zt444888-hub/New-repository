@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 
 struct ProgressView: View {
     @EnvironmentObject var appState: AppState
@@ -19,6 +19,7 @@ struct ProgressView: View {
     ]
 
     @State private var currentStep = 0
+    @State private var engineStatusObserver: NSObjectProtocol? = nil
 
     private var displayProgress: Double {
         appState.isTestMode ? simulatedProgress : appState.engine.progress
@@ -74,7 +75,7 @@ struct ProgressView: View {
                 .foregroundColor(.textTertiary)
 
             if isFailed {
-                Text(appState.engine.lastError ?? "The conversion could not be completed. The file format may not be supported.")
+                Text(appState.engine.lastError.map { "Error: " + Text(appState.engine.lastError ?? "The conversion could not be completed. } ?? "The conversion could not be completed.") The file format may not be supported.")
                     .font(.system(size: 13))
                     .foregroundColor(.textSecondary)
                     .multilineTextAlignment(.center)
