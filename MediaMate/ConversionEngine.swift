@@ -1,0 +1,244 @@
+﻿import AVFoundation
+import Foundation
+
+class ConversionEngine: NSObject, ObservableObject {
+    @Published var progress: Double = 0
+    @Published var isConverting = false
+
+    private var exportSession: AVAssetExportSession?
+    private var reader: AVAssetReader?
+    private var writer: AVAssetWriter?
+    private var completion: ((Result<URL, Error>) -> Void)?
+    private let audioFormats: Set<String> = [""M4A"", ""MP3"", ""WAV""]
+
+    func convertFile(at sourceURL: URL, to format: String, quality: Double, resolution: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        guard !isConverting else {
+            completion(.failure(NSError(domain: ""MediaMate"", code: -1, userInfo: [NSLocalizedDescriptionKey: ""Conversion in progress""])))
+            return
+        }
+
+        isConverting = true
+        progress = 0
+        self.completion = completion
+
+        let outputURL = outputURLFor(sourceURL, format: format)
+
+        if resolution == ""Original"" && audioFormats.contains(format) {
+            convertAudioOnly(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: completion)
+        } else {
+            convertVideoExport(sourceURL: sourceURL, to: format, outputURL: outputURL, quality: quality, resolution: resolution, completion: completion)
+        }
+    }
+
+    private func convertVideoExport(sourceURL: URL, to format: String, outputURL: URL, quality: Double, resolution: String, completion: @escaping (Result<URL, Error>) -> Void) {
+        let asset = AVAsset(url: sourceURL)
+        let preset = avAssetExportPreset(for: quality, resolution: resolution)
+
+        guard let exportSession = AVAssetExportSession(asset: asset, presetName: preset) else {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -2, userInfo: [NSLocalizedDescriptionKey: ""Failed to create export session""])))
+            return
+        }
+
+        self.exportSession = exportSession
+        exportSession.outputURL = outputURL
+        exportSession.outputFileType = avVideoFileType(for: format)
+        exportSession.shouldOptimizeForNetworkUse = true
+
+        if #available(iOS 16.0, *) {
+            exportSession.progressHandler = { [weak self] progress in
+                DispatchQueue.main.async {
+                    self?.progress = progress
+                }
+            }
+        }
+
+        exportSession.exportAsynchronously { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.isConverting = false
+
+                switch exportSession.status {
+                case .completed:
+                    completion(.success(outputURL))
+                case .cancelled:
+                    completion(.failure(NSError(domain: ""MediaMate"", code: -4, userInfo: [NSLocalizedDescriptionKey: ""Cancelled""])))
+                case .failed:
+                    let detail = exportSession.error?.localizedDescription ?? ""Unknown error""
+                    completion(.failure(NSError(domain: ""MediaMate"", code: -3, userInfo: [NSLocalizedDescriptionKey: detail])))
+                default:
+                    completion(.failure(NSError(domain: ""MediaMate"", code: -3, userInfo: [NSLocalizedDescriptionKey: ""Export failed""])))
+                }
+            }
+        }
+    }
+
+    private func convertAudioOnly(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
+        let asset = AVAsset(url: sourceURL)
+
+        guard let audioTrack = asset.tracks(withMediaType: .audio).first else {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -5, userInfo: [NSLocalizedDescriptionKey: ""No audio track found in file""])))
+            return
+        }
+
+        do {
+            reader = try AVAssetReader(asset: asset)
+        } catch {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -6, userInfo: [NSLocalizedDescriptionKey: ""Failed to create reader: \(error.localizedDescription)""])))
+            return
+        }
+
+        guard let reader = reader else { return }
+
+        let readerOutput = AVAssetReaderTrackOutput(track: audioTrack, outputSettings: [
+            AVFormatIDKey: kAudioFormatLinearPCM
+        ])
+
+        guard reader.canAdd(readerOutput) else {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -7, userInfo: [NSLocalizedDescriptionKey: ""Cannot read audio track""])))
+            return
+        }
+        reader.add(readerOutput)
+
+        let outputFileType: AVFileType
+        let audioSettings: [String: Any]
+
+        if format == ""WAV"" {
+            outputFileType = .wav
+            audioSettings = [
+                AVFormatIDKey: kAudioFormatLinearPCM,
+                AVSampleRateKey: 44100,
+                AVNumberOfChannelsKey: 2,
+                AVLinearPCMBitDepthKey: 16,
+                AVLinearPCMIsFloatKey: false,
+                AVLinearPCMIsBigEndianKey: false
+            ]
+        } else {
+            // M4A / MP3 fallback: use AAC in M4A container
+            // iOS has no built-in MP3 encoder; AAC is superior
+            outputFileType = .m4a
+            audioSettings = [
+                AVFormatIDKey: kAudioFormatMPEG4AAC,
+                AVSampleRateKey: 44100,
+                AVNumberOfChannelsKey: 2,
+                AVEncoderBitRateKey: 128000
+            ]
+        }
+
+        do {
+            writer = try AVAssetWriter(outputURL: outputURL, fileType: outputFileType)
+        } catch {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -8, userInfo: [NSLocalizedDescriptionKey: ""Failed to create writer: \(error.localizedDescription)""])))
+            return
+        }
+
+        guard let writer = writer else { return }
+
+        let writerInput = AVAssetWriterInput(mediaType: .audio, outputSettings: audioSettings)
+        writerInput.expectsMediaDataInRealTime = false
+
+        guard writer.canAdd(writerInput) else {
+            isConverting = false
+            completion(.failure(NSError(domain: ""MediaMate"", code: -9, userInfo: [NSLocalizedDescriptionKey: ""Cannot add audio writer""])))
+            return
+        }
+        writer.add(writerInput)
+
+        writer.startWriting()
+        reader.startReading()
+        writer.startSession(atSourceTime: .zero)
+
+        let totalDuration = audioTrack.timeRange.duration
+        let totalSeconds = CMTimeGetSeconds(totalDuration)
+
+        writerInput.requestMediaDataWhenReady(on: DispatchQueue(label: ""com.mediamate.audio"")) { [weak self] in
+            guard let self = self, let reader = self.reader, let writer = self.writer else { return }
+
+            while writerInput.isReadyForMoreMediaData {
+                guard let buffer = readerOutput.copyNextSampleBuffer() else {
+                    let time = writerInput.appendSampleBuffersInQueue
+                    writerInput.markAsFinished()
+
+                    if reader.status == .completed {
+                        writer.finishWriting { [weak self] in
+                            DispatchQueue.main.async {
+                                self?.isConverting = false
+                                self?.progress = 1.0
+                                completion(.success(outputURL))
+                            }
+                        }
+                    } else {
+                        writer.cancelWriting()
+                        reader.cancelReading()
+                        DispatchQueue.main.async {
+                            self.isConverting = false
+                            completion(.failure(NSError(domain: ""MediaMate"", code: -10, userInfo: [NSLocalizedDescriptionKey: ""Audio read failed""])))
+                        }
+                    }
+                    return
+                }
+
+                let pts = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(buffer))
+                if totalSeconds > 0 {
+                    DispatchQueue.main.async {
+                        self.progress = min(pts / totalSeconds, 0.99)
+                    }
+                }
+
+                writerInput.append(buffer)
+            }
+        }
+    }
+
+    func cancel() {
+        exportSession?.cancelExport()
+        reader?.cancelReading()
+        writer?.cancelWriting()
+        isConverting = false
+        progress = 0
+    }
+
+    private func avAssetExportPreset(for quality: Double, resolution: String) -> String {
+        let qualityPresets: [Double: String] = [
+            0: AVAssetExportPresetLowQuality,
+            1: AVAssetExportPresetMediumQuality,
+            2: AVAssetExportPresetHighestQuality,
+            3: AVAssetExportPresetPassthrough
+        ]
+
+        let resolutionPresets: [String: String] = [
+            ""1080p"": AVAssetExportPreset1920x1080,
+            ""720p"": AVAssetExportPreset1280x720,
+            ""480p"": AVAssetExportPreset640x480
+        ]
+
+        if resolution != ""Original"", let preset = resolutionPresets[resolution] {
+            return preset
+        }
+
+        return qualityPresets[quality] ?? AVAssetExportPresetHighestQuality
+    }
+
+    private func avVideoFileType(for format: String) -> AVFileType {
+        let types: [String: AVFileType] = [
+            ""MP4"": .mp4,
+            ""MOV"": .mov
+        ]
+        return types[format] ?? .mp4
+    }
+
+    private func outputURLFor(_ sourceURL: URL, format: String) -> URL {
+        let fileManager = FileManager.default
+        let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileName = sourceURL.deletingPathExtension().lastPathComponent
+
+        // For MP3, use .m4a extension since there is no MP3 encoder on iOS
+        let ext = format == ""MP3"" ? ""m4a"" : format.lowercased()
+        let outputFileName = ""\(fileName)_converted.\(ext)""
+        return documentsDir.appendingPathComponent(outputFileName)
+    }
+}
