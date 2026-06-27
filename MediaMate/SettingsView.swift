@@ -85,7 +85,7 @@ struct SettingsView: View {
             guard url.lastPathComponent.contains("_converted"),
                   let attrs = try? FileManager.default.attributesOfItem(atPath: url.path),
                   let size = attrs[.size] as? Int64 else { return total }
-            return total + size
+            return total + Int(size)
         }
         return ByteCountFormatter.string(fromByteCount: total, countStyle: .file)
     }
