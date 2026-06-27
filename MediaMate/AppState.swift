@@ -18,7 +18,8 @@ class AppState: ObservableObject {
 
     /// Shared ModelContainer — also needs to be passed to `.modelContainer()` in the app scene.
     static let container: ModelContainer = {
-        try! ModelContainer(for: ConversionItem.self)
+        guard let container = try? ModelContainer(for: ConversionItem.self) else { fatalError("Failed to create ModelContainer") }
+        return container
     }()
 
     private let modelContext: ModelContext
@@ -113,3 +114,4 @@ class AppState: ObservableObject {
         engine.isConverting = false
     }
 }
+

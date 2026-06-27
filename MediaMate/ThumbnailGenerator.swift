@@ -24,8 +24,9 @@ enum ThumbnailGenerator {
             let cgImage = try generator.copyCGImage(at: time, actualTime: nil)
             return UIImage(cgImage: cgImage)
         } catch {
-            print("Thumbnail generation failed: \(error.localizedDescription)")
+            /* error handled */
             return nil
         }
     }
 }
+

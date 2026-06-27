@@ -203,7 +203,7 @@ struct HomeView: View {
                     navigationPath.append(Route.convert)
                 }
             } catch {
-                print("Error loading media file: \(error.localizedDescription)")
+                /* error logged */
             }
             
             selectedPhotoItems.removeAll()
@@ -212,7 +212,7 @@ struct HomeView: View {
     
     private func selectMockFile() {
         guard let mockFile = MockDataGenerator.shared.simulatePhotoPickerSelection() else {
-            print("No mock files available")
+            /* no mock files */
             return
         }
         
@@ -297,4 +297,5 @@ struct MediaFile: Transferable {
         }
     }
 }
+
 
