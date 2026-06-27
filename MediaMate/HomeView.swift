@@ -110,7 +110,7 @@ struct HomeView: View {
         .photosPicker(
             isPresented: $showPhotoPicker,
             selection: $selectedPhotoItems,
-            matching: .any(of: [.videos, .audios]),
+            matching: .any(of: [.videos]),
             photoLibrary: .shared()
         )
         .sheet(isPresented: $showFilePicker) {
