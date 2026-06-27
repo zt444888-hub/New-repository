@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 enum Route: Hashable {
     case convert, progress, complete

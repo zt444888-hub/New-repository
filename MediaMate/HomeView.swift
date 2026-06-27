@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 import PhotosUI
 import Photos
 
@@ -12,7 +12,7 @@ struct HomeView: View {
     
     @State private var photoLibraryStatus: PHAuthorizationStatus = .notDetermined
     @State private var showBatchPicker = false
-    @State private var @State private var showPermissionAlert = false
+    @State private var showPermissionAlert = false
     @State private var permissionAlertMessage = ""
     
     var body: some View {

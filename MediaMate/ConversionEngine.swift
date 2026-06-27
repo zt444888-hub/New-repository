@@ -1,4 +1,4 @@
-﻿﻿import AVFoundation
+import AVFoundation
 import UIKit
 import Foundation
 
@@ -75,27 +75,17 @@ class ConversionEngine: NSObject, ObservableObject {
         exportSession.outputFileType = avVideoFileType(for: format)
         exportSession.shouldOptimizeForNetworkUse = true
 
-        if #available(iOS 16.0, *) {
-            exportSession.progressHandler = { [weak self] progress in
-                DispatchQueue.main.async {
-                    self?.progress = progress
+                // Poll export progress via Timer (progressHandler removed in iOS 26+)
+        let pollingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
+            DispatchQueue.main.async {
+                guard let self = self, let session = self.exportSession else { return }
+                self.progress = Double(session.progress)
+                if session.status == .completed || session.status == .failed || session.status == .cancelled {
+                    timer.invalidate()
                 }
             }
-        } else {
-            // Fallback for iOS < 16: poll export progress via Timer
-            let pollingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
-                DispatchQueue.main.async {
-                    guard let self = self, let session = self.exportSession else { return }
-                    self.progress = session.progress
-                    if session.status == .completed || session.status == .failed || session.status == .cancelled {
-                        timer.invalidate()
-                    }
-                }
-            }
-            RunLoop.main.add(pollingTimer, forMode: .common)
         }
-
-
+        RunLoop.main.add(pollingTimer, forMode: .common)
         exportSession.exportAsynchronously { [weak self] in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -119,7 +109,7 @@ class ConversionEngine: NSObject, ObservableObject {
     private func convertAudioOnly(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         let asset = AVAsset(url: sourceURL)
 
-        guard let audioTrack = asset.tracks(withMediaType: .audio).first {
+        guard let audioTrack = asset.tracks(withMediaType: .audio).first else {
             isConverting = false
             conversionState = .failed
             completion(.failure(NSError(domain: "MediaMate", code: -5, userInfo: [NSLocalizedDescriptionKey: "No audio track found in file"])))

@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct ConvertSettingsView: View {
     @EnvironmentObject var appState: AppState

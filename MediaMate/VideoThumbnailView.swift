@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 /// Displays a video thumbnail loaded asynchronously.
 struct VideoThumbnailView: View {

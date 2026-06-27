@@ -1,4 +1,4 @@
-﻿import XCTest
+import XCTest
 @testable import MediaMate
 
 /// Unit tests for the conversion engine state management.

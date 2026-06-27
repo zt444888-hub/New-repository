@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct ProgressView: View {
     @EnvironmentObject var appState: AppState

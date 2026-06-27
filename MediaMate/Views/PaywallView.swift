@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 import StoreKit
 
 @available(iOS 15.0, *)

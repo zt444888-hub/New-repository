@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct PresetsView: View {
     @Binding var selectedPreset: Preset?

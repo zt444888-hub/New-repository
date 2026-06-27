@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 import StoreKit
 
 public enum StoreError: LocalizedError {

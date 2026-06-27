@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 
 /// A conversion preset optimized for a specific platform or use case.
 public struct Preset: Identifiable, Codable, Hashable {

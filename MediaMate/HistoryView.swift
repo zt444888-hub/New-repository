@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var appState: AppState
