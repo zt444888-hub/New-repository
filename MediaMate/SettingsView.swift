@@ -87,7 +87,7 @@ struct SettingsView: View {
                   let size = attrs[.size] as? Int64 else { return total }
             return total + Int(size)
         }
-        return ByteCountFormatter.string(fromByteCount: total, countStyle: .file)
+        return ByteCountFormatter.string(fromByteCount: Int64(total), countStyle: .file)
     }
 }
 
