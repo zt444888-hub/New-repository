@@ -44,10 +44,9 @@ struct VideoThumbnailView: View {
         let ext = url.pathExtension.lowercased()
         guard ["mov", "mp4", "avi", "mkv"].contains(ext) else { return }
         
-        await Task.detached {
+        let img = await Task.detached {
             ThumbnailGenerator.thumbnail(for: url, maxSize: size * 2)
-        }.value.map { img in
-            await MainActor.run { thumbnail = img }
-        }
+        }.value
+        await MainActor.run { thumbnail = img }
     }
 }
