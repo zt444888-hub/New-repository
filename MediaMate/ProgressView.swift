@@ -83,6 +83,7 @@ struct ProgressView: View {
                     .foregroundColor(.textSecondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
+            }
 
                 Button("Go Back") {
                     appState.engine.conversionState = .idle

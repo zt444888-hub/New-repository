@@ -297,4 +297,3 @@ class ConversionEngine: NSObject, ObservableObject {
         return documentsDir.appendingPathComponent(outputFileName)
     }
 }
-}
