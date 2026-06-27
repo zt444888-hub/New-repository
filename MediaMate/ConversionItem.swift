@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 import SwiftData
 
 /// Raw-value backing for SwiftData storage.

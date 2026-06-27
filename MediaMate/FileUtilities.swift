@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 import UIKit
 
 /// Shared utilities for file handling throughout the app.

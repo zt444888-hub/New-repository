@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 import Photos
 
 struct CompleteView: View {

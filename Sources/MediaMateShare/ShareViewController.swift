@@ -1,4 +1,4 @@
-﻿import UIKit
+import UIKit
 import UniformTypeIdentifiers
 import Social
 import MobileCoreServices

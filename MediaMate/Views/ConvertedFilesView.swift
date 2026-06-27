@@ -1,4 +1,4 @@
-﻿import SwiftUI
+import SwiftUI
 
 struct ConvertedFilesView: View {
     @EnvironmentObject var appState: AppState

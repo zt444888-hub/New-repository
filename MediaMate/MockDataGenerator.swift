@@ -1,4 +1,4 @@
-﻿import Foundation
+import Foundation
 import UIKit
 
 #if DEBUG
@@ -229,22 +229,22 @@ class MockDataGenerator {
     }
     
     private func createVideoHeader() -> Data {
-        let headerString = ""
+        let headerString = """
             ftypmp42
             mp42isom
             free
             mdat
-        ""
+        """
         return Data(headerString.utf8)
     }
     
     private func createAudioHeader() -> Data {
-        let headerString = ""
+        let headerString = """
             ftypM4A 
             M4A isom
             free
             mdat
-        ""
+        """
         return Data(headerString.utf8)
     }
 }

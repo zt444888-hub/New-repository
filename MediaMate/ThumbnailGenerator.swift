@@ -1,4 +1,4 @@
-﻿import AVFoundation
+import AVFoundation
 import UIKit
 
 /// Generates thumbnail images from video files using AVFoundation.
