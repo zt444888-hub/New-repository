@@ -23,9 +23,9 @@ for f in files:
     build_refs[name] = bid
 
 infoid = uid()
-frefs += '\t\t' + infoid + ' /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MediaMate/Info.plist"; sourceTree = "<group>"; };\n'
+frefs += '\t\t' + infoid + ' /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };\n'
 assetid = uid()
-frefs += '\t\t' + assetid + ' /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MediaMate/Assets.xcassets"; sourceTree = "<group>"; };\n'
+frefs += '\t\t' + assetid + ' /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };\n'
 
 main_gid = uid()
 top_gid = uid()
@@ -54,7 +54,7 @@ for f in files:
 sbp += '\t\t\t);\n\t\t\trunOnlyForDeploymentPostprocessing = 0;\n\t\t};\n'
 
 did = uid(); rid = uid()
-debug = '\t\t' + did + ' = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbuildSettings = {\n\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\t\t\t\tCODE_SIGN_STYLE = Automatic;\n\t\t\t\tCURRENT_PROJECT_VERSION = 1;\n\t\t\t\tGENERATE_INFOPLIST_FILE = YES;\n\t\t\t\tINFOPLIST_FILE = MediaMate/Info.plist;\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 18.0;\n\t\t\t\tMARKETING_VERSION = 1.0;\n\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;\n\t\t\t\tPRODUCT_NAME = MediaMate;\n\t\t\t\tSWIFT_VERSION = 5.0;\n\t\t\t\tTARGETED_DEVICE_FAMILY = "1,2";\n\t\t\t};\n\t\t\tname = Debug;\n\t\t};\n'
+debug = '\t\t' + did + ' = {\n\t\t\tisa = XCBuildConfiguration;\n\t\t\tbuildSettings = {\n\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n\t\t\t\tCODE_SIGN_STYLE = Automatic;\n\t\t\t\tCURRENT_PROJECT_VERSION = 1;\n\t\t\t\tGENERATE_INFOPLIST_FILE = YES;\n\t\t\t\tINFOPLIST_FILE = Info.plist;\n\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 18.0;\n\t\t\t\tMARKETING_VERSION = 1.0;\n\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;\n\t\t\t\tPRODUCT_NAME = MediaMate;\n\t\t\t\tSWIFT_VERSION = 5.0;\n\t\t\t\tTARGETED_DEVICE_FAMILY = "1,2";\n\t\t\t};\n\t\t\tname = Debug;\n\t\t};\n'
 release = debug.replace('name = Debug', 'name = Release')
 
 cl = ''
@@ -75,3 +75,4 @@ pbx += '\t};\n\trootObject = ' + pid + ';\n}\n'
 with open('MediaMate.xcodeproj/project.pbxproj', 'w') as f:
     f.write(pbx)
 print('OK: ' + str(len(pbx)) + ' bytes, ' + str(len(files)) + ' files')
+
