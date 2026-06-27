@@ -45,7 +45,7 @@ for f in all_files:
     children += f'\t\t\t\t{file_refs[name]} /* {name} */,\n'
 children += f'\t\t\t\t{assetid} /* Assets.xcassets */,\n'
 
-main = f'\t\t{main_gid} = {{\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n{children}\t\t\t);\n\t\t\tname = MediaMate;\n\t\t\tsourceTree = "<group>";\n\t\t}};\n'
+main = f'\t\t{main_gid} = {{\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n{children}\t\t\t);\n\t\t\tpath = MediaMate;\n\t\t\tsourceTree = "<group>";\n\t\t}};\n'
 top = f'\t\t{top_gid} = {{\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = (\n\t\t\t\t{main_gid} /* MediaMate */,\n\t\t\t);\n\t\t\tsourceTree = "<group>";\n\t\t}};\n'
 prod = f'\t\t{prod_gid} = {{\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = ();\n\t\t\tname = Products;\n\t\t\tsourceTree = "<group>";\n\t\t}};\n'
 
@@ -53,7 +53,7 @@ prod = f'\t\t{prod_gid} = {{\n\t\t\tisa = PBXGroup;\n\t\t\tchildren = ();\n\t\t\
 tid = UID()
 sid = UID()
 tcl = UID()
-target = f'\t\t{tid} /* MediaMate */ = {{\n\t\t\tisa = PBXNativeTarget;\n\t\t\tbuildConfigurationList = {tcl};\n\t\t\tbuildPhases = (\n\t\t\t\t{sid} /* Sources */,\n\t\t\t);\n\t\t\tbuildRules = ();\n\t\t\tdependencies = ();\n\t\t\tname = MediaMate;\n\t\t\tproductName = MediaMate;\n\t\t\tproductReference = {UID()};\n\t\t\tproductType = "com.apple.product-type.application";\n\t\t}};\n'
+target = f'\t\t{tid} /* MediaMate */ = {{\n\t\t\tisa = PBXNativeTarget;\n\t\t\tbuildConfigurationList = {tcl};\n\t\t\tbuildPhases = (\n\t\t\t\t{sid} /* Sources */,\n\t\t\t);\n\t\t\tbuildRules = ();\n\t\t\tdependencies = ();\n\t\t\tpath = MediaMate;\n\t\t\tproductpath = MediaMate;\n\t\t\tproductReference = {UID()};\n\t\t\tproductType = "com.apple.product-type.application";\n\t\t}};\n'
 
 # === PBXProject ===
 pid = UID()
@@ -75,7 +75,7 @@ bs += '\t\t\t\tASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;\n'
 bs += '\t\t\t\tCODE_SIGN_STYLE = Automatic;\n'
 bs += '\t\t\t\tCURRENT_PROJECT_VERSION = 1;\n'
 bs += '\t\t\t\tGENERATE_INFOPLIST_FILE = YES;\n'
-bs += '\t\t\t\tINFOPLIST_KEY_CFBundleDisplayName = MediaMate;\n'
+bs += '\t\t\t\tINFOPLIST_KEY_CFBundleDisplaypath = MediaMate;\n'
 bs += '\t\t\t\tINFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";\n'
 bs += '\t\t\t\tINFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";\n'
 bs += '\t\t\t\tINFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;\n'
@@ -86,7 +86,7 @@ bs += '\t\t\t\tSDKROOT = iphoneos;\n'
 bs += '\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 18.0;\n'
 bs += '\t\t\t\tMARKETING_VERSION = 1.0;\n'
 bs += '\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;\n'
-bs += '\t\t\t\tPRODUCT_NAME = MediaMate;\n'
+bs += '\t\t\t\tPRODUCT_path = MediaMate;\n'
 bs += '\t\t\t\tSWIFT_VERSION = 5.0;\n'
 bs += '\t\t\t\tTARGETED_DEVICE_FAMILY = "1,2";\n'
 bs += '\t\t\t}};\n\t\t\tname = Debug;\n\t\t}};\n'
@@ -112,4 +112,6 @@ pbx += '\t};\n\trootObject = ' + pid + ';\n}\n'
 with open('MediaMate.xcodeproj/project.pbxproj', 'w') as f:
     f.write(pbx)
 print(f'OK: {len(pbx)} bytes, {len(all_files)} files')
+
+
 

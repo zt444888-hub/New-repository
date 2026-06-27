@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+﻿// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {};
@@ -6,122 +6,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		618FFC217B1B483BB94BF41F /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F921765494D39BEC1FFAE; };
-		0627B523613F4E228D1FF905 /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3900BF9DAB433DA3D85E46; };
-		4B9C709062164830A66AAC8A /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7CC7CB1FD34724A594AD8C; };
-		FABF7C1729A74467A8CEDCB5 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFA6FB5F2B4889842D7972; };
-		F8110BB4CFBF45D7AB438DEE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B872F3260BF47E5B92304CE; };
-		55EA9E4BBCB54CA29AB9EE57 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2CAEFC59E4902A43F782A; };
-		1646DBFA3ABA41B5A595C756 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F63986D7B41F38C949DD6; };
-		881EFBEC94A142678D6CD737 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4669084C88CC4504A76741C3; };
-		4B4C006BD7AE410DB5808D63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A44108E8024FB2AB6F8AAC; };
-		E099C36D02D54140A4E4D35F /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D94E194EE364FE189981F75; };
-		8DB2B07CCC874D7F9E39FDC9 /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFB921F22CA4F93B7345DB4; };
-		EB4ACB7FDA914BC3B51E90D9 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD1EA725D940E1891C7847; };
-		8A6C1B3218604D3993CC2C7C /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8657E26F47D8A4085C97; };
-		F16E93015061486F9455E16B /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D70C996B4A4CF6A09B68C6; };
-		9BCFD4CBDB8B43818075DB90 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EE8FBC777470B92F7FBB9; };
-		284F31B12F3F4687BE0AD46B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532128A2BA14D888852CB15; };
-		1D9E4CFE71BC4280935F2A10 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB577C029B024B1ABC31D3CB; };
-		F9A52831309D46E4B0295DD8 /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F76F5035A34B5CAAC2E795; };
-		4A857BA62C134D9798387F53 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEE39878374B7DBF4D10D6; };
-		65122903C0844E61AAA73CBD /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88064E0E083344519F6A39A6; };
-		AB5A2663E3EA45DD97D5849E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92A0A049E94135825096B4; };
-		938035EE3B314E39A43DD727 /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4A7833DAC04EF6A808EF4A; };
-		A56D0932709B480088B01D4A /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D03BFBB764B54BF792FDA; };
-		C469366FCC654E81BB5442DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC9FD9BF74341BC398F89; };
-		B1208ECD076A46E088CA151D /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5380A45E8456484F18C1F; };
-		2DC51BDC328649EC8764291B /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD006AF1FBC74CFEA26E8BC1; };
-		634731678CE44EE3A57DD5FE /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD435EAE6524A6A9B05906D; };
-		1C020E0D234C43929F7892D5 /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39507A3A7884468CA3D97E05; };
-		9E26664A3BAB4555A4C1795C /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCAD3E86724533A84B56F2; };
-		183F03A331EF433AB017844F /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CA1366E0F4DA180C5397A; };
-		B0F51CC2197F4C318FDDA37E /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377806A697D4F678AF610BC; };
+		86740AB60A1B4BBC932CD895 /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6257E743A47189C742850; };
+		80EAFB57E90D4A3B8F58FD9D /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53839F50F6454C759DC3E11D; };
+		59064BB617A545038E11FEEF /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA0495D8404D4D9AF5CB96; };
+		417EFFE82CF5478FA1B8B217 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD9B2A9D3F04483B66796CD; };
+		28A40A959E95428D93E64B4C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833882D9DE0D46ECBE1FF0B0; };
+		0E525025D2D44680A69DCFC7 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0737A7CA8014419BA07C69B; };
+		E682B4523C8945A0BEB268D0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E70CBA9376418385886585; };
+		62E998D5611842188C640D04 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130B1B53A1644B2BAF75420; };
+		BDE61D484C874612BD90D059 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F592BDAEAD4C30A9611B97; };
+		148E4EF30B7E4A0F861AB448 /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91A933E7884093A684FF9F; };
+		89A9BC3BAD3B411DB41C3727 /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF725BF25F4DFFBBFDD878; };
+		E1DE9D95EDE24097BE890FD1 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C501A491BA5B4605AA511EC8; };
+		7E1349D400664730A70A5008 /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6964E0F189545699283F3E2; };
+		C1499C60AD774ACDB0FE7D75 /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE0E4CD4044309A8D361B; };
+		EB36BE99760443DCBA6FBE1A /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716602BF7814A7C81F8A27E; };
+		CC599C190CAF43B99BE8725F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C9AA006A1414990BF52BB; };
+		A4BCF7FF61BA4F62A5207165 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD183BD471C465CB43AE05B; };
+		943A9E0AA396456D832DA668 /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA3B7B8854BD6BFB3F7DB; };
+		3A6D9AEABA4649A7A4641156 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D103B1D59D94F778EDD5CCE; };
+		C71380D0E9B3472FAE1782AB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA03D1688D48DD9700FE5D; };
+		76D62BDCDC9F45AE928BE72D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD1E922F84BC6ACAC0B4F; };
+		E54CDE3A274A47E587419BFB /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB631825AA846898F86C739; };
+		9A35AC000FD447F5829A23FD /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25D174DD2245309A05CC58; };
+		80F001197632467E95D2880D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2EFCF51114C9587FC7199; };
+		DA17D20B87E94EFD9BC56207 /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89EB35810954BBC9A7E41AC; };
+		2E731D0D62A54C51AEA97448 /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C81AAC605E4E019536AA6C; };
+		7F5DC03ED52E4FB3803B3A95 /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9469C13DD24008BEABEE9F; };
+		7F218E277F5547688CC2735E /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E592C42D4243CD8574FECC; };
+		F561F95183EF44FFA70EB7E6 /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DF8C8103A4F38A651C990; };
+		A901D193041B40AD8A7A4658 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F078E821B347F280B7672D; };
+		FAA9BEFB0D7C4EA4A345F94B /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3C4EE24A74C9FBE949089; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D02F921765494D39BEC1FFAE /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/BatchPickerView.swift"; sourceTree = "<group>"; };
-		DA3900BF9DAB433DA3D85E46 /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/ConvertedFilesView.swift"; sourceTree = "<group>"; };
-		DD7CC7CB1FD34724A594AD8C /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PaywallView.swift"; sourceTree = "<group>"; };
-		C3BFA6FB5F2B4889842D7972 /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PresetsView.swift"; sourceTree = "<group>"; };
-		8B872F3260BF47E5B92304CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/AppState.swift"; sourceTree = "<group>"; };
-		5EC2CAEFC59E4902A43F782A /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ButtonStyles.swift"; sourceTree = "<group>"; };
-		1E0F63986D7B41F38C949DD6 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ColorExtensions.swift"; sourceTree = "<group>"; };
-		4669084C88CC4504A76741C3 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/CompleteView.swift"; sourceTree = "<group>"; };
-		54A44108E8024FB2AB6F8AAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ContentView.swift"; sourceTree = "<group>"; };
-		6D94E194EE364FE189981F75 /* ConversionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionEngine.swift"; sourceTree = "<group>"; };
-		6AFB921F22CA4F93B7345DB4 /* ConversionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionItem.swift"; sourceTree = "<group>"; };
-		09FD1EA725D940E1891C7847 /* ConvertSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConvertSettingsView.swift"; sourceTree = "<group>"; };
-		814C8657E26F47D8A4085C97 /* FileUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FileUtilities.swift"; sourceTree = "<group>"; };
-		94D70C996B4A4CF6A09B68C6 /* FormatChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FormatChip.swift"; sourceTree = "<group>"; };
-		871EE8FBC777470B92F7FBB9 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryItem.swift"; sourceTree = "<group>"; };
-		D532128A2BA14D888852CB15 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryView.swift"; sourceTree = "<group>"; };
-		FB577C029B024B1ABC31D3CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HomeView.swift"; sourceTree = "<group>"; };
-		E9F76F5035A34B5CAAC2E795 /* MediaMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MediaMateApp.swift"; sourceTree = "<group>"; };
-		2CDEE39878374B7DBF4D10D6 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MockDataGenerator.swift"; sourceTree = "<group>"; };
-		88064E0E083344519F6A39A6 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/PreviewProvider.swift"; sourceTree = "<group>"; };
-		CC92A0A049E94135825096B4 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ProgressView.swift"; sourceTree = "<group>"; };
-		8F4A7833DAC04EF6A808EF4A /* RecentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/RecentRow.swift"; sourceTree = "<group>"; };
-		BD2D03BFBB764B54BF792FDA /* ResolutionChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ResolutionChip.swift"; sourceTree = "<group>"; };
-		DA1DC9FD9BF74341BC398F89 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SettingsView.swift"; sourceTree = "<group>"; };
-		9FF5380A45E8456484F18C1F /* SizeCompareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SizeCompareCard.swift"; sourceTree = "<group>"; };
-		AD006AF1FBC74CFEA26E8BC1 /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ThumbnailGenerator.swift"; sourceTree = "<group>"; };
-		ABD435EAE6524A6A9B05906D /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/VideoThumbnailView.swift"; sourceTree = "<group>"; };
-		39507A3A7884468CA3D97E05 /* GIFExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/GIFExportEngine.swift"; sourceTree = "<group>"; };
-		43CCAD3E86724533A84B56F2 /* HEICConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/HEICConverter.swift"; sourceTree = "<group>"; };
-		188CA1366E0F4DA180C5397A /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = "<group>"; };
-		D377806A697D4F678AF610BC /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = "<group>"; };
-		3580F381ADDA4F92BE454518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MediaMate/Assets.xcassets"; sourceTree = "<group>"; };
+		12B6257E743A47189C742850 /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/BatchPickerView.swift"; sourceTree = "<group>"; };
+		53839F50F6454C759DC3E11D /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ConvertedFilesView.swift"; sourceTree = "<group>"; };
+		64AA0495D8404D4D9AF5CB96 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/PaywallView.swift"; sourceTree = "<group>"; };
+		3CD9B2A9D3F04483B66796CD /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/PresetsView.swift"; sourceTree = "<group>"; };
+		833882D9DE0D46ECBE1FF0B0 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState.swift"; sourceTree = "<group>"; };
+		F0737A7CA8014419BA07C69B /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyles.swift"; sourceTree = "<group>"; };
+		94E70CBA9376418385886585 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorExtensions.swift"; sourceTree = "<group>"; };
+		8130B1B53A1644B2BAF75420 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompleteView.swift"; sourceTree = "<group>"; };
+		20F592BDAEAD4C30A9611B97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
+		BF91A933E7884093A684FF9F /* ConversionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConversionEngine.swift"; sourceTree = "<group>"; };
+		D1CF725BF25F4DFFBBFDD878 /* ConversionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConversionItem.swift"; sourceTree = "<group>"; };
+		C501A491BA5B4605AA511EC8 /* ConvertSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConvertSettingsView.swift"; sourceTree = "<group>"; };
+		A6964E0F189545699283F3E2 /* FileUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileUtilities.swift"; sourceTree = "<group>"; };
+		BFCDE0E4CD4044309A8D361B /* FormatChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatChip.swift"; sourceTree = "<group>"; };
+		9716602BF7814A7C81F8A27E /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryItem.swift"; sourceTree = "<group>"; };
+		CF6C9AA006A1414990BF52BB /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryView.swift"; sourceTree = "<group>"; };
+		2AD183BD471C465CB43AE05B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
+		402FA3B7B8854BD6BFB3F7DB /* MediaMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMateApp.swift"; sourceTree = "<group>"; };
+		1D103B1D59D94F778EDD5CCE /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MockDataGenerator.swift"; sourceTree = "<group>"; };
+		76AA03D1688D48DD9700FE5D /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider.swift"; sourceTree = "<group>"; };
+		DF7CD1E922F84BC6ACAC0B4F /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressView.swift"; sourceTree = "<group>"; };
+		DFB631825AA846898F86C739 /* RecentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentRow.swift"; sourceTree = "<group>"; };
+		FD25D174DD2245309A05CC58 /* ResolutionChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResolutionChip.swift"; sourceTree = "<group>"; };
+		3AC2EFCF51114C9587FC7199 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		F89EB35810954BBC9A7E41AC /* SizeCompareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SizeCompareCard.swift"; sourceTree = "<group>"; };
+		26C81AAC605E4E019536AA6C /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThumbnailGenerator.swift"; sourceTree = "<group>"; };
+		9B9469C13DD24008BEABEE9F /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoThumbnailView.swift"; sourceTree = "<group>"; };
+		52E592C42D4243CD8574FECC /* GIFExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/GIFExportEngine.swift"; sourceTree = "<group>"; };
+		117DF8C8103A4F38A651C990 /* HEICConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/HEICConverter.swift"; sourceTree = "<group>"; };
+		E5F078E821B347F280B7672D /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = "<group>"; };
+		90F3C4EE24A74C9FBE949089 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = "<group>"; };
+		A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		C8BDC0538AB0493483ABE174 = {
+		18436AA034E048CAB37B4A26 = {
 			isa = PBXGroup;
 			children = (
-				D02F921765494D39BEC1FFAE /* BatchPickerView.swift */,
-				DA3900BF9DAB433DA3D85E46 /* ConvertedFilesView.swift */,
-				DD7CC7CB1FD34724A594AD8C /* PaywallView.swift */,
-				C3BFA6FB5F2B4889842D7972 /* PresetsView.swift */,
-				8B872F3260BF47E5B92304CE /* AppState.swift */,
-				5EC2CAEFC59E4902A43F782A /* ButtonStyles.swift */,
-				1E0F63986D7B41F38C949DD6 /* ColorExtensions.swift */,
-				4669084C88CC4504A76741C3 /* CompleteView.swift */,
-				54A44108E8024FB2AB6F8AAC /* ContentView.swift */,
-				6D94E194EE364FE189981F75 /* ConversionEngine.swift */,
-				6AFB921F22CA4F93B7345DB4 /* ConversionItem.swift */,
-				09FD1EA725D940E1891C7847 /* ConvertSettingsView.swift */,
-				814C8657E26F47D8A4085C97 /* FileUtilities.swift */,
-				94D70C996B4A4CF6A09B68C6 /* FormatChip.swift */,
-				871EE8FBC777470B92F7FBB9 /* HistoryItem.swift */,
-				D532128A2BA14D888852CB15 /* HistoryView.swift */,
-				FB577C029B024B1ABC31D3CB /* HomeView.swift */,
-				E9F76F5035A34B5CAAC2E795 /* MediaMateApp.swift */,
-				2CDEE39878374B7DBF4D10D6 /* MockDataGenerator.swift */,
-				88064E0E083344519F6A39A6 /* PreviewProvider.swift */,
-				CC92A0A049E94135825096B4 /* ProgressView.swift */,
-				8F4A7833DAC04EF6A808EF4A /* RecentRow.swift */,
-				BD2D03BFBB764B54BF792FDA /* ResolutionChip.swift */,
-				DA1DC9FD9BF74341BC398F89 /* SettingsView.swift */,
-				9FF5380A45E8456484F18C1F /* SizeCompareCard.swift */,
-				AD006AF1FBC74CFEA26E8BC1 /* ThumbnailGenerator.swift */,
-				ABD435EAE6524A6A9B05906D /* VideoThumbnailView.swift */,
-				39507A3A7884468CA3D97E05 /* GIFExportEngine.swift */,
-				43CCAD3E86724533A84B56F2 /* HEICConverter.swift */,
-				188CA1366E0F4DA180C5397A /* Preset.swift */,
-				D377806A697D4F678AF610BC /* StoreManager.swift */,
-				3580F381ADDA4F92BE454518 /* Assets.xcassets */,
+				12B6257E743A47189C742850 /* BatchPickerView.swift */,
+				53839F50F6454C759DC3E11D /* ConvertedFilesView.swift */,
+				64AA0495D8404D4D9AF5CB96 /* PaywallView.swift */,
+				3CD9B2A9D3F04483B66796CD /* PresetsView.swift */,
+				833882D9DE0D46ECBE1FF0B0 /* AppState.swift */,
+				F0737A7CA8014419BA07C69B /* ButtonStyles.swift */,
+				94E70CBA9376418385886585 /* ColorExtensions.swift */,
+				8130B1B53A1644B2BAF75420 /* CompleteView.swift */,
+				20F592BDAEAD4C30A9611B97 /* ContentView.swift */,
+				BF91A933E7884093A684FF9F /* ConversionEngine.swift */,
+				D1CF725BF25F4DFFBBFDD878 /* ConversionItem.swift */,
+				C501A491BA5B4605AA511EC8 /* ConvertSettingsView.swift */,
+				A6964E0F189545699283F3E2 /* FileUtilities.swift */,
+				BFCDE0E4CD4044309A8D361B /* FormatChip.swift */,
+				9716602BF7814A7C81F8A27E /* HistoryItem.swift */,
+				CF6C9AA006A1414990BF52BB /* HistoryView.swift */,
+				2AD183BD471C465CB43AE05B /* HomeView.swift */,
+				402FA3B7B8854BD6BFB3F7DB /* MediaMateApp.swift */,
+				1D103B1D59D94F778EDD5CCE /* MockDataGenerator.swift */,
+				76AA03D1688D48DD9700FE5D /* PreviewProvider.swift */,
+				DF7CD1E922F84BC6ACAC0B4F /* ProgressView.swift */,
+				DFB631825AA846898F86C739 /* RecentRow.swift */,
+				FD25D174DD2245309A05CC58 /* ResolutionChip.swift */,
+				3AC2EFCF51114C9587FC7199 /* SettingsView.swift */,
+				F89EB35810954BBC9A7E41AC /* SizeCompareCard.swift */,
+				26C81AAC605E4E019536AA6C /* ThumbnailGenerator.swift */,
+				9B9469C13DD24008BEABEE9F /* VideoThumbnailView.swift */,
+				52E592C42D4243CD8574FECC /* GIFExportEngine.swift */,
+				117DF8C8103A4F38A651C990 /* HEICConverter.swift */,
+				E5F078E821B347F280B7672D /* Preset.swift */,
+				90F3C4EE24A74C9FBE949089 /* StoreManager.swift */,
+				A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */,
 			);
-			name = MediaMate;
+			path = MediaMate;
 			sourceTree = "<group>";
 		};
-		2249F791FB9540209D5DDFC0 = {
+		9B639D0953404333B8F22878 = {
 			isa = PBXGroup;
 			children = (
-				C8BDC0538AB0493483ABE174 /* MediaMate */,
+				18436AA034E048CAB37B4A26 /* MediaMate */,
 			);
 			sourceTree = "<group>";
 		};
-		2DDFBA4AF21C40BC97A4C77D = {
+		EA546D5F7BC745DF84D2147A = {
 			isa = PBXGroup;
 			children = ();
 			name = Products;
@@ -130,89 +130,89 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B3929A28DE3E4C19B777B7ED /* MediaMate */ = {
+		3B5DD7877D4B43159BA359D0 /* MediaMate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A8B3EF483B9F4AB6BC283C4E;
+			buildConfigurationList = 7AA9438C083A47A1A2893C9C;
 			buildPhases = (
-				7710531CDB0A4309AD41979E /* Sources */,
+				FA4EAC9108364F1FB8EA6BBD /* Sources */,
 			);
 			buildRules = ();
 			dependencies = ();
-			name = MediaMate;
-			productName = MediaMate;
-			productReference = F7F535AA7807421F95B0AD25;
+			path = MediaMate;
+			productpath = MediaMate;
+			productReference = 556C9B0AA10E447DAEB02A90;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		64C1879E6C064C3FBE6D010E = {
+		D89D7BC4F4404982BF86690B = {
 			isa = PBXProject;
-			buildConfigurationList = F864FA32A6084AAD97D3A2CA;
+			buildConfigurationList = CD9E5341F9FC4A45B72F7A8E;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (en, Base);
-			mainGroup = 2249F791FB9540209D5DDFC0;
-			productRefGroup = 2DDFBA4AF21C40BC97A4C77D;
+			mainGroup = 9B639D0953404333B8F22878;
+			productRefGroup = EA546D5F7BC745DF84D2147A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B3929A28DE3E4C19B777B7ED /* MediaMate */,
+				3B5DD7877D4B43159BA359D0 /* MediaMate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7710531CDB0A4309AD41979E /* Sources */ = {
+		FA4EAC9108364F1FB8EA6BBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				618FFC217B1B483BB94BF41F /* BatchPickerView.swift in Sources */,
-				0627B523613F4E228D1FF905 /* ConvertedFilesView.swift in Sources */,
-				4B9C709062164830A66AAC8A /* PaywallView.swift in Sources */,
-				FABF7C1729A74467A8CEDCB5 /* PresetsView.swift in Sources */,
-				F8110BB4CFBF45D7AB438DEE /* AppState.swift in Sources */,
-				55EA9E4BBCB54CA29AB9EE57 /* ButtonStyles.swift in Sources */,
-				1646DBFA3ABA41B5A595C756 /* ColorExtensions.swift in Sources */,
-				881EFBEC94A142678D6CD737 /* CompleteView.swift in Sources */,
-				4B4C006BD7AE410DB5808D63 /* ContentView.swift in Sources */,
-				E099C36D02D54140A4E4D35F /* ConversionEngine.swift in Sources */,
-				8DB2B07CCC874D7F9E39FDC9 /* ConversionItem.swift in Sources */,
-				EB4ACB7FDA914BC3B51E90D9 /* ConvertSettingsView.swift in Sources */,
-				8A6C1B3218604D3993CC2C7C /* FileUtilities.swift in Sources */,
-				F16E93015061486F9455E16B /* FormatChip.swift in Sources */,
-				9BCFD4CBDB8B43818075DB90 /* HistoryItem.swift in Sources */,
-				284F31B12F3F4687BE0AD46B /* HistoryView.swift in Sources */,
-				1D9E4CFE71BC4280935F2A10 /* HomeView.swift in Sources */,
-				F9A52831309D46E4B0295DD8 /* MediaMateApp.swift in Sources */,
-				4A857BA62C134D9798387F53 /* MockDataGenerator.swift in Sources */,
-				65122903C0844E61AAA73CBD /* PreviewProvider.swift in Sources */,
-				AB5A2663E3EA45DD97D5849E /* ProgressView.swift in Sources */,
-				938035EE3B314E39A43DD727 /* RecentRow.swift in Sources */,
-				A56D0932709B480088B01D4A /* ResolutionChip.swift in Sources */,
-				C469366FCC654E81BB5442DA /* SettingsView.swift in Sources */,
-				B1208ECD076A46E088CA151D /* SizeCompareCard.swift in Sources */,
-				2DC51BDC328649EC8764291B /* ThumbnailGenerator.swift in Sources */,
-				634731678CE44EE3A57DD5FE /* VideoThumbnailView.swift in Sources */,
-				1C020E0D234C43929F7892D5 /* GIFExportEngine.swift in Sources */,
-				9E26664A3BAB4555A4C1795C /* HEICConverter.swift in Sources */,
-				183F03A331EF433AB017844F /* Preset.swift in Sources */,
-				B0F51CC2197F4C318FDDA37E /* StoreManager.swift in Sources */,
+				86740AB60A1B4BBC932CD895 /* BatchPickerView.swift in Sources */,
+				80EAFB57E90D4A3B8F58FD9D /* ConvertedFilesView.swift in Sources */,
+				59064BB617A545038E11FEEF /* PaywallView.swift in Sources */,
+				417EFFE82CF5478FA1B8B217 /* PresetsView.swift in Sources */,
+				28A40A959E95428D93E64B4C /* AppState.swift in Sources */,
+				0E525025D2D44680A69DCFC7 /* ButtonStyles.swift in Sources */,
+				E682B4523C8945A0BEB268D0 /* ColorExtensions.swift in Sources */,
+				62E998D5611842188C640D04 /* CompleteView.swift in Sources */,
+				BDE61D484C874612BD90D059 /* ContentView.swift in Sources */,
+				148E4EF30B7E4A0F861AB448 /* ConversionEngine.swift in Sources */,
+				89A9BC3BAD3B411DB41C3727 /* ConversionItem.swift in Sources */,
+				E1DE9D95EDE24097BE890FD1 /* ConvertSettingsView.swift in Sources */,
+				7E1349D400664730A70A5008 /* FileUtilities.swift in Sources */,
+				C1499C60AD774ACDB0FE7D75 /* FormatChip.swift in Sources */,
+				EB36BE99760443DCBA6FBE1A /* HistoryItem.swift in Sources */,
+				CC599C190CAF43B99BE8725F /* HistoryView.swift in Sources */,
+				A4BCF7FF61BA4F62A5207165 /* HomeView.swift in Sources */,
+				943A9E0AA396456D832DA668 /* MediaMateApp.swift in Sources */,
+				3A6D9AEABA4649A7A4641156 /* MockDataGenerator.swift in Sources */,
+				C71380D0E9B3472FAE1782AB /* PreviewProvider.swift in Sources */,
+				76D62BDCDC9F45AE928BE72D /* ProgressView.swift in Sources */,
+				E54CDE3A274A47E587419BFB /* RecentRow.swift in Sources */,
+				9A35AC000FD447F5829A23FD /* ResolutionChip.swift in Sources */,
+				80F001197632467E95D2880D /* SettingsView.swift in Sources */,
+				DA17D20B87E94EFD9BC56207 /* SizeCompareCard.swift in Sources */,
+				2E731D0D62A54C51AEA97448 /* ThumbnailGenerator.swift in Sources */,
+				7F5DC03ED52E4FB3803B3A95 /* VideoThumbnailView.swift in Sources */,
+				7F218E277F5547688CC2735E /* GIFExportEngine.swift in Sources */,
+				F561F95183EF44FFA70EB7E6 /* HEICConverter.swift in Sources */,
+				A901D193041B40AD8A7A4658 /* Preset.swift in Sources */,
+				FAA9BEFB0D7C4EA4A345F94B /* StoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		568871DACFD1495FA3D6D246 = {
+		7426AE7B5EDD405C95548680 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
+				INFOPLIST_KEY_CFBundleDisplaypath = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -223,20 +223,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
-				PRODUCT_NAME = MediaMate;
+				PRODUCT_path = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			}};
 			name = Debug;
 		}};
-		568871DACFD1495FA3D6D246 = {
+		7426AE7B5EDD405C95548680 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
+				INFOPLIST_KEY_CFBundleDisplaypath = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -247,7 +247,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
-				PRODUCT_NAME = MediaMate;
+				PRODUCT_path = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			}};
@@ -256,25 +256,26 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F864FA32A6084AAD97D3A2CA = {
+		CD9E5341F9FC4A45B72F7A8E = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				568871DACFD1495FA3D6D246,
-				B60654DE836441F7A8363ACD,
+				7426AE7B5EDD405C95548680,
+				C07117DD44184693A2B29881,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8B3EF483B9F4AB6BC283C4E = {
+		7AA9438C083A47A1A2893C9C = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				568871DACFD1495FA3D6D246,
-				B60654DE836441F7A8363ACD,
+				7426AE7B5EDD405C95548680,
+				C07117DD44184693A2B29881,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 64C1879E6C064C3FBE6D010E;
+	rootObject = D89D7BC4F4404982BF86690B;
 }
+
