@@ -15,7 +15,9 @@ enum FileUtilities {
                 return formatter.string(fromByteCount: fileSize)
             }
         } catch {
-            #if DEBUG\n        print("Error getting file size: \(error)")\n        #endif
+            #if DEBUG
+            print("Error getting file size: \(error)")
+            #endif
         }
         return "Unknown"
     }

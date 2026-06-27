@@ -75,11 +75,15 @@ struct ProgressView: View {
                 .foregroundColor(.textTertiary)
 
             if isFailed {
-                Text(appState.engine.lastError.map { "Error: " + Text(appState.engine.lastError ?? "The conversion could not be completed. } ?? "The conversion could not be completed.") The file format may not be supported.")
+            if let error = appState.engine.lastError {
+                Text("Error: " + error)
+            } else {
+                Text("The conversion could not be completed. The file format may not be supported.")
                     .font(.system(size: 13))
                     .foregroundColor(.textSecondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
+            }
 
                 Button("Go Back") {
                     appState.engine.conversionState = .idle
