@@ -8,14 +8,14 @@ struct ProgressView: View {
     let timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
 
     let progressSteps = [
-        (p: 0.05, t: ""52s""),
-        (p: 0.18, t: ""42s""),
-        (p: 0.35, t: ""30s""),
-        (p: 0.50, t: ""22s""),
-        (p: 0.68, t: ""12s""),
-        (p: 0.82, t: ""7s""),
-        (p: 0.94, t: ""2s""),
-        (p: 1.00, t: ""Done"")
+        (p: 0.05, t: "52s"),
+        (p: 0.18, t: "42s"),
+        (p: 0.35, t: "30s"),
+        (p: 0.50, t: "22s"),
+        (p: 0.68, t: "12s"),
+        (p: 0.82, t: "7s"),
+        (p: 0.94, t: "2s"),
+        (p: 1.00, t: "Done")
     ]
 
     @State private var currentStep = 0
@@ -34,19 +34,19 @@ struct ProgressView: View {
     }
 
     private var etaText: String {
-        if isComplete { return ""Done"" }
+        if isComplete { return "Done" }
         if appState.isTestMode {
             if currentStep < progressSteps.count {
-                return ""Estimated \(progressSteps[min(currentStep, progressSteps.count - 1)].t) remaining""
+                return "Estimated \(progressSteps[min(currentStep, progressSteps.count - 1)].t) remaining"
             }
-            return ""Finishing...""
+            return "Finishing..."
         }
-        return ""Converting...""
+        return "Converting..."
     }
 
     var body: some View {
         VStack(spacing: 32) {
-            Text(appState.originalFileName.isEmpty ? ""vacation_clip.mov"" : appState.originalFileName)
+            Text(appState.originalFileName.isEmpty ? "vacation_clip.mov" : appState.originalFileName)
                 .font(.system(size: 17, weight: .semibold))
                 .foregroundColor(.textPrimary)
 
@@ -66,7 +66,7 @@ struct ProgressView: View {
             .frame(height: 8)
             .padding(.horizontal, 20)
 
-            Text(isFailed ? ""Failed"" : ""\(Int(displayProgress * 100))%"")
+            Text(isFailed ? "Failed" : "\(Int(displayProgress * 100))%")
                 .font(.system(size: 36, weight: .bold))
                 .foregroundColor(isFailed ? .red : .accent)
 
@@ -81,7 +81,7 @@ struct ProgressView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
 
-                Button(""Go Back"") {
+                Button("Go Back") {
                     appState.engine.conversionState = .idle
                     appState.engine.progress = 0
                     appState.engine.isConverting = false
@@ -94,7 +94,7 @@ struct ProgressView: View {
                 .background(Color.bgCard)
                 .cornerRadius(16)
             } else {
-                Button(""Cancel"") {
+                Button("Cancel") {
                     handleCancel()
                 }
                 .font(.system(size: 16, weight: .semibold))
@@ -106,7 +106,7 @@ struct ProgressView: View {
             }
         }
         .background(Color.bgPrimary)
-        .navigationTitle("""")
+        .navigationTitle("")
         .navigationBarHidden(true)
         .onReceive(timer) { _ in
             if appState.isTestMode {
@@ -148,17 +148,17 @@ struct ProgressView: View {
     private func finishConversion() {
         if appState.isTestMode {
             appState.conversionProgress = 1.0
-            appState.convertedFile = URL(fileURLWithPath: ""/mock/converted.mp4"")
+            appState.convertedFile = URL(fileURLWithPath: "/mock/converted.mp4")
         } else {
             appState.conversionProgress = 1.0
         }
 
-        let displayFrom = appState.currentFile?.pathExtension.uppercased() ?? ""MOV""
-        let displaySize = appState.originalFileSizeText.isEmpty ? ""128.0 MB"" : appState.originalFileSizeText
-        let convertedSize = appState.convertedFileSizeText.isEmpty ? ""48.3 MB"" : appState.convertedFileSizeText
+        let displayFrom = appState.currentFile?.pathExtension.uppercased() ?? "MOV"
+        let displaySize = appState.originalFileSizeText.isEmpty ? "128.0 MB" : appState.originalFileSizeText
+        let convertedSize = appState.convertedFileSizeText.isEmpty ? "48.3 MB" : appState.convertedFileSizeText
 
         let newItem = ConversionItem(
-            fileName: appState.originalFileName.isEmpty ? ""vacation_clip.mov"" : appState.originalFileName,
+            fileName: appState.originalFileName.isEmpty ? "vacation_clip.mov" : appState.originalFileName,
             fromFormat: displayFrom,
             toFormat: appState.selectedFormat,
             originalSize: displaySize,

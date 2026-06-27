@@ -18,7 +18,7 @@ class ConversionEngine: NSObject, ObservableObject {
     private var reader: AVAssetReader?
     private var writer: AVAssetWriter?
     private var completion: ((Result<URL, Error>) -> Void)?
-    private let audioFormats: Set<String> = [""M4A"", ""MP3"", ""WAV""]
+    private let audioFormats: Set<String> = ["M4A", "MP3", "WAV"]
     private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
     @Published var lastError: String?
 
@@ -30,7 +30,7 @@ class ConversionEngine: NSObject, ObservableObject {
         }
 
         guard !isConverting else {
-            completion(.failure(NSError(domain: ""MediaMate"", code: -1, userInfo: [NSLocalizedDescriptionKey: ""Conversion in progress""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -1, userInfo: [NSLocalizedDescriptionKey: "Conversion in progress"])))
             lastError = "Conversion already in progress"
                     endBackgroundTask()
             return
@@ -66,7 +66,7 @@ class ConversionEngine: NSObject, ObservableObject {
         guard let exportSession = AVAssetExportSession(asset: asset, presetName: preset) else {
             isConverting = false
             conversionState = .failed
-            completion(.failure(NSError(domain: ""MediaMate"", code: -2, userInfo: [NSLocalizedDescriptionKey: ""Failed to create export session""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -2, userInfo: [NSLocalizedDescriptionKey: "Failed to create export session"])))
             return
         }
 
@@ -106,12 +106,12 @@ class ConversionEngine: NSObject, ObservableObject {
                 case .completed:
                     completion(.success(outputURL))
                 case .cancelled:
-                    completion(.failure(NSError(domain: ""MediaMate"", code: -4, userInfo: [NSLocalizedDescriptionKey: ""Cancelled""])))
+                    completion(.failure(NSError(domain: "MediaMate", code: -4, userInfo: [NSLocalizedDescriptionKey: "Cancelled"])))
                 case .failed:
-                    let detail = exportSession.error?.localizedDescription ?? ""Unknown error""
-                    completion(.failure(NSError(domain: ""MediaMate"", code: -3, userInfo: [NSLocalizedDescriptionKey: detail])))
+                    let detail = exportSession.error?.localizedDescription ?? "Unknown error"
+                    completion(.failure(NSError(domain: "MediaMate", code: -3, userInfo: [NSLocalizedDescriptionKey: detail])))
                 default:
-                    completion(.failure(NSError(domain: ""MediaMate"", code: -3, userInfo: [NSLocalizedDescriptionKey: ""Export failed""])))
+                    completion(.failure(NSError(domain: "MediaMate", code: -3, userInfo: [NSLocalizedDescriptionKey: "Export failed"])))
                 }
             }
         }
@@ -123,7 +123,7 @@ class ConversionEngine: NSObject, ObservableObject {
         guard let audioTrack = asset.tracks(withMediaType: .audio).first {
             isConverting = false
             conversionState = .failed
-            completion(.failure(NSError(domain: ""MediaMate"", code: -5, userInfo: [NSLocalizedDescriptionKey: ""No audio track found in file""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -5, userInfo: [NSLocalizedDescriptionKey: "No audio track found in file"])))
             return
         }
 
@@ -132,7 +132,7 @@ class ConversionEngine: NSObject, ObservableObject {
         } catch {
             isConverting = false
             conversionState = .failed
-            completion(.failure(NSError(domain: ""MediaMate"", code: -6, userInfo: [NSLocalizedDescriptionKey: ""Failed to create reader: \(error.localizedDescription)""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -6, userInfo: [NSLocalizedDescriptionKey: "Failed to create reader: \(error.localizedDescription)"])))
             return
         }
 
@@ -144,7 +144,7 @@ class ConversionEngine: NSObject, ObservableObject {
 
         guard reader.canAdd(readerOutput) else {
             isConverting = false
-            completion(.failure(NSError(domain: ""MediaMate"", code: -7, userInfo: [NSLocalizedDescriptionKey: ""Cannot read audio track""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -7, userInfo: [NSLocalizedDescriptionKey: "Cannot read audio track"])))
             return
         }
         reader.add(readerOutput)
@@ -152,7 +152,7 @@ class ConversionEngine: NSObject, ObservableObject {
         let outputFileType: AVFileType
         let audioSettings: [String: Any]
 
-        if format == ""WAV"" {
+        if format == "WAV" {
             outputFileType = .wav
             audioSettings = [
                 AVFormatIDKey: kAudioFormatLinearPCM,
@@ -179,7 +179,7 @@ class ConversionEngine: NSObject, ObservableObject {
         } catch {
             isConverting = false
             conversionState = .failed
-            completion(.failure(NSError(domain: ""MediaMate"", code: -8, userInfo: [NSLocalizedDescriptionKey: ""Failed to create writer: \(error.localizedDescription)""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -8, userInfo: [NSLocalizedDescriptionKey: "Failed to create writer: \(error.localizedDescription)"])))
             return
         }
 
@@ -190,7 +190,7 @@ class ConversionEngine: NSObject, ObservableObject {
 
         guard writer.canAdd(writerInput) else {
             isConverting = false
-            completion(.failure(NSError(domain: ""MediaMate"", code: -9, userInfo: [NSLocalizedDescriptionKey: ""Cannot add audio writer""])))
+            completion(.failure(NSError(domain: "MediaMate", code: -9, userInfo: [NSLocalizedDescriptionKey: "Cannot add audio writer"])))
             return
         }
         writer.add(writerInput)
@@ -202,7 +202,7 @@ class ConversionEngine: NSObject, ObservableObject {
         let totalDuration = audioTrack.timeRange.duration
         let totalSeconds = CMTimeGetSeconds(totalDuration)
 
-        writerInput.requestMediaDataWhenReady(on: DispatchQueue(label: ""com.mediamate.audio"")) { [weak self] in
+        writerInput.requestMediaDataWhenReady(on: DispatchQueue(label: "com.mediamate.audio")) { [weak self] in
             guard let self = self, let reader = self.reader, let writer = self.writer else { return }
 
             while writerInput.isReadyForMoreMediaData {
@@ -224,7 +224,7 @@ class ConversionEngine: NSObject, ObservableObject {
                         DispatchQueue.main.async {
                             self.isConverting = false
                             self.conversionState = .failed
-                            completion(.failure(NSError(domain: "MediaMate", code: -10, userInfo: [NSLocalizedDescriptionKey: ""Audio read failed""])))
+                            completion(.failure(NSError(domain: "MediaMate", code: -10, userInfo: [NSLocalizedDescriptionKey: "Audio read failed"])))
                         }
                     }
                     return
@@ -260,12 +260,12 @@ class ConversionEngine: NSObject, ObservableObject {
         ]
 
         let resolutionPresets: [String: String] = [
-            ""1080p"": AVAssetExportPreset1920x1080,
-            ""720p"": AVAssetExportPreset1280x720,
-            ""480p"": AVAssetExportPreset640x480
+            "1080p": AVAssetExportPreset1920x1080,
+            "720p": AVAssetExportPreset1280x720,
+            "480p": AVAssetExportPreset640x480
         ]
 
-        if resolution != ""Original"", let preset = resolutionPresets[resolution] {
+        if resolution != "Original", let preset = resolutionPresets[resolution] {
             return preset
         }
 
@@ -274,8 +274,8 @@ class ConversionEngine: NSObject, ObservableObject {
 
     private func avVideoFileType(for format: String) -> AVFileType {
         let types: [String: AVFileType] = [
-            ""MP4"": .mp4,
-            ""MOV"": .mov
+            "MP4": .mp4,
+            "MOV": .mov
         ]
         return types[format] ?? .mp4
     }
@@ -293,8 +293,8 @@ class ConversionEngine: NSObject, ObservableObject {
         let fileName = sourceURL.deletingPathExtension().lastPathComponent
 
         // For MP3, use .m4a extension since there is no MP3 encoder on iOS
-        let ext = format == ""MP3"" ? ""m4a"" : format.lowercased()
-        let outputFileName = ""\(fileName)_converted.\(ext)""
+        let ext = format == "MP3" ? "m4a" : format.lowercased()
+        let outputFileName = "\(fileName)_converted.\(ext)"
         return documentsDir.appendingPathComponent(outputFileName)
     }
 }

@@ -6,12 +6,12 @@ struct ConvertSettingsView: View {
     @State private var selectedPreset: Preset? = nil
     @State private var conversionStarted = false
 
-    let formats = [""MP4"", ""MOV"", ""M4A"", ""MP3"", ""WAV""]
-    let resolutions = [""Original"", ""1080p"", ""720p"", ""480p""]
-    let qualityLabels = [""Low"", ""Medium"", ""High"", ""Lossless""]
+    let formats = ["MP4", "MOV", "M4A", "MP3", "WAV"]
+    let resolutions = ["Original", "1080p", "720p", "480p"]
+    let qualityLabels = ["Low", "Medium", "High", "Lossless"]
 
     var selectedFileName: String {
-        appState.currentFile?.lastPathComponent ?? ""Unknown File""
+        appState.currentFile?.lastPathComponent ?? "Unknown File"
     }
 
     var body: some View {
@@ -43,7 +43,7 @@ struct ConvertSettingsView: View {
                     .buttonStyle(.plain)
                 }
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(""Selected File"")
+                    Text("Selected File")
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(.textSecondary)
                         .textCase(.uppercase)
@@ -72,7 +72,7 @@ struct ConvertSettingsView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(""Output Format"")
+                    Text("Output Format")
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(.textSecondary)
                         .textCase(.uppercase)
@@ -92,7 +92,7 @@ struct ConvertSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
-                        Text(""Quality"")
+                        Text("Quality")
                             .font(.system(size: 13, weight: .semibold))
                             .foregroundColor(.textSecondary)
                             .textCase(.uppercase)
@@ -117,7 +117,7 @@ struct ConvertSettingsView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(""Resolution"")
+                    Text("Resolution")
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(.textSecondary)
                         .textCase(.uppercase)
@@ -139,14 +139,14 @@ struct ConvertSettingsView: View {
         .background(Color.bgPrimary)
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 8) {
-                Button(""Start Conversion"") {
+                Button("Start Conversion") {
                     startConversion()
                 }
                 .disabled(conversionStarted)
                 .buttonStyle(PrimaryButtonStyle())
                 .padding(.horizontal, 20)
 
-                Button(""Cancel"") {
+                Button("Cancel") {
                     navigationPath.removeLast()
                 }
                 .font(.system(size: 16, weight: .semibold))
@@ -155,7 +155,7 @@ struct ConvertSettingsView: View {
             }
             .background(Color.bgPrimary)
         }
-        .navigationTitle(""Convert Settings"")
+        .navigationTitle("Convert Settings")
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
             conversionStarted = false
@@ -200,7 +200,7 @@ struct ConvertSettingsView: View {
                     appState.convertedFileSizeText = FileUtilities.formatFileSize(outputURL.path)
 
                 case .failure(let error):
-                    print(""Conversion failed: \(error.localizedDescription)"")
+                    print("Conversion failed: \(error.localizedDescription)")
                     appState.engine.progress = 0
                 }
             }
@@ -210,14 +210,14 @@ struct ConvertSettingsView: View {
     }
 
     private var fileIcon: String {
-        guard let url = appState.currentFile else { return ""doc"" }
+        guard let url = appState.currentFile else { return "doc" }
         let ext = url.pathExtension.lowercased()
-        if [""mov"", ""mp4"", ""avi"", ""mkv""].contains(ext) {
-            return ""film""
-        } else if [""m4a"", ""mp3"", ""wav"", ""aac""].contains(ext) {
-            return ""music.note""
+        if ["mov", "mp4", "avi", "mkv"].contains(ext) {
+            return "film"
+        } else if ["m4a", "mp3", "wav", "aac"].contains(ext) {
+            return "music.note"
         }
-        return ""doc""
+        return "doc"
     }
 
 }
