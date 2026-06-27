@@ -1,43 +1,9 @@
-﻿// !$*UTF8*$!
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {};
 	objectVersion = 56;
 	objects = {
-
-/* Begin PBXBuildFile section */
-		86740AB60A1B4BBC932CD895 /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6257E743A47189C742850; };
-		80EAFB57E90D4A3B8F58FD9D /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53839F50F6454C759DC3E11D; };
-		59064BB617A545038E11FEEF /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA0495D8404D4D9AF5CB96; };
-		417EFFE82CF5478FA1B8B217 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD9B2A9D3F04483B66796CD; };
-		28A40A959E95428D93E64B4C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833882D9DE0D46ECBE1FF0B0; };
-		0E525025D2D44680A69DCFC7 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0737A7CA8014419BA07C69B; };
-		E682B4523C8945A0BEB268D0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E70CBA9376418385886585; };
-		62E998D5611842188C640D04 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130B1B53A1644B2BAF75420; };
-		BDE61D484C874612BD90D059 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F592BDAEAD4C30A9611B97; };
-		148E4EF30B7E4A0F861AB448 /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91A933E7884093A684FF9F; };
-		89A9BC3BAD3B411DB41C3727 /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF725BF25F4DFFBBFDD878; };
-		E1DE9D95EDE24097BE890FD1 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C501A491BA5B4605AA511EC8; };
-		7E1349D400664730A70A5008 /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6964E0F189545699283F3E2; };
-		C1499C60AD774ACDB0FE7D75 /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE0E4CD4044309A8D361B; };
-		EB36BE99760443DCBA6FBE1A /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716602BF7814A7C81F8A27E; };
-		CC599C190CAF43B99BE8725F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C9AA006A1414990BF52BB; };
-		A4BCF7FF61BA4F62A5207165 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD183BD471C465CB43AE05B; };
-		943A9E0AA396456D832DA668 /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA3B7B8854BD6BFB3F7DB; };
-		3A6D9AEABA4649A7A4641156 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D103B1D59D94F778EDD5CCE; };
-		C71380D0E9B3472FAE1782AB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA03D1688D48DD9700FE5D; };
-		76D62BDCDC9F45AE928BE72D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD1E922F84BC6ACAC0B4F; };
-		E54CDE3A274A47E587419BFB /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB631825AA846898F86C739; };
-		9A35AC000FD447F5829A23FD /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25D174DD2245309A05CC58; };
-		80F001197632467E95D2880D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2EFCF51114C9587FC7199; };
-		DA17D20B87E94EFD9BC56207 /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89EB35810954BBC9A7E41AC; };
-		2E731D0D62A54C51AEA97448 /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C81AAC605E4E019536AA6C; };
-		7F5DC03ED52E4FB3803B3A95 /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9469C13DD24008BEABEE9F; };
-		7F218E277F5547688CC2735E /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E592C42D4243CD8574FECC; };
-		F561F95183EF44FFA70EB7E6 /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DF8C8103A4F38A651C990; };
-		A901D193041B40AD8A7A4658 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F078E821B347F280B7672D; };
-		FAA9BEFB0D7C4EA4A345F94B /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3C4EE24A74C9FBE949089; };
-/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12B6257E743A47189C742850 /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/BatchPickerView.swift"; sourceTree = "<group>"; };
@@ -73,16 +39,47 @@
 		90F3C4EE24A74C9FBE949089 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = "<group>"; };
 		A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
 		556C9B0AA10E447DAEB02A90 /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		556C9B0AA10E447DAEB02A90 /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXBuildFile section */
+		86740AB60A1B4BBC932CD895 /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6257E743A47189C742850; };
+		80EAFB57E90D4A3B8F58FD9D /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53839F50F6454C759DC3E11D; };
+		59064BB617A545038E11FEEF /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AA0495D8404D4D9AF5CB96; };
+		417EFFE82CF5478FA1B8B217 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD9B2A9D3F04483B66796CD; };
+		28A40A959E95428D93E64B4C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833882D9DE0D46ECBE1FF0B0; };
+		0E525025D2D44680A69DCFC7 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0737A7CA8014419BA07C69B; };
+		E682B4523C8945A0BEB268D0 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E70CBA9376418385886585; };
+		62E998D5611842188C640D04 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130B1B53A1644B2BAF75420; };
+		BDE61D484C874612BD90D059 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F592BDAEAD4C30A9611B97; };
+		148E4EF30B7E4A0F861AB448 /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91A933E7884093A684FF9F; };
+		89A9BC3BAD3B411DB41C3727 /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CF725BF25F4DFFBBFDD878; };
+		E1DE9D95EDE24097BE890FD1 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C501A491BA5B4605AA511EC8; };
+		7E1349D400664730A70A5008 /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6964E0F189545699283F3E2; };
+		C1499C60AD774ACDB0FE7D75 /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE0E4CD4044309A8D361B; };
+		EB36BE99760443DCBA6FBE1A /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9716602BF7814A7C81F8A27E; };
+		CC599C190CAF43B99BE8725F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C9AA006A1414990BF52BB; };
+		A4BCF7FF61BA4F62A5207165 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD183BD471C465CB43AE05B; };
+		943A9E0AA396456D832DA668 /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA3B7B8854BD6BFB3F7DB; };
+		3A6D9AEABA4649A7A4641156 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D103B1D59D94F778EDD5CCE; };
+		C71380D0E9B3472FAE1782AB /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA03D1688D48DD9700FE5D; };
+		76D62BDCDC9F45AE928BE72D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD1E922F84BC6ACAC0B4F; };
+		E54CDE3A274A47E587419BFB /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB631825AA846898F86C739; };
+		9A35AC000FD447F5829A23FD /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25D174DD2245309A05CC58; };
+		80F001197632467E95D2880D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2EFCF51114C9587FC7199; };
+		DA17D20B87E94EFD9BC56207 /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89EB35810954BBC9A7E41AC; };
+		2E731D0D62A54C51AEA97448 /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C81AAC605E4E019536AA6C; };
+		7F5DC03ED52E4FB3803B3A95 /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9469C13DD24008BEABEE9F; };
+		7F218E277F5547688CC2735E /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E592C42D4243CD8574FECC; };
+		F561F95183EF44FFA70EB7E6 /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117DF8C8103A4F38A651C990; };
+		A901D193041B40AD8A7A4658 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F078E821B347F280B7672D; };
+		FAA9BEFB0D7C4EA4A345F94B /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3C4EE24A74C9FBE949089; };
+/* End PBXBuildFile section */
+
 /* Begin PBXGroup section */
-		18436AA034E048CAB37B4A26 = {
+		6C23634256067739F424F066 = {
 			isa = PBXGroup;
 			children = (
-				12B6257E743A47189C742850 /* BatchPickerView.swift */,
-				53839F50F6454C759DC3E11D /* ConvertedFilesView.swift */,
-				64AA0495D8404D4D9AF5CB96 /* PaywallView.swift */,
-				3CD9B2A9D3F04483B66796CD /* PresetsView.swift */,
 				833882D9DE0D46ECBE1FF0B0 /* AppState.swift */,
 				F0737A7CA8014419BA07C69B /* ButtonStyles.swift */,
 				94E70CBA9376418385886585 /* ColorExtensions.swift */,
@@ -106,67 +103,54 @@
 				F89EB35810954BBC9A7E41AC /* SizeCompareCard.swift */,
 				26C81AAC605E4E019536AA6C /* ThumbnailGenerator.swift */,
 				9B9469C13DD24008BEABEE9F /* VideoThumbnailView.swift */,
+				12B6257E743A47189C742850 /* BatchPickerView.swift */,
+				53839F50F6454C759DC3E11D /* ConvertedFilesView.swift */,
+				64AA0495D8404D4D9AF5CB96 /* PaywallView.swift */,
+				3CD9B2A9D3F04483B66796CD /* PresetsView.swift */,
+				A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */,
+			);
+			path = "MediaMate";
+			sourceTree = "<group>";
+		};
+		B01CBB340F1EA20CD34C689E = {
+			isa = PBXGroup;
+			children = (
 				52E592C42D4243CD8574FECC /* GIFExportEngine.swift */,
 				117DF8C8103A4F38A651C990 /* HEICConverter.swift */,
 				E5F078E821B347F280B7672D /* Preset.swift */,
 				90F3C4EE24A74C9FBE949089 /* StoreManager.swift */,
-				A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */,
+				DA60068A117F9A39975CC48F /* ShareViewController.swift */,
 			);
-			path = MediaMate;
+			path = "Sources";
 			sourceTree = "<group>";
 		};
-		9B639D0953404333B8F22878 = {
+		1B27536F867FA25145BCEDCB = {
 			isa = PBXGroup;
 			children = (
-				18436AA034E048CAB37B4A26 /* MediaMate */,
+				CBBB4899836F63A38A936E8D /* ConversionEngineTests.swift */,
+				EF7CE30F947565AD15A5872F /* FileUtilitiesTests.swift */,
 			);
+			path = "MediaMateTests";
 			sourceTree = "<group>";
 		};
-		EA546D5F7BC745DF84D2147A = {
+		CF200290D81EA5CAE5947D3F = {
 			isa = PBXGroup;
-			children = ();
+			children = (
+			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FC5E68C23F4995960D1A2F8D = {
+			isa = PBXGroup;
+			children = (
+				6C23634256067739F424F066 /* MediaMate */,
+				B01CBB340F1EA20CD34C689E /* Sources */,
+				1B27536F867FA25145BCEDCB /* MediaMateTests */,
+				CF200290D81EA5CAE5947D3F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		3B5DD7877D4B43159BA359D0 /* MediaMate */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7AA9438C083A47A1A2893C9C;
-			buildPhases = (
-				FA4EAC9108364F1FB8EA6BBD /* Sources */,
-				E4B3A2D1C5F64780A9B8C7D6E5F4A3B2 /* Frameworks */,
-				F1A2B3C4D5E647809A8B7C6D5E4F3A2B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			productInstallPath = /Applications;
-			productName = MediaMate;
-			productReference = 556C9B0AA10E447DAEB02A90;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D89D7BC4F4404982BF86690B = {
-			isa = PBXProject;
-			buildConfigurationList = CD9E5341F9FC4A45B72F7A8E;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (en, Base);
-			mainGroup = 9B639D0953404333B8F22878;
-			productRefGroup = EA546D5F7BC745DF84D2147A;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				3B5DD7877D4B43159BA359D0 /* MediaMate */,
-			);
-		};
-/* End PBXProject section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E4B3A2D1C5F64780A9B8C7D6E5F4A3B2 /* Frameworks */ = {
@@ -224,10 +208,51 @@
 				F561F95183EF44FFA70EB7E6 /* HEICConverter.swift in Sources */,
 				A901D193041B40AD8A7A4658 /* Preset.swift in Sources */,
 				FAA9BEFB0D7C4EA4A345F94B /* StoreManager.swift in Sources */,
+				18E2D83726E743C7DF160A97 /* ShareViewController.swift in Sources */,
+				49C67F1F3E72C0739E44D275 /* ConversionEngineTests.swift in Sources */,
+				A5C19D92F5470E2F1A3A0F19 /* FileUtilitiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3B5DD7877D4B43159BA359D0 /* MediaMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AA9438C083A47A1A2893C9C;
+			buildPhases = (
+				FA4EAC9108364F1FB8EA6BBD /* Sources */,
+				E4B3A2D1C5F64780A9B8C7D6E5F4A3B2 /* Frameworks */,
+				F1A2B3C4D5E647809A8B7C6D5E4F3A2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			productInstallPath = /Applications;
+			productName = MediaMate;
+			productReference = 556C9B0AA10E447DAEB02A90;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D89D7BC4F4404982BF86690B = {
+			isa = PBXProject;
+			buildConfigurationList = CD9E5341F9FC4A45B72F7A8E;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = FC5E68C23F4995960D1A2F8D;
+			productRefGroup = CF200290D81EA5CAE5947D3F;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B5DD7877D4B43159BA359D0 /* MediaMate */,
+			);
+		};
+/* End PBXProject section */
 
 /* Begin XCBuildConfiguration section */
 		7426AE7B5EDD405C95548680 = {
@@ -303,4 +328,3 @@
 	};
 	rootObject = D89D7BC4F4404982BF86690B;
 }
-
