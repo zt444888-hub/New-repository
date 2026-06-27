@@ -196,6 +196,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+	\t\t\tSUPPORTED_PLATFORMS = iphoneos;
+	\t\t\tSDKROOT = iphoneos;
+	\t\t\tINFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
@@ -217,6 +220,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+	\t\t\tSUPPORTED_PLATFORMS = iphoneos;
+	\t\t\tSDKROOT = iphoneos;
+	\t\t\tINFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
@@ -256,4 +262,5 @@
 	};
 	rootObject = C5FAA2E640614A41864657A8;
 }
+
 
