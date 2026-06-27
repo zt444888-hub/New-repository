@@ -76,7 +76,6 @@ class ConversionEngine: NSObject, ObservableObject {
         exportSession.shouldOptimizeForNetworkUse = true
 
         if #available(iOS 16.0, *) {
-        if #available(iOS 16.0, *) {
             exportSession.progressHandler = { [weak self] progress in
                 DispatchQueue.main.async {
                     self?.progress = progress

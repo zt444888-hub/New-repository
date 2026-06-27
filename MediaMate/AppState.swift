@@ -11,8 +11,8 @@ class AppState: ObservableObject {
     @Published var convertedFile: URL?
     @Published var engine = ConversionEngine()
 
-    @Published var originalFileSizeText: String = "
-    @Published var convertedFileSizeText: String = "
+    @Published var originalFileSizeText: String = ""
+    @Published var convertedFileSizeText: String = ""
     @Published var isTestMode = false
     @Published var originalFileName: String = ""
 
@@ -107,8 +107,8 @@ class AppState: ObservableObject {
         conversionProgress = 0
         convertedFile = nil
 
-        originalFileSizeText = "
-        convertedFileSizeText = "
+        originalFileSizeText = ""
+        convertedFileSizeText = ""
         originalFileName = ""
         engine.progress = 0
         engine.isConverting = false
