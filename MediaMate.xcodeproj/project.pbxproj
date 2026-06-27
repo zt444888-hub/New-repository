@@ -72,6 +72,7 @@
 		E5F078E821B347F280B7672D /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = "<group>"; };
 		90F3C4EE24A74C9FBE949089 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = "<group>"; };
 		A2FF2FEC552A4C2285F9D2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		556C9B0AA10E447DAEB02A90 /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -135,11 +136,15 @@
 			buildConfigurationList = 7AA9438C083A47A1A2893C9C;
 			buildPhases = (
 				FA4EAC9108364F1FB8EA6BBD /* Sources */,
+				E4B3A2D1C5F64780A9B8C7D6E5F4A3B2 /* Frameworks */,
+				F1A2B3C4D5E647809A8B7C6D5E4F3A2B /* Resources */,
 			);
-			buildRules = ();
-			dependencies = ();
-			path = MediaMate;
-			productpath = MediaMate;
+			buildRules = (
+			);
+			dependencies = (
+			);
+			productInstallPath = /Applications;
+			productName = MediaMate;
 			productReference = 556C9B0AA10E447DAEB02A90;
 			productType = "com.apple.product-type.application";
 		};
@@ -162,6 +167,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B3A2D1C5F64780A9B8C7D6E5F4A3B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1A2B3C4D5E647809A8B7C6D5E4F3A2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA4EAC9108364F1FB8EA6BBD /* Sources */ = {
@@ -212,7 +237,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplaypath = MediaMate;
+				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -223,7 +248,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
-				PRODUCT_path = MediaMate;
+				PRODUCT_NAME = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -236,7 +261,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplaypath = MediaMate;
+				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -247,7 +272,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
-				PRODUCT_path = MediaMate;
+				PRODUCT_NAME = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -260,7 +285,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7426AE7B5EDD405C95548680,
-				C07117DD44184693A2B29881,
+				B60654DE836441F7A8363ACD,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -269,7 +294,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7426AE7B5EDD405C95548680,
-				C07117DD44184693A2B29881,
+				B60654DE836441F7A8363ACD,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
