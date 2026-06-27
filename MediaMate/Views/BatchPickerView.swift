@@ -7,7 +7,7 @@ struct BatchPickerView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration(photoLibrary: .shared())
-        config.filter = .any(of: [.videos, .audios])
+        config.filter = .any(of: [.videos])
         config.selectionLimit = 10
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = context.coordinator
