@@ -6,110 +6,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BC9D5F75D3846AC80D95C8E /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F4B24F36D7400096B9A530; };
-		9EC2F890448B46098514742E /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3D1ADB41604AB7AE7CC3D0; };
-		3A72DF27DE1447CC82FDFBDE /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B68F5D531664F2990110BB5; };
-		F5D5AD804B5F4480B1AB370D /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CAEB7E5F246D78F1CBE14; };
-		F5D3664A1F654AC4BFBC534F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D925F40F6A6847D1B4355032; };
-		929415D2EF4F4AC7B93ADE6E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E50DEE49174457BC568036; };
-		976CBA2172794671B22FA7FE /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FE90A933B4C00AB79C3F7; };
-		B81DF6AB47444EEE913EEC39 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695E9AFD7A01480AA094DBFF; };
-		3B011550DE2F4A5088AC6BE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1AABF17CCA4FB392CBC832; };
-		7DADCB2119F144799C8F8E3B /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CB37BE6D6D453694A7B0C2; };
-		8700C1E2350C4EE3B893C42C /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCE6D93D5641099608B2F9; };
-		9DCE3E40479146AD82D909C5 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF0F7B1E7D84C5E80A03194; };
-		94C7C2AE274342A18D528555 /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8314B8D47A4E17A4B3FEE4; };
-		02756C01CBE748CDB9E158F9 /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449638F7FE8246319AEBB0EE; };
-		1F8C488C5D044DD3883B8938 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E03C7AA554206BE092FE3; };
-		A61A408B9EF54C67ACB4D373 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856D50BFD3F4903A05DC0B5; };
-		D8E9D895930D401AAF691BBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC9B25D1954CB6AF2BA081; };
-		F8E62F7588A4468C8401C1AA /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864157B24DD431284695601; };
-		DB9052E1E1DF4FC0A9F336A7 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACC78BEF2045C5B3AD2850; };
-		33C8EF46481A4DA6BAF805AD /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59780A51EDC4877A14283B7; };
-		B02C014F8A6C4B27897C134B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE601BB97584B29A5D8B6A5; };
-		6AB5E86DCC364A57BED3043B /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C5E4A142143E282053739; };
-		A58A3D4879F346FD9E2F92F3 /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C09DC13046E490985BA3B12; };
-		B90984B75EFF4A2E9B9155F5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF7F3D886A4C0598734750; };
-		D91F4F2050F548CF9F8562C8 /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB459A03174CC6A9F23518; };
-		B61063D149AB4016B7B9A87C /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311EBC8C1E8D4BA589A7CF57; };
-		EB0DBC5830AB45D3A23C6CE5 /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745D0C1E19C407F99227C2D; };
+		618FFC217B1B483BB94BF41F /* BatchPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02F921765494D39BEC1FFAE; };
+		0627B523613F4E228D1FF905 /* ConvertedFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3900BF9DAB433DA3D85E46; };
+		4B9C709062164830A66AAC8A /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7CC7CB1FD34724A594AD8C; };
+		FABF7C1729A74467A8CEDCB5 /* PresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFA6FB5F2B4889842D7972; };
+		F8110BB4CFBF45D7AB438DEE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B872F3260BF47E5B92304CE; };
+		55EA9E4BBCB54CA29AB9EE57 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2CAEFC59E4902A43F782A; };
+		1646DBFA3ABA41B5A595C756 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F63986D7B41F38C949DD6; };
+		881EFBEC94A142678D6CD737 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4669084C88CC4504A76741C3; };
+		4B4C006BD7AE410DB5808D63 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A44108E8024FB2AB6F8AAC; };
+		E099C36D02D54140A4E4D35F /* ConversionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D94E194EE364FE189981F75; };
+		8DB2B07CCC874D7F9E39FDC9 /* ConversionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFB921F22CA4F93B7345DB4; };
+		EB4ACB7FDA914BC3B51E90D9 /* ConvertSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD1EA725D940E1891C7847; };
+		8A6C1B3218604D3993CC2C7C /* FileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C8657E26F47D8A4085C97; };
+		F16E93015061486F9455E16B /* FormatChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D70C996B4A4CF6A09B68C6; };
+		9BCFD4CBDB8B43818075DB90 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871EE8FBC777470B92F7FBB9; };
+		284F31B12F3F4687BE0AD46B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532128A2BA14D888852CB15; };
+		1D9E4CFE71BC4280935F2A10 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB577C029B024B1ABC31D3CB; };
+		F9A52831309D46E4B0295DD8 /* MediaMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F76F5035A34B5CAAC2E795; };
+		4A857BA62C134D9798387F53 /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEE39878374B7DBF4D10D6; };
+		65122903C0844E61AAA73CBD /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88064E0E083344519F6A39A6; };
+		AB5A2663E3EA45DD97D5849E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92A0A049E94135825096B4; };
+		938035EE3B314E39A43DD727 /* RecentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4A7833DAC04EF6A808EF4A; };
+		A56D0932709B480088B01D4A /* ResolutionChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D03BFBB764B54BF792FDA; };
+		C469366FCC654E81BB5442DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC9FD9BF74341BC398F89; };
+		B1208ECD076A46E088CA151D /* SizeCompareCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5380A45E8456484F18C1F; };
+		2DC51BDC328649EC8764291B /* ThumbnailGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD006AF1FBC74CFEA26E8BC1; };
+		634731678CE44EE3A57DD5FE /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD435EAE6524A6A9B05906D; };
+		1C020E0D234C43929F7892D5 /* GIFExportEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39507A3A7884468CA3D97E05; };
+		9E26664A3BAB4555A4C1795C /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CCAD3E86724533A84B56F2; };
+		183F03A331EF433AB017844F /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CA1366E0F4DA180C5397A; };
+		B0F51CC2197F4C318FDDA37E /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D377806A697D4F678AF610BC; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9F4B24F36D7400096B9A530 /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/BatchPickerView.swift"; sourceTree = "<group>"; };
-		2D3D1ADB41604AB7AE7CC3D0 /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/ConvertedFilesView.swift"; sourceTree = "<group>"; };
-		1B68F5D531664F2990110BB5 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PaywallView.swift"; sourceTree = "<group>"; };
-		CE9CAEB7E5F246D78F1CBE14 /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PresetsView.swift"; sourceTree = "<group>"; };
-		D925F40F6A6847D1B4355032 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/AppState.swift"; sourceTree = "<group>"; };
-		B9E50DEE49174457BC568036 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ButtonStyles.swift"; sourceTree = "<group>"; };
-		B94FE90A933B4C00AB79C3F7 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ColorExtensions.swift"; sourceTree = "<group>"; };
-		695E9AFD7A01480AA094DBFF /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/CompleteView.swift"; sourceTree = "<group>"; };
-		EF1AABF17CCA4FB392CBC832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ContentView.swift"; sourceTree = "<group>"; };
-		14CB37BE6D6D453694A7B0C2 /* ConversionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionEngine.swift"; sourceTree = "<group>"; };
-		DEBCE6D93D5641099608B2F9 /* ConversionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionItem.swift"; sourceTree = "<group>"; };
-		6CF0F7B1E7D84C5E80A03194 /* ConvertSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConvertSettingsView.swift"; sourceTree = "<group>"; };
-		DD8314B8D47A4E17A4B3FEE4 /* FileUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FileUtilities.swift"; sourceTree = "<group>"; };
-		449638F7FE8246319AEBB0EE /* FormatChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FormatChip.swift"; sourceTree = "<group>"; };
-		818E03C7AA554206BE092FE3 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryItem.swift"; sourceTree = "<group>"; };
-		1856D50BFD3F4903A05DC0B5 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryView.swift"; sourceTree = "<group>"; };
-		A8CC9B25D1954CB6AF2BA081 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HomeView.swift"; sourceTree = "<group>"; };
-		8864157B24DD431284695601 /* MediaMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MediaMateApp.swift"; sourceTree = "<group>"; };
-		9DACC78BEF2045C5B3AD2850 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MockDataGenerator.swift"; sourceTree = "<group>"; };
-		C59780A51EDC4877A14283B7 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/PreviewProvider.swift"; sourceTree = "<group>"; };
-		3CE601BB97584B29A5D8B6A5 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ProgressView.swift"; sourceTree = "<group>"; };
-		188C5E4A142143E282053739 /* RecentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/RecentRow.swift"; sourceTree = "<group>"; };
-		7C09DC13046E490985BA3B12 /* ResolutionChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ResolutionChip.swift"; sourceTree = "<group>"; };
-		24FF7F3D886A4C0598734750 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SettingsView.swift"; sourceTree = "<group>"; };
-		3CFB459A03174CC6A9F23518 /* SizeCompareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SizeCompareCard.swift"; sourceTree = "<group>"; };
-		311EBC8C1E8D4BA589A7CF57 /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ThumbnailGenerator.swift"; sourceTree = "<group>"; };
-		3745D0C1E19C407F99227C2D /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/VideoThumbnailView.swift"; sourceTree = "<group>"; };
-		62985CB9A21242489BC69582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MediaMate/Assets.xcassets"; sourceTree = "<group>"; };
+		D02F921765494D39BEC1FFAE /* BatchPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/BatchPickerView.swift"; sourceTree = "<group>"; };
+		DA3900BF9DAB433DA3D85E46 /* ConvertedFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/ConvertedFilesView.swift"; sourceTree = "<group>"; };
+		DD7CC7CB1FD34724A594AD8C /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PaywallView.swift"; sourceTree = "<group>"; };
+		C3BFA6FB5F2B4889842D7972 /* PresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/Views/PresetsView.swift"; sourceTree = "<group>"; };
+		8B872F3260BF47E5B92304CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/AppState.swift"; sourceTree = "<group>"; };
+		5EC2CAEFC59E4902A43F782A /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ButtonStyles.swift"; sourceTree = "<group>"; };
+		1E0F63986D7B41F38C949DD6 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ColorExtensions.swift"; sourceTree = "<group>"; };
+		4669084C88CC4504A76741C3 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/CompleteView.swift"; sourceTree = "<group>"; };
+		54A44108E8024FB2AB6F8AAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ContentView.swift"; sourceTree = "<group>"; };
+		6D94E194EE364FE189981F75 /* ConversionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionEngine.swift"; sourceTree = "<group>"; };
+		6AFB921F22CA4F93B7345DB4 /* ConversionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConversionItem.swift"; sourceTree = "<group>"; };
+		09FD1EA725D940E1891C7847 /* ConvertSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ConvertSettingsView.swift"; sourceTree = "<group>"; };
+		814C8657E26F47D8A4085C97 /* FileUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FileUtilities.swift"; sourceTree = "<group>"; };
+		94D70C996B4A4CF6A09B68C6 /* FormatChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/FormatChip.swift"; sourceTree = "<group>"; };
+		871EE8FBC777470B92F7FBB9 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryItem.swift"; sourceTree = "<group>"; };
+		D532128A2BA14D888852CB15 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HistoryView.swift"; sourceTree = "<group>"; };
+		FB577C029B024B1ABC31D3CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/HomeView.swift"; sourceTree = "<group>"; };
+		E9F76F5035A34B5CAAC2E795 /* MediaMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MediaMateApp.swift"; sourceTree = "<group>"; };
+		2CDEE39878374B7DBF4D10D6 /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/MockDataGenerator.swift"; sourceTree = "<group>"; };
+		88064E0E083344519F6A39A6 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/PreviewProvider.swift"; sourceTree = "<group>"; };
+		CC92A0A049E94135825096B4 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ProgressView.swift"; sourceTree = "<group>"; };
+		8F4A7833DAC04EF6A808EF4A /* RecentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/RecentRow.swift"; sourceTree = "<group>"; };
+		BD2D03BFBB764B54BF792FDA /* ResolutionChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ResolutionChip.swift"; sourceTree = "<group>"; };
+		DA1DC9FD9BF74341BC398F89 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SettingsView.swift"; sourceTree = "<group>"; };
+		9FF5380A45E8456484F18C1F /* SizeCompareCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/SizeCompareCard.swift"; sourceTree = "<group>"; };
+		AD006AF1FBC74CFEA26E8BC1 /* ThumbnailGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/ThumbnailGenerator.swift"; sourceTree = "<group>"; };
+		ABD435EAE6524A6A9B05906D /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMate/VideoThumbnailView.swift"; sourceTree = "<group>"; };
+		39507A3A7884468CA3D97E05 /* GIFExportEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/GIFExportEngine.swift"; sourceTree = "<group>"; };
+		43CCAD3E86724533A84B56F2 /* HEICConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/HEICConverter.swift"; sourceTree = "<group>"; };
+		188CA1366E0F4DA180C5397A /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = "<group>"; };
+		D377806A697D4F678AF610BC /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = "<group>"; };
+		3580F381ADDA4F92BE454518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "MediaMate/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		29F12A28E65745A582EF5909 = {
+		C8BDC0538AB0493483ABE174 = {
 			isa = PBXGroup;
 			children = (
-				E9F4B24F36D7400096B9A530 /* BatchPickerView.swift */,
-				2D3D1ADB41604AB7AE7CC3D0 /* ConvertedFilesView.swift */,
-				1B68F5D531664F2990110BB5 /* PaywallView.swift */,
-				CE9CAEB7E5F246D78F1CBE14 /* PresetsView.swift */,
-				D925F40F6A6847D1B4355032 /* AppState.swift */,
-				B9E50DEE49174457BC568036 /* ButtonStyles.swift */,
-				B94FE90A933B4C00AB79C3F7 /* ColorExtensions.swift */,
-				695E9AFD7A01480AA094DBFF /* CompleteView.swift */,
-				EF1AABF17CCA4FB392CBC832 /* ContentView.swift */,
-				14CB37BE6D6D453694A7B0C2 /* ConversionEngine.swift */,
-				DEBCE6D93D5641099608B2F9 /* ConversionItem.swift */,
-				6CF0F7B1E7D84C5E80A03194 /* ConvertSettingsView.swift */,
-				DD8314B8D47A4E17A4B3FEE4 /* FileUtilities.swift */,
-				449638F7FE8246319AEBB0EE /* FormatChip.swift */,
-				818E03C7AA554206BE092FE3 /* HistoryItem.swift */,
-				1856D50BFD3F4903A05DC0B5 /* HistoryView.swift */,
-				A8CC9B25D1954CB6AF2BA081 /* HomeView.swift */,
-				8864157B24DD431284695601 /* MediaMateApp.swift */,
-				9DACC78BEF2045C5B3AD2850 /* MockDataGenerator.swift */,
-				C59780A51EDC4877A14283B7 /* PreviewProvider.swift */,
-				3CE601BB97584B29A5D8B6A5 /* ProgressView.swift */,
-				188C5E4A142143E282053739 /* RecentRow.swift */,
-				7C09DC13046E490985BA3B12 /* ResolutionChip.swift */,
-				24FF7F3D886A4C0598734750 /* SettingsView.swift */,
-				3CFB459A03174CC6A9F23518 /* SizeCompareCard.swift */,
-				311EBC8C1E8D4BA589A7CF57 /* ThumbnailGenerator.swift */,
-				3745D0C1E19C407F99227C2D /* VideoThumbnailView.swift */,
-				62985CB9A21242489BC69582 /* Assets.xcassets */,
+				D02F921765494D39BEC1FFAE /* BatchPickerView.swift */,
+				DA3900BF9DAB433DA3D85E46 /* ConvertedFilesView.swift */,
+				DD7CC7CB1FD34724A594AD8C /* PaywallView.swift */,
+				C3BFA6FB5F2B4889842D7972 /* PresetsView.swift */,
+				8B872F3260BF47E5B92304CE /* AppState.swift */,
+				5EC2CAEFC59E4902A43F782A /* ButtonStyles.swift */,
+				1E0F63986D7B41F38C949DD6 /* ColorExtensions.swift */,
+				4669084C88CC4504A76741C3 /* CompleteView.swift */,
+				54A44108E8024FB2AB6F8AAC /* ContentView.swift */,
+				6D94E194EE364FE189981F75 /* ConversionEngine.swift */,
+				6AFB921F22CA4F93B7345DB4 /* ConversionItem.swift */,
+				09FD1EA725D940E1891C7847 /* ConvertSettingsView.swift */,
+				814C8657E26F47D8A4085C97 /* FileUtilities.swift */,
+				94D70C996B4A4CF6A09B68C6 /* FormatChip.swift */,
+				871EE8FBC777470B92F7FBB9 /* HistoryItem.swift */,
+				D532128A2BA14D888852CB15 /* HistoryView.swift */,
+				FB577C029B024B1ABC31D3CB /* HomeView.swift */,
+				E9F76F5035A34B5CAAC2E795 /* MediaMateApp.swift */,
+				2CDEE39878374B7DBF4D10D6 /* MockDataGenerator.swift */,
+				88064E0E083344519F6A39A6 /* PreviewProvider.swift */,
+				CC92A0A049E94135825096B4 /* ProgressView.swift */,
+				8F4A7833DAC04EF6A808EF4A /* RecentRow.swift */,
+				BD2D03BFBB764B54BF792FDA /* ResolutionChip.swift */,
+				DA1DC9FD9BF74341BC398F89 /* SettingsView.swift */,
+				9FF5380A45E8456484F18C1F /* SizeCompareCard.swift */,
+				AD006AF1FBC74CFEA26E8BC1 /* ThumbnailGenerator.swift */,
+				ABD435EAE6524A6A9B05906D /* VideoThumbnailView.swift */,
+				39507A3A7884468CA3D97E05 /* GIFExportEngine.swift */,
+				43CCAD3E86724533A84B56F2 /* HEICConverter.swift */,
+				188CA1366E0F4DA180C5397A /* Preset.swift */,
+				D377806A697D4F678AF610BC /* StoreManager.swift */,
+				3580F381ADDA4F92BE454518 /* Assets.xcassets */,
 			);
 			name = MediaMate;
 			sourceTree = "<group>";
 		};
-		4DB8078EBBD340C398CF20D3 = {
+		2249F791FB9540209D5DDFC0 = {
 			isa = PBXGroup;
 			children = (
-				29F12A28E65745A582EF5909 /* MediaMate */,
+				C8BDC0538AB0493483ABE174 /* MediaMate */,
 			);
 			sourceTree = "<group>";
 		};
-		164E5CA8886F40C385620B58 = {
+		2DDFBA4AF21C40BC97A4C77D = {
 			isa = PBXGroup;
 			children = ();
 			name = Products;
@@ -118,147 +130,151 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16B4D453FC064C809CA8F8DB /* MediaMate */ = {
+		B3929A28DE3E4C19B777B7ED /* MediaMate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C66A00CAD1A24FA39D274CE8;
+			buildConfigurationList = A8B3EF483B9F4AB6BC283C4E;
 			buildPhases = (
-				A131D4E94B7F40369A96601E /* Sources */,
+				7710531CDB0A4309AD41979E /* Sources */,
 			);
 			buildRules = ();
 			dependencies = ();
 			name = MediaMate;
 			productName = MediaMate;
-			productReference = 0FD42124020F4282BC060D67;
+			productReference = F7F535AA7807421F95B0AD25;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6F1078B061E94BDF8578301A = {
+		64C1879E6C064C3FBE6D010E = {
 			isa = PBXProject;
-			buildConfigurationList = 8D8EB455D3E4489995EB5A8A;
+			buildConfigurationList = F864FA32A6084AAD97D3A2CA;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (en, Base);
-			mainGroup = 4DB8078EBBD340C398CF20D3;
-			productRefGroup = 164E5CA8886F40C385620B58;
+			mainGroup = 2249F791FB9540209D5DDFC0;
+			productRefGroup = 2DDFBA4AF21C40BC97A4C77D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16B4D453FC064C809CA8F8DB /* MediaMate */,
+				B3929A28DE3E4C19B777B7ED /* MediaMate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A131D4E94B7F40369A96601E /* Sources */ = {
+		7710531CDB0A4309AD41979E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC9D5F75D3846AC80D95C8E /* BatchPickerView.swift in Sources */,
-				9EC2F890448B46098514742E /* ConvertedFilesView.swift in Sources */,
-				3A72DF27DE1447CC82FDFBDE /* PaywallView.swift in Sources */,
-				F5D5AD804B5F4480B1AB370D /* PresetsView.swift in Sources */,
-				F5D3664A1F654AC4BFBC534F /* AppState.swift in Sources */,
-				929415D2EF4F4AC7B93ADE6E /* ButtonStyles.swift in Sources */,
-				976CBA2172794671B22FA7FE /* ColorExtensions.swift in Sources */,
-				B81DF6AB47444EEE913EEC39 /* CompleteView.swift in Sources */,
-				3B011550DE2F4A5088AC6BE8 /* ContentView.swift in Sources */,
-				7DADCB2119F144799C8F8E3B /* ConversionEngine.swift in Sources */,
-				8700C1E2350C4EE3B893C42C /* ConversionItem.swift in Sources */,
-				9DCE3E40479146AD82D909C5 /* ConvertSettingsView.swift in Sources */,
-				94C7C2AE274342A18D528555 /* FileUtilities.swift in Sources */,
-				02756C01CBE748CDB9E158F9 /* FormatChip.swift in Sources */,
-				1F8C488C5D044DD3883B8938 /* HistoryItem.swift in Sources */,
-				A61A408B9EF54C67ACB4D373 /* HistoryView.swift in Sources */,
-				D8E9D895930D401AAF691BBB /* HomeView.swift in Sources */,
-				F8E62F7588A4468C8401C1AA /* MediaMateApp.swift in Sources */,
-				DB9052E1E1DF4FC0A9F336A7 /* MockDataGenerator.swift in Sources */,
-				33C8EF46481A4DA6BAF805AD /* PreviewProvider.swift in Sources */,
-				B02C014F8A6C4B27897C134B /* ProgressView.swift in Sources */,
-				6AB5E86DCC364A57BED3043B /* RecentRow.swift in Sources */,
-				A58A3D4879F346FD9E2F92F3 /* ResolutionChip.swift in Sources */,
-				B90984B75EFF4A2E9B9155F5 /* SettingsView.swift in Sources */,
-				D91F4F2050F548CF9F8562C8 /* SizeCompareCard.swift in Sources */,
-				B61063D149AB4016B7B9A87C /* ThumbnailGenerator.swift in Sources */,
-				EB0DBC5830AB45D3A23C6CE5 /* VideoThumbnailView.swift in Sources */,
+				618FFC217B1B483BB94BF41F /* BatchPickerView.swift in Sources */,
+				0627B523613F4E228D1FF905 /* ConvertedFilesView.swift in Sources */,
+				4B9C709062164830A66AAC8A /* PaywallView.swift in Sources */,
+				FABF7C1729A74467A8CEDCB5 /* PresetsView.swift in Sources */,
+				F8110BB4CFBF45D7AB438DEE /* AppState.swift in Sources */,
+				55EA9E4BBCB54CA29AB9EE57 /* ButtonStyles.swift in Sources */,
+				1646DBFA3ABA41B5A595C756 /* ColorExtensions.swift in Sources */,
+				881EFBEC94A142678D6CD737 /* CompleteView.swift in Sources */,
+				4B4C006BD7AE410DB5808D63 /* ContentView.swift in Sources */,
+				E099C36D02D54140A4E4D35F /* ConversionEngine.swift in Sources */,
+				8DB2B07CCC874D7F9E39FDC9 /* ConversionItem.swift in Sources */,
+				EB4ACB7FDA914BC3B51E90D9 /* ConvertSettingsView.swift in Sources */,
+				8A6C1B3218604D3993CC2C7C /* FileUtilities.swift in Sources */,
+				F16E93015061486F9455E16B /* FormatChip.swift in Sources */,
+				9BCFD4CBDB8B43818075DB90 /* HistoryItem.swift in Sources */,
+				284F31B12F3F4687BE0AD46B /* HistoryView.swift in Sources */,
+				1D9E4CFE71BC4280935F2A10 /* HomeView.swift in Sources */,
+				F9A52831309D46E4B0295DD8 /* MediaMateApp.swift in Sources */,
+				4A857BA62C134D9798387F53 /* MockDataGenerator.swift in Sources */,
+				65122903C0844E61AAA73CBD /* PreviewProvider.swift in Sources */,
+				AB5A2663E3EA45DD97D5849E /* ProgressView.swift in Sources */,
+				938035EE3B314E39A43DD727 /* RecentRow.swift in Sources */,
+				A56D0932709B480088B01D4A /* ResolutionChip.swift in Sources */,
+				C469366FCC654E81BB5442DA /* SettingsView.swift in Sources */,
+				B1208ECD076A46E088CA151D /* SizeCompareCard.swift in Sources */,
+				2DC51BDC328649EC8764291B /* ThumbnailGenerator.swift in Sources */,
+				634731678CE44EE3A57DD5FE /* VideoThumbnailView.swift in Sources */,
+				1C020E0D234C43929F7892D5 /* GIFExportEngine.swift in Sources */,
+				9E26664A3BAB4555A4C1795C /* HEICConverter.swift in Sources */,
+				183F03A331EF433AB017844F /* Preset.swift in Sources */,
+				B0F51CC2197F4C318FDDA37E /* StoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C0FE1DF980404A149D629D1B = {
+		568871DACFD1495FA3D6D246 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				SUPPORTED_PLATFORMS = iphoneos;
-				SDKROOT = iphoneos;
-				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SDKROOT = iphoneos;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
 				PRODUCT_NAME = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
+			}};
 			name = Debug;
-		};
-		C0FE1DF980404A149D629D1B = {
+		}};
+		568871DACFD1495FA3D6D246 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				SUPPORTED_PLATFORMS = iphoneos;
-				SDKROOT = iphoneos;
-				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MediaMate;
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "MediaMate needs access to your files to select media for conversion.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "MediaMate needs access to your photos to select video and audio files for conversion.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SDKROOT = iphoneos;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.app;
 				PRODUCT_NAME = MediaMate;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
+			}};
 			name = Release;
-		};
+		}};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D8EB455D3E4489995EB5A8A = {
+		F864FA32A6084AAD97D3A2CA = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0FE1DF980404A149D629D1B,
-				7A1373066AE3491AAF94A675,
+				568871DACFD1495FA3D6D246,
+				B60654DE836441F7A8363ACD,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C66A00CAD1A24FA39D274CE8 = {
+		A8B3EF483B9F4AB6BC283C4E = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C0FE1DF980404A149D629D1B,
-				7A1373066AE3491AAF94A675,
+				568871DACFD1495FA3D6D246,
+				B60654DE836441F7A8363ACD,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6F1078B061E94BDF8578301A;
+	rootObject = 64C1879E6C064C3FBE6D010E;
 }
