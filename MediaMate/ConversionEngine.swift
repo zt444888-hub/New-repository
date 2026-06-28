@@ -1,7 +1,8 @@
 import AVFoundation
 import UIKit
 import Foundation
-import MediaMateCore
+import ImageIO
+import UniformTypeIdentifiers
 
 @MainActor class ConversionEngine: NSObject, ObservableObject {
     @Published var progress: Double = 0
@@ -301,60 +302,182 @@ import MediaMateCore
 }
     private func convertToGIF(sourceURL: URL, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         let asset = AVAsset(url: sourceURL)
-        guard asset.tracks(withMediaType: .video).first != nil else {
+        guard let videoTrack = asset.tracks(withMediaType: .video).first else {
             isConverting = false
             conversionState = .failed
             completion(.failure(NSError(domain: "MediaMate", code: -11, userInfo: [NSLocalizedDescriptionKey: "No video track found for GIF conversion"])))
             return
         }
-        GIFExportEngine.export(sourceURL: sourceURL, outputURL: outputURL, frameRate: 15) { [weak self] result in
+
+        let duration = CMTimeGetSeconds(asset.duration)
+        let frameRate = 15
+        let totalFrames = Int(duration * Double(frameRate))
+        let naturalSize = videoTrack.naturalSize
+        let maxWidth: CGFloat = 480
+        let scale = min(maxWidth / naturalSize.width, 1.0)
+        let targetSize = CGSize(width: naturalSize.width * scale, height: naturalSize.height * scale)
+
+        let reader: AVAssetReader
+        do {
+            reader = try AVAssetReader(asset: asset)
+        } catch {
+            isConverting = false
+            conversionState = .failed
+            completion(.failure(error))
+            return
+        }
+
+        let readerOutput = AVAssetReaderTrackOutput(
+            track: videoTrack,
+            outputSettings: [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32ARGB]
+        )
+        guard reader.canAdd(readerOutput) else {
+            isConverting = false
+            conversionState = .failed
+            completion(.failure(NSError(domain: "MediaMate", code: -12, userInfo: [NSLocalizedDescriptionKey: "Cannot read video track"])))
+            return
+        }
+        reader.add(readerOutput)
+        reader.startReading()
+
+        let frameDuration = 1.0 / Double(frameRate)
+        var frames: [CGImage] = []
+        var lastSampleTime = CMTime.negativeInfinity
+
+        while reader.status == .reading {
+            guard let sample = readerOutput.copyNextSampleBuffer() else { break }
+            let pts = CMSampleBufferGetPresentationTimeStamp(sample)
+            if CMTimeCompare(pts, lastSampleTime) > 0 {
+                if let imageBuffer = CMSampleBufferGetImageBuffer(sample) {
+                    let ciImage = CIImage(cvPixelBuffer: imageBuffer)
+                    let context = CIContext()
+                    if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
+                        let colorSpace = cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB()
+                        if let ctx = CGContext(
+                            data: nil,
+                            width: Int(targetSize.width),
+                            height: Int(targetSize.height),
+                            bitsPerComponent: 8,
+                            bytesPerRow: 0,
+                            space: colorSpace,
+                            bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue
+                        ) {
+                            ctx.interpolationQuality = .high
+                            ctx.draw(cgImage, in: CGRect(origin: .zero, size: targetSize))
+                            if let resized = ctx.makeImage() {
+                                frames.append(resized)
+                            }
+                        }
+                    }
+                }
+                lastSampleTime = pts
+            }
+            let nextTime = CMTimeAdd(lastSampleTime, CMTimeMake(value: 1, timescale: Int32(frameRate)))
+            while reader.status == .reading {
+                guard let nextSample = readerOutput.copyNextSampleBuffer() else { break }
+                let nextPts = CMSampleBufferGetPresentationTimeStamp(nextSample)
+                if CMTimeCompare(nextPts, nextTime) >= 0 {
+                    lastSampleTime = nextPts
+                    break
+                }
+            }
+        }
+
+        reader.cancelReading()
+
+        guard !frames.isEmpty else {
+            isConverting = false
+            conversionState = .failed
+            completion(.failure(NSError(domain: "MediaMate", code: -13, userInfo: [NSLocalizedDescriptionKey: "No frames extracted for GIF"])))
+            return
+        }
+
+        DispatchQueue.global(qos: .utility).async {
+            guard let destination = CGImageDestinationCreateWithURL(
+                outputURL as CFURL,
+                UTType.gif.identifier as CFString,
+                frames.count,
+                nil
+            ) else {
+                DispatchQueue.main.async {
+                    self.isConverting = false
+                    self.conversionState = .failed
+                    completion(.failure(NSError(domain: "MediaMate", code: -14, userInfo: [NSLocalizedDescriptionKey: "Cannot create GIF destination"])))
+                }
+                return
+            }
+
+            let gifProperties: [String: Any] = [
+                kCGImagePropertyGIFDictionary as String: [
+                    kCGImagePropertyGIFLoopCount as String: 0
+                ]
+            ]
+            CGImageDestinationSetProperties(destination, gifProperties as CFDictionary)
+
+            for frame in frames {
+                let frameProperties: [String: Any] = [
+                    kCGImagePropertyGIFDictionary as String: [
+                        kCGImagePropertyGIFDelayTime as String: frameDuration
+                    ]
+                ]
+                CGImageDestinationAddImage(destination, frame, frameProperties as CFDictionary)
+            }
+
+            let success = CGImageDestinationFinalize(destination)
             DispatchQueue.main.async {
-                guard let self = self else { return }
                 self.isConverting = false
-                switch result {
-                case .success:
+                if success {
                     self.conversionState = .completed
                     self.progress = 1.0
                     completion(.success(outputURL))
-                case .failure(let error):
+                } else {
                     self.conversionState = .failed
-                    completion(.failure(error))
+                    completion(.failure(NSError(domain: "MediaMate", code: -15, userInfo: [NSLocalizedDescriptionKey: "GIF finalization failed"])))
                 }
             }
         }
     }
 
     private func convertImage(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
-        if format == "JPEG" {
-            HEICConverter.convertToJPEG(sourceURL: sourceURL, outputURL: outputURL) { [weak self] result in
+        DispatchQueue.global(qos: .utility).async {
+            guard let image = UIImage(contentsOfFile: sourceURL.path) else {
                 DispatchQueue.main.async {
-                    guard let self = self else { return }
                     self.isConverting = false
-                    switch result {
-                    case .success:
-                        self.conversionState = .completed
-                        self.progress = 1.0
-                        completion(.success(outputURL))
-                    case .failure(let error):
-                        self.conversionState = .failed
-                        completion(.failure(error))
-                    }
+                    self.conversionState = .failed
+                    completion(.failure(NSError(domain: "MediaMate", code: -16, userInfo: [NSLocalizedDescriptionKey: "Cannot load image from file"])))
                 }
+                return
             }
-        } else {
-            HEICConverter.convertToPNG(sourceURL: sourceURL, outputURL: outputURL) { [weak self] result in
+
+            let data: Data?
+            if format == "JPEG" {
+                data = image.jpegData(compressionQuality: 0.85)
+            } else {
+                data = image.pngData()
+            }
+
+            guard let imageData = data else {
                 DispatchQueue.main.async {
-                    guard let self = self else { return }
                     self.isConverting = false
-                    switch result {
-                    case .success:
-                        self.conversionState = .completed
-                        self.progress = 1.0
-                        completion(.success(outputURL))
-                    case .failure(let error):
-                        self.conversionState = .failed
-                        completion(.failure(error))
-                    }
+                    self.conversionState = .failed
+                    completion(.failure(NSError(domain: "MediaMate", code: -17, userInfo: [NSLocalizedDescriptionKey: "Failed to encode image"])))
+                }
+                return
+            }
+
+            do {
+                try imageData.write(to: outputURL)
+                DispatchQueue.main.async {
+                    self.isConverting = false
+                    self.conversionState = .completed
+                    self.progress = 1.0
+                    completion(.success(outputURL))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.isConverting = false
+                    self.conversionState = .failed
+                    completion(.failure(error))
                 }
             }
         }
