@@ -27,7 +27,8 @@ struct BatchQueueView: View {
     let quality: Double
     let resolution: String
 
-    init(format: String = "MP4", quality: Double = 2, resolution: String = "Original") {
+    init(navigationPath: Binding<NavigationPath>, format: String = "MP4", quality: Double = 2, resolution: String = "Original") {
+        self._navigationPath = navigationPath
         self.format = format
         self.quality = quality
         self.resolution = resolution
