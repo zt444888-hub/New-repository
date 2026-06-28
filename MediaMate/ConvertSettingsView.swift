@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 
 struct ConvertSettingsView: View {
     @EnvironmentObject var appState: AppState
@@ -187,6 +187,9 @@ struct ConvertSettingsView: View {
         appState.engine.isConverting = true
         appState.conversionProgress = 0
 
+        appState.engine.targetFileSizeMB = appState.targetFileSizeMB
+        appState.engine.trimStartTime = appState.hasTrimmed ? appState.trimStartTime : nil
+        appState.engine.trimEndTime = appState.hasTrimmed ? appState.trimEndTime : nil
         appState.engine.convertFile(at: sourceURL, to: appState.selectedFormat, quality: appState.quality, resolution: appState.selectedResolution) { result in
             DispatchQueue.main.async {
                 appState.engine.isConverting = false
@@ -221,4 +224,5 @@ struct ConvertSettingsView: View {
     }
 
 }
+
 

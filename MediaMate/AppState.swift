@@ -1,4 +1,4 @@
-import Foundation
+﻿import Foundation
 import SwiftData
 
 @MainActor class AppState: ObservableObject {
@@ -10,13 +10,22 @@ import SwiftData
     @Published var conversionProgress: Double = 0
     @Published var convertedFile: URL?
     @Published var engine = ConversionEngine()
+    // MARK: - Trim state
+    @Published var trimStartTime: Double = 0
+    @Published var trimEndTime: Double = 0
+    @Published var hasTrimmed: Bool = false
+
+    // MARK: - Target size
+    @Published var targetFileSizeMB: Double? = nil
+    @Published var batchFiles: [URL] = []
+
 
     @Published var originalFileSizeText: String = ""
     @Published var convertedFileSizeText: String = ""
     @Published var isTestMode = false
     @Published var originalFileName: String = ""
 
-    /// Shared ModelContainer — also needs to be passed to `.modelContainer()` in the app scene.
+    /// Shared ModelContainer 鈥?also needs to be passed to `.modelContainer()` in the app scene.
     static let container: ModelContainer = {
         guard let container = try? ModelContainer(for: ConversionItem.self) else { fatalError("Failed to create ModelContainer") }
         return container
@@ -114,4 +123,5 @@ import SwiftData
         engine.isConverting = false
     }
 }
+
 

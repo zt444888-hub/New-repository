@@ -85,7 +85,7 @@ struct HomeView: View {
                     
                     ForEach(appState.recentItems.prefix(5)) { item in
                         RecentRow(item: item) {
-                            navigationPath.append(Route.convert)
+                            navigationPath.append(Route.trim)
                         }
                     }
                 } else {
@@ -150,7 +150,7 @@ struct HomeView: View {
         appState.originalFileName = firstURL.lastPathComponent
         appState.originalFileSizeText = FileUtilities.formatFileSize(firstURL.path)
         appState.currentFile = firstURL
-        navigationPath.append(Route.convert)
+        navigationPath.append(Route.trim)
     }
     
     private func checkPhotoLibraryPermission() {
@@ -190,7 +190,7 @@ struct HomeView: View {
             status: .pending,
             date: Date()
         ))
-        navigationPath.append(Route.convert)
+        navigationPath.append(Route.trim)
     }
     
     private func processPhotoPickerItem(_ item: PhotosPickerItem) {
@@ -208,7 +208,7 @@ struct HomeView: View {
                         status: .pending,
                         date: Date()
                     ))
-                    navigationPath.append(Route.convert)
+                    navigationPath.append(Route.trim)
                 }
             } catch {
                 /* error logged */
@@ -240,7 +240,7 @@ struct HomeView: View {
             date: Date()
         ))
         
-        navigationPath.append(Route.convert)
+        navigationPath.append(Route.trim)
     }
 }
 
@@ -305,5 +305,7 @@ struct MediaFile: Transferable {
         }
     }
 }
+
+
 
 

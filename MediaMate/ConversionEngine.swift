@@ -1,4 +1,4 @@
-import AVFoundation
+﻿import AVFoundation
 import UIKit
 import Foundation
 import ImageIO
@@ -24,6 +24,13 @@ import UniformTypeIdentifiers
     private let imageFormats: Set<String> = ["JPEG", "PNG"]
     private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
     @Published var lastError: String?
+    
+    // Trim state
+    var trimStartTime: Double? = nil
+    var trimEndTime: Double? = nil
+    
+    // Target file size (in MB)
+    var targetFileSizeMB: Double? = nil
 
     func convertFile(at sourceURL: URL, to format: String, quality: Double, resolution: String, completion: @escaping (Result<URL, Error>) -> Void) {
         // Keep conversion alive when app goes to background
@@ -81,6 +88,19 @@ import UniformTypeIdentifiers
         exportSession.outputURL = outputURL
         exportSession.outputFileType = avVideoFileType(for: format)
         exportSession.shouldOptimizeForNetworkUse = true
+        
+        // Apply trim if set
+        if let start = trimStartTime, let end = trimEndTime, end > start {
+            let startTime = CMTimeMake(value: Int64(start * 1000), timescale: 1000)
+            let endTime = CMTimeMake(value: Int64(end * 1000), timescale: 1000)
+            let duration = CMTimeSubtract(endTime, startTime)
+            exportSession.timeRange = CMTimeRangeMake(start: startTime, duration: duration)
+        }
+        
+        // Apply target file size if set
+        if let targetMB = targetFileSizeMB {
+            exportSession.fileLengthLimit = Int64(targetMB * 1024 * 1024)
+        }
 
                 // Poll export progress via Timer (progressHandler removed in iOS 26+)
         let pollingTimer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { [weak self] timer in
@@ -299,7 +319,6 @@ import UniformTypeIdentifiers
         let outputFileName = "\(fileName)_converted.\(ext)"
         return documentsDir.appendingPathComponent(outputFileName)
     }
-}
     private func convertToGIF(sourceURL: URL, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
         let asset = AVAsset(url: sourceURL)
         guard let videoTrack = asset.tracks(withMediaType: .video).first else {
@@ -482,3 +501,4 @@ import UniformTypeIdentifiers
             }
         }
     }
+}

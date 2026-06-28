@@ -1,7 +1,7 @@
 import SwiftUI
 
 enum Route: Hashable {
-    case convert, progress, complete
+    case trim, convert, progress, complete, batch
 }
 
 enum Tab: String, CaseIterable {
@@ -18,9 +18,11 @@ struct ContentView: View {
                 HomeView(navigationPath: $navigationPath)
                     .navigationDestination(for: Route.self) { route in
                         switch route {
+                        case .trim: TrimView(navigationPath: $navigationPath)
                         case .convert: ConvertSettingsView(navigationPath: $navigationPath)
                         case .progress: ProgressView(navigationPath: $navigationPath)
                         case .complete: CompleteView(navigationPath: $navigationPath)
+                        case .batch: BatchQueueView(navigationPath: $navigationPath)
                         }
                     }
             }
