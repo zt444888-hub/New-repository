@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-#if DEBUG
 class MockDataGenerator {
     static let shared = MockDataGenerator()
     
@@ -269,4 +268,3 @@ extension MockDataGenerator {
         return (name, size, type)
     }
 }
-#endif
