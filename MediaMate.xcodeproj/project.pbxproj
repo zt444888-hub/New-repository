@@ -1,6 +1,18 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
+	archiveVersion = 
+/* Begin XCConfigurationList section */
+		6513FD60E37B0B32A73AB631 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				789281D948ED47709950FC5C,
+				8250FDFF5D71D74A63738649,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+1;
 	classes = {
 	};
 	objectVersion = 60;
@@ -76,8 +88,27 @@
 		2BAEB86A9935BD0867C83329 /* HEICConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3BCD6F066AEBC63433492; };
 		473615C3493449BBACBA0C8F /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D7F989E1D7A57158CDBA1E; };
 		E76A7AB7420D77BC7DB0AB3C /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DD3711EA31FF7E37BBDB67; };
+		51DA7EC3CBF8358C6683232D /* ConversionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8EF8B88354F6A9100F67C; };
+		29D3FE5C21A19F282EBAA138 /* FileUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693EA97F621DF09B737A8D5; };
 /* End PBXBuildFile section */
 
+/* Begin PBXTargetDependency section */
+		E92F9C0783785489A59DE1B4 = {
+			isa = PBXTargetDependency;
+			name = MediaMateTests;
+			target = CB558DA80EBB8CD9F53E8386;
+			targetProxy = 6837EA5DF0ADCE8555EEE516;
+		};
+/* End PBXTargetDependency section */
+/* Begin PBXContainerItemProxy section */
+		6837EA5DF0ADCE8555EEE516 = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 950E36F3F8226B47FAB6EEE7;
+			proxyType = 1;
+			remoteGlobalIDString = 944BEAAC553EE4389F193E59;
+			remoteInfo = MediaMateTests;
+		};
+/* End PBXContainerItemProxy section */
 /* Begin PBXGroup section */
 		669E990BCDF922B6ED60AE08 = {
 			isa = PBXGroup;
@@ -189,6 +220,16 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+/* Begin PBXFrameworksBuildPhase section */
+		1F97D33AD11E3F63DD79315F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 
 /* Begin PBXResourcesBuildPhase section */
 		B8D24320569C5836FE5B60B4 /* Resources */ = {
@@ -240,6 +281,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+/* Begin PBXSourcesBuildPhase section */
+		1715CBFA0F216C4BF4E25C36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51DA7EC3CBF8358C6683232D /* ConversionEngineTests.swift in Sources */,
+				29D3FE5C21A19F282EBAA138 /* FileUtilitiesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 
 /* Begin PBXNativeTarget section */
 		9015A8807E67626EB8F0CEBE /* MediaMate */ = {
@@ -261,6 +314,25 @@
 		};
 /* End PBXNativeTarget section */
 
+
+/* Begin PBXNativeTarget section */
+		944BEAAC553EE4389F193E59 /* MediaMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6513FD60E37B0B32A73AB631;
+			buildPhases = (
+				1715CBFA0F216C4BF4E25C36 /* Sources */,
+				1F97D33AD11E3F63DD79315F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E92F9C0783785489A59DE1B4 /* MediaMateTests */,
+			);
+			name = MediaMateTests;
+			productName = MediaMateTests;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
 /* Begin PBXProject section */
 		950E36F3F8226B47FAB6EEE7 = {
 			isa = PBXProject;
@@ -332,6 +404,41 @@
 		};
 /* End XCBuildConfiguration section */
 
+
+/* Begin XCBuildConfiguration section */
+		789281D948ED47709950FC5C = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MediaMateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.tests;
+				PRODUCT_NAME = MediaMateTests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaMate.app/MediaMate";
+			};
+			name = Debug;
+		};
+		8250FDFF5D71D74A63738649 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MediaMateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.tests;
+				PRODUCT_NAME = MediaMateTests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaMate.app/MediaMate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
 /* Begin XCConfigurationList section */
 		D353F62CFB28F8733C460A76 = {
 			isa = XCConfigurationList;
