@@ -30,10 +30,12 @@ enum FileUtilities {
     /// Determine the SF Symbol icon name for a given file extension.
     static func iconForFileExtension(_ ext: String) -> String {
         switch ext.lowercased() {
-        case "mov", "mp4", "avi", "mkv":
+        case "mov", "mp4", "avi", "mkv", "gif":
             return "film"
         case "m4a", "mp3", "wav", "aac":
             return "music.note"
+        case "jpg", "jpeg", "png", "heic":
+            return "photo"
         default:
             return "doc"
         }

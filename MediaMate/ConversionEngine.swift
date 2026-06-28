@@ -1,6 +1,7 @@
 import AVFoundation
 import UIKit
 import Foundation
+import MediaMateCore
 
 @MainActor class ConversionEngine: NSObject, ObservableObject {
     @Published var progress: Double = 0
@@ -18,7 +19,8 @@ import Foundation
     private var reader: AVAssetReader?
     private var writer: AVAssetWriter?
     private var completion: ((Result<URL, Error>) -> Void)?
-    private let audioFormats: Set<String> = ["M4A", "MP3", "WAV"]
+    private let audioFormats: Set<String> = ["M4A", "AAC", "WAV"]
+    private let imageFormats: Set<String> = ["JPEG", "PNG"]
     private var backgroundTaskID: UIBackgroundTaskIdentifier = .invalid
     @Published var lastError: String?
 
@@ -52,7 +54,11 @@ import Foundation
 
         let outputURL = outputURLFor(sourceURL, format: format)
 
-        if audioFormats.contains(format) {
+        if format == "GIF" {
+            convertToGIF(sourceURL: sourceURL, outputURL: outputURL, completion: wrappedCompletion)
+        } else if imageFormats.contains(format) {
+            convertImage(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: wrappedCompletion)
+        } else if audioFormats.contains(format) {
             convertAudioOnly(sourceURL: sourceURL, to: format, outputURL: outputURL, completion: wrappedCompletion)
         } else {
             convertVideoExport(sourceURL: sourceURL, to: format, outputURL: outputURL, quality: quality, resolution: resolution, completion: wrappedCompletion)
@@ -281,9 +287,75 @@ import Foundation
         let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         let fileName = sourceURL.deletingPathExtension().lastPathComponent
 
-        // For MP3, use .m4a extension since there is no MP3 encoder on iOS
-        let ext = format == "MP3" ? "m4a" : format.lowercased()
+        let ext: String
+        switch format {
+        case "AAC": ext = "m4a"
+        case "GIF": ext = "gif"
+        case "JPEG": ext = "jpg"
+        case "PNG": ext = "png"
+        default: ext = format.lowercased()
+        }
         let outputFileName = "\(fileName)_converted.\(ext)"
         return documentsDir.appendingPathComponent(outputFileName)
     }
 }
+    private func convertToGIF(sourceURL: URL, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
+        let asset = AVAsset(url: sourceURL)
+        guard asset.tracks(withMediaType: .video).first != nil else {
+            isConverting = false
+            conversionState = .failed
+            completion(.failure(NSError(domain: "MediaMate", code: -11, userInfo: [NSLocalizedDescriptionKey: "No video track found for GIF conversion"])))
+            return
+        }
+        GIFExportEngine.export(sourceURL: sourceURL, outputURL: outputURL, frameRate: 15) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                self.isConverting = false
+                switch result {
+                case .success:
+                    self.conversionState = .completed
+                    self.progress = 1.0
+                    completion(.success(outputURL))
+                case .failure(let error):
+                    self.conversionState = .failed
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+
+    private func convertImage(sourceURL: URL, to format: String, outputURL: URL, completion: @escaping (Result<URL, Error>) -> Void) {
+        if format == "JPEG" {
+            HEICConverter.convertToJPEG(sourceURL: sourceURL, outputURL: outputURL) { [weak self] result in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.isConverting = false
+                    switch result {
+                    case .success:
+                        self.conversionState = .completed
+                        self.progress = 1.0
+                        completion(.success(outputURL))
+                    case .failure(let error):
+                        self.conversionState = .failed
+                        completion(.failure(error))
+                    }
+                }
+            }
+        } else {
+            HEICConverter.convertToPNG(sourceURL: sourceURL, outputURL: outputURL) { [weak self] result in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.isConverting = false
+                    switch result {
+                    case .success:
+                        self.conversionState = .completed
+                        self.progress = 1.0
+                        completion(.success(outputURL))
+                    case .failure(let error):
+                        self.conversionState = .failed
+                        completion(.failure(error))
+                    }
+                }
+            }
+        }
+    }

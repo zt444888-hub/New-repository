@@ -1,4 +1,4 @@
-import Foundation
+﻿import Foundation
 import UIKit
 
 class MockDataGenerator {
@@ -9,17 +9,17 @@ class MockDataGenerator {
     private var hasAttemptedCreation = false
     
     private init() {
-        print("馃摝 MockDataGenerator singleton initialized")
+        print("[Mock] MockDataGenerator singleton initialized")
     }
     
     func setupMockFiles() {
         print("\n========================================")
-        print("馃敡 setupMockFiles() called")
+        print("[Mock] setupMockFiles() called")
         print("  hasAttemptedCreation: \(hasAttemptedCreation)")
         print("  mockFiles count BEFORE: \(mockFiles.count)")
         
         if hasAttemptedCreation && !mockFiles.isEmpty {
-            print("  鈫?SKIPPING: Already attempted and files exist")
+            print("  SKIPPING: Already attempted and files exist")
             print("========================================\n")
             return
         }
@@ -30,43 +30,43 @@ class MockDataGenerator {
         let videoFormats = ["mov", "mp4"]
         let audioFormats = ["m4a", "mp3", "wav"]
         
-        print("\n馃殌 Starting Mock File Generation")
-        print("馃搨 Temporary directory: \(NSTemporaryDirectory())")
+        print("\n[Mock] Starting Mock File Generation")
+        print("[Mock] Temporary directory: \(NSTemporaryDirectory())")
         
         var successCount = 0
         
         for i in 0..<3 {
             let format = videoFormats.randomElement() ?? "mp4"
-            print("\n馃摴 Attempting video file \(i+1) (\(format))...")
+            print("\n[Mock] Attempting video file \(i+1) (\(format))...")
             
             if let videoUrl = createMockVideoFile(format: format) {
                 mockFiles.append(videoUrl)
                 successCount += 1
-                print("  鉁?SUCCESS: \(videoUrl.lastPathComponent)")
+                print("  SUCCESS: \(videoUrl.lastPathComponent)")
             } else {
-                print("  鉂?FAILED: Could not create video file")
+                print("  FAILED: Could not create video file")
             }
         }
         
         for i in 0..<2 {
             let format = audioFormats.randomElement() ?? "m4a"
-            print("\n馃幍 Attempting audio file \(i+1) (\(format))...")
+            print("\n[Mock] Attempting audio file \(i+1) (\(format))...")
             
             if let audioUrl = createMockAudioFile(format: format) {
                 mockFiles.append(audioUrl)
                 successCount += 1
-                print("  鉁?SUCCESS: \(audioUrl.lastPathComponent)")
+                print("  SUCCESS: \(audioUrl.lastPathComponent)")
             } else {
-                print("  鉂?FAILED: Could not create audio file")
+                print("  FAILED: Could not create audio file")
             }
         }
         
-        print("\n馃搳 Mock File Generation Complete")
+        print("\n[Mock] Mock File Generation Complete")
         print("  Total files created: \(mockFiles.count)")
         
         if mockFiles.isEmpty {
-            print("\n鈿狅笍 WARNING: No mock files were created!")
-            print("  鈫?Attempting fallback creation...")
+            print("\nWARNING: No mock files were created!")
+            print("  Attempting fallback creation...")
             createFallbackFiles()
         }
         
@@ -78,14 +78,14 @@ class MockDataGenerator {
     }
     
     private func createFallbackFiles() {
-        print("\n馃攧 Creating fallback mock files...")
+        print("\n[Mock] Creating fallback mock files...")
         
         let fallbackDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("MediaMateMock")
         print("  Fallback directory: \(fallbackDir.path)")
         
         do {
             try fileManager.createDirectory(at: fallbackDir, withIntermediateDirectories: true)
-            print("  鉁?Created fallback directory")
+            print("  Created fallback directory")
             
             let testVideoUrl = fallbackDir.appendingPathComponent("test_video.mp4")
             let testAudioUrl = fallbackDir.appendingPathComponent("test_audio.mp3")
@@ -93,42 +93,42 @@ class MockDataGenerator {
             let smallData = Data(repeating: 0x00, count: 1024 * 1024 * 2)
             
             try smallData.write(to: testVideoUrl)
-            print("  鉁?Created test_video.mp4")
+            print("  Created test_video.mp4")
             
             try smallData.write(to: testAudioUrl)
-            print("  鉁?Created test_audio.mp3")
+            print("  Created test_audio.mp3")
             
             mockFiles.append(testVideoUrl)
             mockFiles.append(testAudioUrl)
             
-            print("  鉁?Fallback files created successfully")
+            print("  Fallback files created successfully")
             
         } catch {
-            print("  鉂?Failed to create fallback files:")
-            print("    Error: \(error.localizedDescription)")
-            print("    Full error: \(error)")
+            print("  Failed to create fallback files:")
+            print("    ERROR: \(error.localizedDescription)")
+            print("    Full ERROR: \(error)")
         }
     }
     
     func getMockFiles() -> [URL] {
-        print("馃摜 getMockFiles() called")
+        print("[Mock] getMockFiles() called")
         setupMockFiles()
         return mockFiles
     }
     
     func getRandomMockFile() -> URL? {
-        print("\n馃幉 getRandomMockFile() called")
+        print("\n[Mock] getRandomMockFile() called")
         setupMockFiles()
         
         print("  Current mockFiles count: \(mockFiles.count)")
         
         guard !mockFiles.isEmpty else {
-            print("  鉂?ERROR: No mock files available!")
+            print("  ERROR: No mock files available!")
             return nil
         }
         
         let selected = mockFiles.randomElement()
-        print("  鉁?Selected file: \(selected?.lastPathComponent ?? "nil")")
+        print("  Selected file: \(selected?.lastPathComponent ?? "nil")")
         return selected
     }
     
@@ -144,13 +144,13 @@ class MockDataGenerator {
             print("    Generated data: \(videoData.count) bytes")
             
             try videoData.write(to: fileUrl)
-            print("    鉁?File written successfully")
+            print("    File written successfully")
             
             return fileUrl
         } catch {
-            print("    鉂?Error writing file:")
+            print("    Error writing file:")
             print("      - Description: \(error.localizedDescription)")
-            print("      - Full error: \(error)")
+            print("      - Full ERROR: \(error)")
             return nil
         }
     }
@@ -167,13 +167,13 @@ class MockDataGenerator {
             print("    Generated data: \(audioData.count) bytes")
             
             try audioData.write(to: fileUrl)
-            print("    鉁?File written successfully")
+            print("    File written successfully")
             
             return fileUrl
         } catch {
-            print("    鉂?Error writing file:")
+            print("    Error writing file:")
             print("      - Description: \(error.localizedDescription)")
-            print("      - Full error: \(error)")
+            print("      - Full ERROR: \(error)")
             return nil
         }
     }
@@ -250,12 +250,12 @@ class MockDataGenerator {
 
 extension MockDataGenerator {
     func simulatePhotoPickerSelection() -> URL? {
-        print("\n馃摲 simulatePhotoPickerSelection() called")
+        print("\n[Mock] simulatePhotoPickerSelection() called")
         return getRandomMockFile()
     }
     
     func simulateDocumentPickerSelection() -> URL? {
-        print("\n馃搧 simulateDocumentPickerSelection() called")
+        print("\n[Mock] simulateDocumentPickerSelection() called")
         return getRandomMockFile()
     }
     
@@ -268,3 +268,8 @@ extension MockDataGenerator {
         return (name, size, type)
     }
 }
+
+
+
+
+

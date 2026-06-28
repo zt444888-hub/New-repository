@@ -43,6 +43,10 @@ mock_*.m4a
 mock_*.mp3
 mock_*.wav
 
+# Python build artifacts
+*.pyc
+__pycache__/
+
 # CocoaPods
 Pods/
 Podfile.lock

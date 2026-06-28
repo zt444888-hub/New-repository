@@ -99,7 +99,7 @@ class ShareViewController: UIViewController {
     private func showFormatPicker() {
         activityIndicator.stopAnimating()
 
-        let buttons = ["MP4", "MOV", "M4A", "MP3", "GIF"]
+        let buttons = ["MP4", "MOV", "GIF", "M4A", "AAC", "WAV", "JPEG", "PNG"]
         let buttonStack = UIStackView()
         buttonStack.axis = .vertical
         buttonStack.spacing = 12

@@ -6,7 +6,7 @@ struct ConvertSettingsView: View {
     @State private var selectedPreset: Preset? = nil
     @State private var conversionStarted = false
 
-    let formats = ["MP4", "MOV", "M4A", "MP3", "WAV"]
+    let formats = ["MP4", "MOV", "GIF", "M4A", "AAC", "WAV", "JPEG", "PNG"]
     let resolutions = ["Original", "1080p", "720p", "480p"]
     let qualityLabels = ["Low", "Medium", "High", "Lossless"]
 

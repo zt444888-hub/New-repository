@@ -19,7 +19,7 @@ struct CompleteView: View {
               let afterVal = parseSize(afterSize),
               beforeVal > 0 else { return "-62%" }
         let pct = (1 - afterVal / beforeVal) * 100
-        return String(format: "%.0f%%", -pct)
+        return String(format: "%.0f%%", pct)
     }
 
     var body: some View {

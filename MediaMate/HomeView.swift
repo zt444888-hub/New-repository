@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 import PhotosUI
 import Photos
 
@@ -69,7 +69,6 @@ struct HomeView: View {
                             await MainActor.run {
                                 MockDataGenerator.shared.setupMockFiles()
                             }
-                            appState.isTestMode = true
                             appState.isTestMode = true
                         }
                     }
