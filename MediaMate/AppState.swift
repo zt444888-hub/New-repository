@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-class AppState: ObservableObject {
+@MainActor class AppState: ObservableObject {
     @Published var recentItems: [ConversionItem] = []
     @Published var currentFile: URL?
     @Published var selectedFormat = "MP4"

@@ -2,7 +2,7 @@ import AVFoundation
 import UIKit
 import Foundation
 
-class ConversionEngine: NSObject, ObservableObject {
+@MainActor class ConversionEngine: NSObject, ObservableObject {
     @Published var progress: Double = 0
     @Published var isConverting = false
 
