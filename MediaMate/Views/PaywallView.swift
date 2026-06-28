@@ -35,14 +35,14 @@ struct PaywallView: View {
                     Task { await purchase() }
                 } label: {
                     HStack {
-                        if isPurchasing { ProgressView().tint(.white) }
+                        if isPurchasing { SwiftUI.ProgressView().tint(.white) }
                         Text("Buy Full Version – \(product.displayPrice)").font(.system(size: 18, weight: .semibold))
                     }
                     .frame(maxWidth: .infinity).padding(.vertical, 16)
                     .background(Color.accent).foregroundColor(.white).cornerRadius(16)
                 }.disabled(isPurchasing).padding(.horizontal, 32).padding(.bottom, 8)
             } else {
-                ProgressView().padding(.bottom, 8)
+                SwiftUI.ProgressView().padding(.bottom, 8)
             }
 
             Button("Restore Purchases") { Task { await store.restorePurchases() } }
