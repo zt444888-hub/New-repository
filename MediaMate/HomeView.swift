@@ -118,7 +118,7 @@ struct HomeView: View {
                 handlePickedFile(url)
             }
         }
-        .onChange(of: selectedPhotoItems) { items in
+        .onChange(of: selectedPhotoItems) { _, items in
             if let item = items.first {
                 processPhotoPickerItem(item)
             }

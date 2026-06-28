@@ -53,7 +53,7 @@ public struct GIFExportEngine {
         let readerOutput = AVAssetReaderTrackOutput(
             track: videoTrack,
             outputSettings: [
-                kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32ARGB
+                kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32ARGB as OSType
             ]
         )
         guard reader.canAdd(readerOutput) else {
@@ -74,7 +74,7 @@ public struct GIFExportEngine {
                 CMTimeCompare(lastSampleTime, CMTime.negativeInfinity) == 0 {
                 if let imageBuffer = CMSampleBufferGetImageBuffer(sample) {
                     let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-                    let context = CIContext()
+                    let context = CIContext(options: nil)
                     if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
                         // Resize
                         let colorSpace = cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB()

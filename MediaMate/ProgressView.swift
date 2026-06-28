@@ -123,7 +123,7 @@ struct ProgressView: View {
                 currentStep = 0
             }
         }
-                .onChange(of: isComplete) { done in
+                .onChange(of: isComplete) { _, done in
             if done {
                 if !appState.isTestMode {
                     UINotificationFeedbackGenerator().notificationOccurred(.success)
@@ -131,7 +131,7 @@ struct ProgressView: View {
                 finishConversion()
             }
         }
-        .onChange(of: isFailed) { failed in
+        .onChange(of: isFailed) { _, failed in
             if failed {
                 UINotificationFeedbackGenerator().notificationOccurred(.error)
             }

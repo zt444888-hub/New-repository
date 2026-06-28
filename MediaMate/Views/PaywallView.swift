@@ -51,7 +51,7 @@ struct PaywallView: View {
                 .font(.system(size: 15)).foregroundColor(.textTertiary).padding(.bottom, 24)
         }
         .background(Color.bgPrimary)
-        .onChange(of: store.isPurchased) { if $0 { dismiss() } }
+        .onChange(of: store.isPurchased) { _, newValue in if newValue { dismiss() } }
         .interactiveDismissDisabled()
     }
 
