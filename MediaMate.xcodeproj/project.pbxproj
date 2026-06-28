@@ -39,17 +39,12 @@
 		44D7F989E1D7A57158CDBA1E /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = SOURCE_ROOT; };
 		E9DD3711EA31FF7E37BBDB67 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = SOURCE_ROOT; };
 		80B0B50B97EFF8EE179D3A51 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateShare/ShareViewController.swift"; sourceTree = SOURCE_ROOT; };
-		A0B1C2D3E4F5A6B7C8D9E0F1 /* MediaMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMateTests.xctest; path = MediaMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A8EF8B88354F6A9100F67C /* ConversionEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMateTests/ConversionEngineTests.swift"; sourceTree = SOURCE_ROOT; };
 		1693EA97F621DF09B737A8D5 /* FileUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaMateTests/FileUtilitiesTests.swift"; sourceTree = SOURCE_ROOT; };
 		FD2B543C26F50161B669B29F /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXBuildFile section */
-
-		111111111111111111111111 /* ConversionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A8EF8B88354F6A9100F67C /* ConversionEngineTests.swift */; };
-		222222222222222222222222 /* FileUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693EA97F621DF09B737A8D5 /* FileUtilitiesTests.swift */; };
-
 		4773F055392F7BD686D7DA21 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF9DD69B54F3CBC4D38BA06; };
 		F9D910E99C10E0FDE60A320B /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51B523FED26AD25EDCB8F76; };
 		A48634CBEE47DC6D4B63D79A /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C11FBEDAF3422ACE8FD8D84; };
@@ -158,8 +153,7 @@
 		4BD238B24E5B1BE218ADD975 = {
 			isa = PBXGroup;
 			children = (
-				A0B1C2D3E4F5A6B7C8D9E0F1 /* MediaMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMateTests.xctest; path = MediaMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		26A8EF8B88354F6A9100F67C /* ConversionEngineTests.swift */,
+				26A8EF8B88354F6A9100F67C /* ConversionEngineTests.swift */,
 				1693EA97F621DF09B737A8D5 /* FileUtilitiesTests.swift */,
 			);
 			name = MediaMateTests;
@@ -170,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				FD2B543C26F50161B669B29F /* MediaMate.app */,
-				A0B1C2D3E4F5A6B7C8D9E0F1 /* MediaMateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,25 +261,6 @@
 		};
 /* End PBXNativeTarget section */
 
-
-/* Begin PBXSourcesBuildPhase section */
-		CAFEBABE0123456789ABCDEF /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-				111111111111111111111111 /* ConversionEngineTests.swift in Sources */,
-				222222222222222222222222 /* FileUtilitiesTests.swift in Sources */,
-			); runOnlyForDeploymentPostprocessing = 0; };
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		DEADBEEF0123456789ABCDEF /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXContainerItemProxy section */
-		BEEFCAFE0123456789ABCDEF = {isa = PBXContainerItemProxy; containerPortal = 950E36F3F8226B47FAB6EEE7; proxyType = 1; remoteGlobalIDString = 9015A8807E67626EB8F0CEBE; remoteInfo = MediaMate; };
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXTargetDependency section */
-		C0FFEE0123456789ABCDEF01 = {isa = PBXTargetDependency; target = 9015A8807E67626EB8F0CEBE; targetProxy = BEEFCAFE0123456789ABCDEF; };
-/* End PBXTargetDependency section */
 /* Begin PBXProject section */
 		950E36F3F8226B47FAB6EEE7 = {
 			isa = PBXProject;
@@ -301,19 +275,10 @@
 			projectRoot = "";
 			targets = (
 				9015A8807E67626EB8F0CEBE /* MediaMate */,
-				F0E1D2C3B4A5968778695040 /* MediaMateTests */,
 			);
 		};
 /* End PBXProject section */
 
-
-/* Begin PBXNativeTarget section */
-		F0E1D2C3B4A5968778695040 /* MediaMateTests */ = {isa = PBXNativeTarget; buildConfigurationList = 1234ABCD5678EF9009ABCDEF; buildPhases = (
-				CAFEBABE0123456789ABCDEF /* Sources */,
-				DEADBEEF0123456789ABCDEF /* Frameworks */,
-			); buildRules = (); dependencies = (
-				C0FFEE0123456789ABCDEF01,); name = MediaMateTests; productName = MediaMateTests; productReference = A0B1C2D3E4F5A6B7C8D9E0F1; productType = "com.apple.product-type.bundle.unit-test"; };
-/* End PBXNativeTarget section */
 /* Begin XCBuildConfiguration section */
 		F40BBDDA64FBE832CB87F55F = {
 			isa = XCBuildConfiguration;
@@ -367,11 +332,6 @@
 		};
 /* End XCBuildConfiguration section */
 
-
-/* Begin XCBuildConfiguration section */
-		ABCD1234EF56789012345678 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; INFOPLIST_FILE = MediaMateTests/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 18.0; PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.tests; PRODUCT_NAME = MediaMateTests; SDKROOT = iphoneos; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaMate.app/MediaMate";}; name = Debug; };
-		87654321FEDCBA0987654321 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; INFOPLIST_FILE = MediaMateTests/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 18.0; PRODUCT_BUNDLE_IDENTIFIER = com.mediamate.tests; PRODUCT_NAME = MediaMateTests; SDKROOT = iphoneos; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaMate.app/MediaMate";}; name = Release; };
-/* End XCBuildConfiguration section */
 /* Begin XCConfigurationList section */
 		D353F62CFB28F8733C460A76 = {
 			isa = XCConfigurationList;
@@ -392,11 +352,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCConfigurationList section */
-		1234ABCD5678EF9009ABCDEF = {isa = XCConfigurationList; buildConfigurations = (ABCD1234EF56789012345678,87654321FEDCBA0987654321,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-/* End XCConfigurationList section */
-
 
 	};
 	rootObject = 950E36F3F8226B47FAB6EEE7;
