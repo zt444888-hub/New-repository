@@ -2,6 +2,7 @@ import Foundation
 import AVFoundation
 import ImageIO
 import UniformTypeIdentifiers
+import CoreImage
 
 public struct GIFExportEngine {
 
@@ -74,7 +75,7 @@ public struct GIFExportEngine {
                 CMTimeCompare(lastSampleTime, CMTime.negativeInfinity) == 0 {
                 if let imageBuffer = CMSampleBufferGetImageBuffer(sample) {
                     let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-                    let context = CIContext(options: nil)
+                    let context = CIContext()
                     if let cgImage = context.createCGImage(ciImage, from: ciImage.extent) {
                         // Resize
                         let colorSpace = cgImage.colorSpace ?? CGColorSpaceCreateDeviceRGB()
@@ -87,7 +88,7 @@ public struct GIFExportEngine {
                             space: colorSpace,
                             bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue
                         ) {
-                            context2.interpolationQuality = .high
+                            context2.interpolationQuality = CGInterpolationQuality.high
                             context2.draw(cgImage, in: CGRect(origin: .zero, size: targetSize))
                             if let resized = context2.makeImage() {
                                 sampledFrames.append(resized)
