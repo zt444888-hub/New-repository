@@ -138,11 +138,20 @@ struct HomeView: View {
                 handleBatchFiles(urls)
             }
         }
-        ..onAppear {
+        .onAppear {
             checkPhotoLibraryPermission()
         }
         .navigationTitle("")
         .navigationBarHidden(true)
+    }
+    
+    
+    private func handleBatchFiles(_ urls: [URL]) {
+        guard let firstURL = urls.first else { return }
+        appState.originalFileName = firstURL.lastPathComponent
+        appState.originalFileSizeText = FileUtilities.formatFileSize(firstURL.path)
+        appState.currentFile = firstURL
+        navigationPath.append(Route.convert)
     }
     
     private func checkPhotoLibraryPermission() {
@@ -150,15 +159,15 @@ struct HomeView: View {
     }
     
     private func requestPhotoLibraryPermission() {
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [weak self] status in
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
             DispatchQueue.main.async {
-                self?.photoLibraryStatus = status
+                self.photoLibraryStatus = status
                 switch status {
                 case .authorized, .limited:
-                    self?.showPhotoPicker = true
+                    self.showPhotoPicker = true
                 case .denied, .restricted:
-                    self?.permissionAlertMessage = "Please enable photo library access in Settings to select media files."
-                    self?.showPermissionAlert = true
+                    self.permissionAlertMessage = "Please enable photo library access in Settings to select media files."
+                    self.showPermissionAlert = true
                 case .notDetermined:
                     break
                 @unknown default:
@@ -247,7 +256,7 @@ struct DocumentPickerView: UIViewControllerRepresentable {
         picker.allowsMultipleSelection = false
         if let popover = picker.popoverPresentationController {
             popover.sourceView = picker.view
-            popover.sourceRect = sourceRect
+            popover.sourceRect = picker.view.bounds
         }
         return picker
     }
