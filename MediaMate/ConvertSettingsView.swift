@@ -102,7 +102,7 @@ struct ConvertSettingsView: View {
                             .foregroundColor(.textSecondary)
                     }
 
-                    Slider(value: .quality, in: 0...3, step: 1)
+                    Slider(value: $appState.quality, in: 0...3, step: 1)
                         .tint(.accent)
                         .padding(.vertical, 4)
 
