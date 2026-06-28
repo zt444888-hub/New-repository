@@ -1,39 +1,41 @@
-﻿name: Build & Archive
+name: Build iOS
 
 on:
   push:
-    branches: [master]
-    tags: ['v*']
-  workflow_dispatch:
+    branches: [ "master", "fixbug-synatx" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
-    name: Build and Archive
-    runs-on: macos-14
+    name: Build and check errors
+    runs-on: macos-15
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
-      - name: Show Xcode Version
+      - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: Build
+      - name: Build for iOS Simulator
         run: |
-          xcodebuild clean archive \
+          xcodebuild build \
             -project MediaMate.xcodeproj \
             -scheme MediaMate \
-            -configuration Release \
-            -archivePath $RUNNER_TEMP/MediaMate.xcarchive \
-            CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            2>&1 | tee build.log
 
-      - name: Upload Artifact
+      - name: Upload build log
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MediaMate.xcarchive
-          path: ${{ runner.temp }}/MediaMate.xcarchive
+          name: build-log
+          path: build.log
