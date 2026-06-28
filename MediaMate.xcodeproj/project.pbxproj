@@ -40,6 +40,7 @@
 		B37CE2D2BEEC7948D8368EE7 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/Preset.swift"; sourceTree = SOURCE_ROOT; };
 		2086CBE9171A0C79C95DAB85 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateCore/StoreManager.swift"; sourceTree = SOURCE_ROOT; };
 		43F1E307DE19C697A616B3B3 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/MediaMateShare/ShareViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A2F6B5F8A7B7334A720AF616 /* MediaMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMateTests.xctest; path = MediaMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E401C06A0EC7F711BA8C284 /* MediaMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,7 +131,9 @@
 				DFE5ACC0068F54137E314136 /* FileUtilitiesTests.swift */,
 			); name = MediaMateTests; path = MediaMateTests; sourceTree = "<group>"; };
 		C6FD29065A235F988FC22676 = {isa = PBXGroup; children = (
-				1E401C06A0EC7F711BA8C284 /* MediaMate.app */,
+				A2F6B5F8A7B7334A720AF616 /* MediaMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMateTests.xctest; path = MediaMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E401C06A0EC7F711BA8C284 /* MediaMate.app */,
+				A2F6B5F8A7B7334A720AF616 /* MediaMateTests.xctest */,
 			); name = Products; sourceTree = "<group>"; };
 		F81A997F3C20313A0DF12402 = {isa = PBXGroup; children = (
 				1B7637CF6E8895C0B34B5138 /* MediaMate */,
@@ -197,7 +200,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXNativeTarget section */
-		DB0D85D8EE139115BCAF3B9C /* MediaMateTests */ = {isa = PBXNativeTarget; buildConfigurationList = 143E8A62EAA1DC6185E6D5C2; buildPhases = (955163343A9ADC8C815FBD8D /* Sources */,7EA6CB663A61899E72542E4D /* Frameworks */,); buildRules = (); dependencies = (E0CB96AF388E6492B886BD86,); name = MediaMateTests; productName = MediaMateTests; productType = "com.apple.product-type.bundle.unit-test"; };
+		DB0D85D8EE139115BCAF3B9C /* MediaMateTests */ = {isa = PBXNativeTarget; buildConfigurationList = 143E8A62EAA1DC6185E6D5C2; buildPhases = (955163343A9ADC8C815FBD8D /* Sources */,7EA6CB663A61899E72542E4D /* Frameworks */,); buildRules = (); dependencies = (E0CB96AF388E6492B886BD86,); name = MediaMateTests; productName = MediaMateTests; productReference = A2F6B5F8A7B7334A720AF616; productType = "com.apple.product-type.bundle.unit-test"; };
 /* End PBXNativeTarget section */
 
 /* Begin PBXSourcesBuildPhase section */
