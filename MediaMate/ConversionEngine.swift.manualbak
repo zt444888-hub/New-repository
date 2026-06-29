@@ -1,4 +1,4 @@
-@preconcurrency import AVFoundation
+import AVFoundation
 import UIKit
 import Foundation
 import ImageIO
@@ -325,7 +325,7 @@ import UniformTypeIdentifiers
 
         let duration = CMTimeGetSeconds(asset.duration)
         let frameRate = 15
-        let totalFrames = min(Int(duration * Double(frameRate)), 450)
+        let totalFrames = Int(duration * Double(frameRate))
         let naturalSize = videoTrack.naturalSize
         let maxWidth: CGFloat = 480
         let scale = min(maxWidth / naturalSize.width, 1.0)

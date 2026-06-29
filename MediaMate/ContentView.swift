@@ -37,7 +37,9 @@ struct ContentView: View {
                 .tabItem { Label("Files", systemImage: "tray.full") }
                 .tag(Tab.files)
 
-            SettingsView()
+            NavigationStack {
+                SettingsView()
+            }
                 .tabItem { Label("Settings", systemImage: "gearshape") }
                 .tag(Tab.settings)
         }

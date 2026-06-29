@@ -34,7 +34,7 @@ struct HistoryView: View {
                     HistoryListItem(item: item)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             Button(role: .destructive) {
-                                if let idx = appState.recentItems.firstIndex(where: { $0.id == item.id }) {
+                                if nil != appState.recentItems.firstIndex(where: { $0.id == item.id }) {
                                     appState.deleteConversion(item)
                                 }
                             } label: {

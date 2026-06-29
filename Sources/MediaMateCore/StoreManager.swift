@@ -88,7 +88,7 @@ public final class StoreManager: ObservableObject {
             for await result in Transaction.updates {
                 if case .verified(let transaction) = result {
                     await transaction.finish()
-                    await MainActor.run { self?.isPurchased = true }
+                    await MainActor.run { [weak self] in self?.isPurchased = true }
                 }
             }
         }

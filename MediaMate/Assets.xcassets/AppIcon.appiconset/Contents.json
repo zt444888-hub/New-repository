@@ -1,4 +1,4 @@
-﻿{
+{
   "images" : [
     { "filename" : "icon-20@2x.png", "idiom" : "iphone", "size" : "20x20", "scale" : "2x" },
     { "filename" : "icon-20@3x.png", "idiom" : "iphone", "size" : "20x20", "scale" : "3x" },

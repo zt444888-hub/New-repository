@@ -1,5 +1,5 @@
 import Foundation
-import AVFoundation
+@preconcurrency import AVFoundation
 import ImageIO
 import UniformTypeIdentifiers
 import CoreImage
@@ -37,7 +37,7 @@ public struct GIFExportEngine {
         }
 
         let duration = CMTimeGetSeconds(asset.duration)
-        let totalFrames = Int(duration * Double(frameRate))
+        
         let naturalSize = videoTrack.naturalSize
         let targetWidth = maxWidth ?? naturalSize.width
         let scale = targetWidth / naturalSize.width
